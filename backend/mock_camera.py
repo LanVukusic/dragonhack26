@@ -17,13 +17,13 @@ logger = logging.getLogger(__name__)
 UPDATE_INTERVAL = 0.1
 BURST_DURATION = 0.5
 SETTLE_DURATION = 2.0
-MOVE_DISTANCE_MIN = 50
-MOVE_DISTANCE_MAX = 150
-JIGGLE_AMOUNT = 2
+MOVE_DISTANCE_MIN = 400  # ~13% of min dimension
+MOVE_DISTANCE_MAX = 1200  # ~40% of min dimension (strong hit)
+JIGGLE_AMOUNT = 10  # ~0.3% (camera noise tolerance)
 NUM_CIRCLES = 3
 FIELD_WIDTH = 4000
 FIELD_HEIGHT = 3000
-PUCK_RADIUS = 25
+PUCK_RADIUS = 60  # ~2% of min dimension
 
 
 class MockCameraService:
@@ -227,7 +227,9 @@ class MockCameraService:
                 active = random.choice(list(self.positions.keys()))
                 current = self.positions[active].copy()
 
-                jump_distance = random.uniform(150, 300)
+                jump_distance = random.uniform(
+                    1500, 2500
+                )  # Large jump for blur detection
                 angle = random.uniform(0, 2 * np.pi)
                 jump_target = (
                     current + np.array([np.cos(angle), np.sin(angle)]) * jump_distance
@@ -270,7 +272,7 @@ class MockCameraService:
                 if np.linalg.norm(direction) > 0:
                     direction = direction / np.linalg.norm(direction)
 
-                push_distance = random.uniform(80, 150)
+                push_distance = random.uniform(500, 1000)  # Proportional push distance
                 new_p1 = p1 - direction * push_distance
                 new_p2 = p2 + direction * push_distance
 

@@ -296,15 +296,15 @@ async def tracker_update(circles: List[CircleInput]):
 
     turn_manager.update(circle_objs)
 
-    current_state = turn_manager.get_current_state()
+    # BROADCAST RAW DATA DIRECTLY - don't use get_current_state()
     circles_list = [
         {
-            "id": cid,
-            "x": float(pos[0]),
-            "y": float(pos[1]),
-            "in_frame": cid in turn_manager.get_in_frame_ids(),
+            "id": c.id,
+            "x": c.x,
+            "y": c.y,
+            "in_frame": c.id in turn_manager.get_in_frame_ids(),
         }
-        for cid, pos in current_state.items()
+        for c in circles
     ]
 
     await broadcast_to_frontends(
