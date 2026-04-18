@@ -1,0 +1,1903 @@
+INFO:     Started server process [90411]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:     127.0.0.1:44882 - "GET /health HTTP/1.1" 200 OK
+2026-04-18 23:52:10,250 - INFO - POST /api/tracker: received 3 circles: [id=0 x=575 y=259, id=1 x=505 y=152, id=2 x=696 y=496]
+2026-04-18 23:52:10,250 - INFO - New circle detected: 0
+2026-04-18 23:52:10,250 - INFO - New circle detected: 1
+2026-04-18 23:52:10,250 - INFO - New circle detected: 2
+INFO:     127.0.0.1:36352 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:10,353 - INFO - POST /api/tracker: received 3 circles: [id=0 x=574 y=260, id=1 x=497 y=175, id=2 x=694 y=495]
+2026-04-18 23:52:10,353 - INFO - Movement check: moved=[1]
+2026-04-18 23:52:10,353 - INFO -   Circle 1: delta=23.7px
+2026-04-18 23:52:10,353 - INFO -   Circle 2: delta=1.9px
+2026-04-18 23:52:10,353 - INFO -   Circle 0: delta=1.4px
+INFO:     127.0.0.1:36368 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:10,354 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:10,456 - INFO - POST /api/tracker: received 3 circles: [id=0 x=575 y=259, id=1 x=488 y=197, id=2 x=695 y=497]
+2026-04-18 23:52:10,456 - INFO - Movement check: moved=[1]
+2026-04-18 23:52:10,456 - INFO -   Circle 1: delta=47.4px
+2026-04-18 23:52:10,456 - INFO -   Circle 2: delta=1.3px
+2026-04-18 23:52:10,456 - INFO -   Circle 0: delta=0.2px
+INFO:     127.0.0.1:36378 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:10,456 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:10,558 - INFO - POST /api/tracker: received 3 circles: [id=0 x=576 y=258, id=1 x=480 y=219, id=2 x=693 y=497]
+2026-04-18 23:52:10,558 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:10,558 - INFO -   Circle 1: delta=71.1px
+2026-04-18 23:52:10,558 - INFO -   Circle 2: delta=3.2px
+2026-04-18 23:52:10,558 - INFO -   Circle 0: delta=2.1px
+INFO:     127.0.0.1:36384 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:10,558 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:10,660 - INFO - POST /api/tracker: received 3 circles: [id=0 x=576 y=258, id=1 x=471 y=241, id=2 x=691 y=499]
+2026-04-18 23:52:10,661 - INFO - Movement check: moved=[1, 2]
+2026-04-18 23:52:10,661 - INFO -   Circle 1: delta=94.8px
+2026-04-18 23:52:10,661 - INFO -   Circle 2: delta=5.5px
+2026-04-18 23:52:10,661 - INFO -   Circle 0: delta=1.3px
+INFO:     127.0.0.1:36390 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:10,661 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:10,763 - INFO - POST /api/tracker: received 3 circles: [id=0 x=575 y=259, id=1 x=471 y=240, id=2 x=692 y=499]
+2026-04-18 23:52:10,763 - INFO - Movement check: moved=[1, 2]
+2026-04-18 23:52:10,763 - INFO -   Circle 1: delta=94.1px
+2026-04-18 23:52:10,763 - INFO -   Circle 2: delta=5.2px
+2026-04-18 23:52:10,763 - INFO -   Circle 0: delta=0.4px
+INFO:     127.0.0.1:36400 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:10,763 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:10,865 - INFO - POST /api/tracker: received 3 circles: [id=0 x=575 y=259, id=1 x=470 y=240, id=2 x=692 y=499]
+2026-04-18 23:52:10,866 - INFO - Movement check: moved=[1, 2]
+2026-04-18 23:52:10,866 - INFO -   Circle 1: delta=94.2px
+2026-04-18 23:52:10,866 - INFO -   Circle 2: delta=4.6px
+2026-04-18 23:52:10,866 - INFO -   Circle 0: delta=0.6px
+INFO:     127.0.0.1:36402 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:10,866 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:10,968 - INFO - POST /api/tracker: received 3 circles: [id=0 x=574 y=259, id=1 x=471 y=241, id=2 x=693 y=499]
+2026-04-18 23:52:10,968 - INFO - Movement check: moved=[1, 2]
+2026-04-18 23:52:10,968 - INFO -   Circle 1: delta=94.5px
+2026-04-18 23:52:10,968 - INFO -   Circle 2: delta=4.0px
+2026-04-18 23:52:10,968 - INFO -   Circle 0: delta=0.6px
+INFO:     127.0.0.1:36410 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:10,969 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:11,070 - INFO - POST /api/tracker: received 3 circles: [id=0 x=574 y=259, id=1 x=470 y=240, id=2 x=692 y=499]
+2026-04-18 23:52:11,071 - INFO - Movement check: moved=[1, 2]
+2026-04-18 23:52:11,071 - INFO -   Circle 1: delta=94.0px
+2026-04-18 23:52:11,071 - INFO -   Circle 2: delta=4.6px
+2026-04-18 23:52:11,071 - INFO -   Circle 0: delta=1.7px
+INFO:     127.0.0.1:36416 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:11,071 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:11,173 - INFO - POST /api/tracker: received 3 circles: [id=0 x=574 y=258, id=1 x=470 y=241, id=2 x=692 y=499]
+2026-04-18 23:52:11,173 - INFO - Movement check: moved=[1, 2]
+2026-04-18 23:52:11,173 - INFO -   Circle 1: delta=94.9px
+2026-04-18 23:52:11,173 - INFO -   Circle 2: delta=4.9px
+2026-04-18 23:52:11,173 - INFO -   Circle 0: delta=1.4px
+INFO:     127.0.0.1:36430 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:11,173 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:11,275 - INFO - POST /api/tracker: received 3 circles: [id=0 x=574 y=259, id=1 x=469 y=240, id=2 x=693 y=500]
+2026-04-18 23:52:11,275 - INFO - Movement check: moved=[1, 2]
+2026-04-18 23:52:11,275 - INFO -   Circle 1: delta=94.9px
+2026-04-18 23:52:11,275 - INFO -   Circle 2: delta=4.8px
+2026-04-18 23:52:11,275 - INFO -   Circle 0: delta=0.8px
+INFO:     127.0.0.1:36444 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:11,276 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:11,378 - INFO - POST /api/tracker: received 3 circles: [id=0 x=575 y=260, id=1 x=470 y=240, id=2 x=693 y=500]
+2026-04-18 23:52:11,378 - INFO - Movement check: moved=[1, 2]
+2026-04-18 23:52:11,378 - INFO -   Circle 1: delta=94.9px
+2026-04-18 23:52:11,378 - INFO -   Circle 2: delta=5.0px
+2026-04-18 23:52:11,378 - INFO -   Circle 0: delta=0.2px
+INFO:     127.0.0.1:36454 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:11,378 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:11,480 - INFO - POST /api/tracker: received 3 circles: [id=0 x=576 y=260, id=1 x=470 y=240, id=2 x=694 y=499]
+2026-04-18 23:52:11,480 - INFO - Movement check: moved=[1, 2]
+2026-04-18 23:52:11,480 - INFO -   Circle 1: delta=94.1px
+2026-04-18 23:52:11,480 - INFO -   Circle 2: delta=3.8px
+2026-04-18 23:52:11,480 - INFO -   Circle 0: delta=1.0px
+INFO:     127.0.0.1:36458 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:11,480 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:11,582 - INFO - POST /api/tracker: received 3 circles: [id=0 x=576 y=260, id=1 x=470 y=239, id=2 x=695 y=498]
+2026-04-18 23:52:11,582 - INFO - Movement check: moved=[1, 2]
+2026-04-18 23:52:11,582 - INFO -   Circle 1: delta=93.5px
+2026-04-18 23:52:11,582 - INFO -   Circle 2: delta=2.6px
+2026-04-18 23:52:11,582 - INFO -   Circle 0: delta=1.2px
+INFO:     127.0.0.1:36460 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:11,583 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:11,684 - INFO - POST /api/tracker: received 3 circles: [id=0 x=575 y=260, id=1 x=469 y=238, id=2 x=695 y=497]
+2026-04-18 23:52:11,685 - INFO - Movement check: moved=[1]
+2026-04-18 23:52:11,685 - INFO -   Circle 1: delta=93.1px
+2026-04-18 23:52:11,685 - INFO -   Circle 2: delta=1.5px
+2026-04-18 23:52:11,685 - INFO -   Circle 0: delta=0.7px
+INFO:     127.0.0.1:36466 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:11,685 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:11,787 - INFO - POST /api/tracker: received 3 circles: [id=0 x=575 y=261, id=1 x=470 y=239, id=2 x=695 y=497]
+2026-04-18 23:52:11,787 - INFO - Movement check: moved=[1]
+2026-04-18 23:52:11,787 - INFO -   Circle 1: delta=93.1px
+2026-04-18 23:52:11,787 - INFO -   Circle 0: delta=1.2px
+2026-04-18 23:52:11,787 - INFO -   Circle 2: delta=0.9px
+INFO:     127.0.0.1:36476 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:11,787 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:11,889 - INFO - POST /api/tracker: received 3 circles: [id=0 x=575 y=260, id=1 x=471 y=240, id=2 x=695 y=496]
+2026-04-18 23:52:11,889 - INFO - Movement check: moved=[1]
+2026-04-18 23:52:11,889 - INFO -   Circle 1: delta=93.6px
+2026-04-18 23:52:11,889 - INFO -   Circle 2: delta=0.9px
+2026-04-18 23:52:11,889 - INFO -   Circle 0: delta=0.5px
+INFO:     127.0.0.1:36484 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:11,890 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:11,992 - INFO - POST /api/tracker: received 3 circles: [id=0 x=574 y=259, id=1 x=470 y=240, id=2 x=694 y=496]
+2026-04-18 23:52:11,992 - INFO - Movement check: moved=[1]
+2026-04-18 23:52:11,992 - INFO -   Circle 1: delta=94.5px
+2026-04-18 23:52:11,992 - INFO -   Circle 2: delta=1.4px
+2026-04-18 23:52:11,992 - INFO -   Circle 0: delta=0.9px
+INFO:     127.0.0.1:36496 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:11,992 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:12,094 - INFO - POST /api/tracker: received 3 circles: [id=0 x=575 y=258, id=1 x=470 y=240, id=2 x=695 y=495]
+2026-04-18 23:52:12,094 - INFO - Movement check: moved=[1]
+2026-04-18 23:52:12,094 - INFO -   Circle 1: delta=94.2px
+2026-04-18 23:52:12,094 - INFO -   Circle 0: delta=1.5px
+2026-04-18 23:52:12,094 - INFO -   Circle 2: delta=0.8px
+INFO:     127.0.0.1:36504 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:12,095 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:12,197 - INFO - POST /api/tracker: received 3 circles: [id=0 x=574 y=257, id=1 x=470 y=241, id=2 x=696 y=496]
+2026-04-18 23:52:12,197 - INFO - Movement check: moved=[0, 1]
+2026-04-18 23:52:12,197 - INFO -   Circle 1: delta=94.9px
+2026-04-18 23:52:12,197 - INFO -   Circle 0: delta=2.3px
+2026-04-18 23:52:12,197 - INFO -   Circle 2: delta=0.2px
+INFO:     127.0.0.1:36518 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:12,197 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:12,299 - INFO - POST /api/tracker: received 3 circles: [id=0 x=574 y=257, id=1 x=470 y=241, id=2 x=696 y=495]
+2026-04-18 23:52:12,299 - INFO - Movement check: moved=[0, 1]
+2026-04-18 23:52:12,299 - INFO -   Circle 1: delta=95.9px
+2026-04-18 23:52:12,299 - INFO -   Circle 0: delta=3.1px
+2026-04-18 23:52:12,299 - INFO -   Circle 2: delta=0.6px
+INFO:     127.0.0.1:36524 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:12,300 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:12,402 - INFO - POST /api/tracker: received 3 circles: [id=0 x=573 y=257, id=1 x=470 y=241, id=2 x=696 y=496]
+2026-04-18 23:52:12,402 - INFO - Movement check: moved=[0, 1]
+2026-04-18 23:52:12,402 - INFO -   Circle 1: delta=94.7px
+2026-04-18 23:52:12,402 - INFO -   Circle 0: delta=2.7px
+2026-04-18 23:52:12,402 - INFO -   Circle 2: delta=0.4px
+INFO:     127.0.0.1:36538 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:12,402 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:12,504 - INFO - POST /api/tracker: received 3 circles: [id=0 x=574 y=256, id=1 x=471 y=240, id=2 x=697 y=497]
+2026-04-18 23:52:12,504 - INFO - Movement check: moved=[0, 1]
+2026-04-18 23:52:12,504 - INFO -   Circle 1: delta=94.0px
+2026-04-18 23:52:12,504 - INFO -   Circle 0: delta=3.3px
+2026-04-18 23:52:12,504 - INFO -   Circle 2: delta=1.1px
+INFO:     127.0.0.1:36540 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:12,505 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:12,607 - INFO - POST /api/tracker: received 3 circles: [id=0 x=574 y=257, id=1 x=470 y=240, id=2 x=696 y=497]
+2026-04-18 23:52:12,607 - INFO - Movement check: moved=[0, 1]
+2026-04-18 23:52:12,607 - INFO -   Circle 1: delta=93.8px
+2026-04-18 23:52:12,607 - INFO -   Circle 0: delta=2.9px
+2026-04-18 23:52:12,607 - INFO -   Circle 2: delta=1.5px
+INFO:     127.0.0.1:36554 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:12,607 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:12,709 - INFO - POST /api/tracker: received 3 circles: [id=0 x=575 y=256, id=1 x=470 y=239, id=2 x=696 y=498]
+2026-04-18 23:52:12,709 - INFO - Movement check: moved=[0, 1]
+2026-04-18 23:52:12,709 - INFO -   Circle 1: delta=93.4px
+2026-04-18 23:52:12,709 - INFO -   Circle 0: delta=3.3px
+2026-04-18 23:52:12,709 - INFO -   Circle 2: delta=2.0px
+INFO:     127.0.0.1:36556 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:12,709 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:12,811 - INFO - POST /api/tracker: received 3 circles: [id=0 x=585 y=270, id=1 x=472 y=240, id=2 x=695 y=500]
+2026-04-18 23:52:12,811 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:12,811 - INFO -   Circle 1: delta=93.4px
+2026-04-18 23:52:12,812 - INFO -   Circle 0: delta=14.2px
+2026-04-18 23:52:12,812 - INFO -   Circle 2: delta=4.0px
+INFO:     127.0.0.1:36570 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:12,812 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:12,914 - INFO - POST /api/tracker: received 3 circles: [id=0 x=594 y=283, id=1 x=473 y=239, id=2 x=696 y=501]
+2026-04-18 23:52:12,914 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:12,914 - INFO -   Circle 1: delta=92.1px
+2026-04-18 23:52:12,914 - INFO -   Circle 0: delta=30.6px
+2026-04-18 23:52:12,914 - INFO -   Circle 2: delta=5.5px
+INFO:     127.0.0.1:36582 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:12,915 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:13,017 - INFO - POST /api/tracker: received 3 circles: [id=0 x=604 y=297, id=1 x=473 y=237, id=2 x=697 y=502]
+2026-04-18 23:52:13,017 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:13,017 - INFO -   Circle 1: delta=90.7px
+2026-04-18 23:52:13,017 - INFO -   Circle 0: delta=47.1px
+2026-04-18 23:52:13,017 - INFO -   Circle 2: delta=6.2px
+INFO:     127.0.0.1:36590 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:13,017 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:13,119 - INFO - POST /api/tracker: received 3 circles: [id=0 x=613 y=310, id=1 x=475 y=238, id=2 x=696 y=502]
+2026-04-18 23:52:13,119 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:13,119 - INFO -   Circle 1: delta=90.7px
+2026-04-18 23:52:13,119 - INFO -   Circle 0: delta=63.7px
+2026-04-18 23:52:13,119 - INFO -   Circle 2: delta=6.1px
+INFO:     127.0.0.1:36600 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:13,119 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:13,221 - INFO - POST /api/tracker: received 3 circles: [id=0 x=623 y=324, id=1 x=476 y=237, id=2 x=696 y=504]
+2026-04-18 23:52:13,221 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:13,221 - INFO -   Circle 1: delta=89.4px
+2026-04-18 23:52:13,221 - INFO -   Circle 0: delta=80.2px
+2026-04-18 23:52:13,221 - INFO -   Circle 2: delta=8.0px
+INFO:     127.0.0.1:36608 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:13,222 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:13,324 - INFO - POST /api/tracker: received 3 circles: [id=0 x=622 y=324, id=1 x=476 y=238, id=2 x=695 y=505]
+2026-04-18 23:52:13,324 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:13,324 - INFO -   Circle 1: delta=89.9px
+2026-04-18 23:52:13,324 - INFO -   Circle 0: delta=80.0px
+2026-04-18 23:52:13,324 - INFO -   Circle 2: delta=9.0px
+INFO:     127.0.0.1:36624 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:13,324 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:13,426 - INFO - POST /api/tracker: received 3 circles: [id=0 x=622 y=325, id=1 x=475 y=238, id=2 x=695 y=504]
+2026-04-18 23:52:13,426 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:13,426 - INFO -   Circle 1: delta=90.2px
+2026-04-18 23:52:13,426 - INFO -   Circle 0: delta=80.5px
+2026-04-18 23:52:13,426 - INFO -   Circle 2: delta=8.4px
+INFO:     127.0.0.1:36636 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:13,426 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:13,529 - INFO - POST /api/tracker: received 3 circles: [id=0 x=622 y=325, id=1 x=476 y=238, id=2 x=696 y=505]
+2026-04-18 23:52:13,529 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:13,529 - INFO -   Circle 1: delta=90.0px
+2026-04-18 23:52:13,529 - INFO -   Circle 0: delta=80.0px
+2026-04-18 23:52:13,529 - INFO -   Circle 2: delta=8.7px
+INFO:     127.0.0.1:36646 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:13,529 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:13,631 - INFO - POST /api/tracker: received 3 circles: [id=0 x=622 y=325, id=1 x=477 y=238, id=2 x=695 y=505]
+2026-04-18 23:52:13,631 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:13,631 - INFO -   Circle 1: delta=90.4px
+2026-04-18 23:52:13,631 - INFO -   Circle 0: delta=80.9px
+2026-04-18 23:52:13,631 - INFO -   Circle 2: delta=9.3px
+INFO:     127.0.0.1:36660 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:13,632 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:13,734 - INFO - POST /api/tracker: received 3 circles: [id=0 x=622 y=325, id=1 x=478 y=238, id=2 x=695 y=505]
+2026-04-18 23:52:13,734 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:13,734 - INFO -   Circle 1: delta=90.1px
+2026-04-18 23:52:13,734 - INFO -   Circle 0: delta=80.4px
+2026-04-18 23:52:13,734 - INFO -   Circle 2: delta=9.1px
+INFO:     127.0.0.1:36662 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:13,734 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:13,836 - INFO - POST /api/tracker: received 3 circles: [id=0 x=622 y=325, id=1 x=478 y=238, id=2 x=695 y=505]
+2026-04-18 23:52:13,836 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:13,836 - INFO -   Circle 1: delta=90.1px
+2026-04-18 23:52:13,836 - INFO -   Circle 0: delta=80.8px
+2026-04-18 23:52:13,836 - INFO -   Circle 2: delta=8.9px
+INFO:     127.0.0.1:36666 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:13,837 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:13,939 - INFO - POST /api/tracker: received 3 circles: [id=0 x=622 y=326, id=1 x=477 y=238, id=2 x=696 y=504]
+2026-04-18 23:52:13,939 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:13,939 - INFO -   Circle 1: delta=90.0px
+2026-04-18 23:52:13,939 - INFO -   Circle 0: delta=81.3px
+2026-04-18 23:52:13,939 - INFO -   Circle 2: delta=8.4px
+INFO:     127.0.0.1:36674 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:13,939 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:14,041 - INFO - POST /api/tracker: received 3 circles: [id=0 x=623 y=325, id=1 x=477 y=238, id=2 x=697 y=504]
+2026-04-18 23:52:14,041 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:14,041 - INFO -   Circle 1: delta=90.3px
+2026-04-18 23:52:14,041 - INFO -   Circle 0: delta=81.2px
+2026-04-18 23:52:14,041 - INFO -   Circle 2: delta=7.8px
+INFO:     127.0.0.1:36676 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:14,041 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:14,143 - INFO - POST /api/tracker: received 3 circles: [id=0 x=624 y=326, id=1 x=477 y=239, id=2 x=697 y=504]
+2026-04-18 23:52:14,143 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:14,143 - INFO -   Circle 1: delta=90.7px
+2026-04-18 23:52:14,143 - INFO -   Circle 0: delta=82.4px
+2026-04-18 23:52:14,143 - INFO -   Circle 2: delta=7.7px
+INFO:     127.0.0.1:36680 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:14,144 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:14,245 - INFO - POST /api/tracker: received 3 circles: [id=0 x=623 y=327, id=1 x=478 y=240, id=2 x=696 y=504]
+2026-04-18 23:52:14,246 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:14,246 - INFO -   Circle 1: delta=91.4px
+2026-04-18 23:52:14,246 - INFO -   Circle 0: delta=82.7px
+2026-04-18 23:52:14,246 - INFO -   Circle 2: delta=8.3px
+INFO:     127.0.0.1:36682 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:14,246 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:14,348 - INFO - POST /api/tracker: received 3 circles: [id=0 x=624 y=326, id=1 x=479 y=240, id=2 x=696 y=504]
+2026-04-18 23:52:14,348 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:14,348 - INFO -   Circle 1: delta=91.8px
+2026-04-18 23:52:14,348 - INFO -   Circle 0: delta=82.7px
+2026-04-18 23:52:14,348 - INFO -   Circle 2: delta=8.5px
+INFO:     127.0.0.1:36694 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:14,349 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:14,450 - INFO - POST /api/tracker: received 3 circles: [id=0 x=624 y=327, id=1 x=479 y=240, id=2 x=696 y=505]
+2026-04-18 23:52:14,450 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:14,450 - INFO -   Circle 1: delta=91.9px
+2026-04-18 23:52:14,450 - INFO -   Circle 0: delta=83.2px
+2026-04-18 23:52:14,450 - INFO -   Circle 2: delta=8.9px
+INFO:     127.0.0.1:36706 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:14,451 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:14,553 - INFO - POST /api/tracker: received 3 circles: [id=0 x=624 y=326, id=1 x=478 y=241, id=2 x=695 y=505]
+2026-04-18 23:52:14,553 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:14,553 - INFO -   Circle 1: delta=92.8px
+2026-04-18 23:52:14,553 - INFO -   Circle 0: delta=82.5px
+2026-04-18 23:52:14,553 - INFO -   Circle 2: delta=9.2px
+INFO:     127.0.0.1:36716 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:14,553 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:14,655 - INFO - POST /api/tracker: received 3 circles: [id=0 x=625 y=327, id=1 x=479 y=241, id=2 x=695 y=504]
+2026-04-18 23:52:14,655 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:14,655 - INFO -   Circle 1: delta=92.3px
+2026-04-18 23:52:14,655 - INFO -   Circle 0: delta=83.7px
+2026-04-18 23:52:14,655 - INFO -   Circle 2: delta=8.2px
+INFO:     127.0.0.1:36724 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:14,656 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:14,757 - INFO - POST /api/tracker: received 3 circles: [id=0 x=626 y=326, id=1 x=478 y=241, id=2 x=694 y=504]
+2026-04-18 23:52:14,758 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:14,758 - INFO -   Circle 1: delta=92.8px
+2026-04-18 23:52:14,758 - INFO -   Circle 0: delta=83.6px
+2026-04-18 23:52:14,758 - INFO -   Circle 2: delta=8.7px
+INFO:     127.0.0.1:36740 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:14,758 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:14,860 - INFO - POST /api/tracker: received 3 circles: [id=0 x=626 y=326, id=1 x=478 y=242, id=2 x=693 y=503]
+2026-04-18 23:52:14,860 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:14,860 - INFO -   Circle 1: delta=93.7px
+2026-04-18 23:52:14,860 - INFO -   Circle 0: delta=83.7px
+2026-04-18 23:52:14,860 - INFO -   Circle 2: delta=7.9px
+INFO:     127.0.0.1:36746 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:14,860 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:14,963 - INFO - POST /api/tracker: received 3 circles: [id=0 x=627 y=325, id=1 x=478 y=242, id=2 x=694 y=504]
+2026-04-18 23:52:14,963 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:14,963 - INFO -   Circle 1: delta=93.4px
+2026-04-18 23:52:14,963 - INFO -   Circle 0: delta=83.6px
+2026-04-18 23:52:14,963 - INFO -   Circle 2: delta=8.3px
+INFO:     127.0.0.1:36748 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:14,963 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:15,065 - INFO - POST /api/tracker: received 3 circles: [id=0 x=626 y=326, id=1 x=478 y=241, id=2 x=693 y=504]
+2026-04-18 23:52:15,065 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:15,065 - INFO -   Circle 1: delta=93.1px
+2026-04-18 23:52:15,065 - INFO -   Circle 0: delta=83.6px
+2026-04-18 23:52:15,065 - INFO -   Circle 2: delta=8.6px
+INFO:     127.0.0.1:36750 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:15,065 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:15,167 - INFO - POST /api/tracker: received 3 circles: [id=0 x=625 y=326, id=1 x=477 y=242, id=2 x=694 y=503]
+2026-04-18 23:52:15,168 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:15,168 - INFO -   Circle 1: delta=93.8px
+2026-04-18 23:52:15,168 - INFO -   Circle 0: delta=83.4px
+2026-04-18 23:52:15,168 - INFO -   Circle 2: delta=7.9px
+INFO:     127.0.0.1:36762 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:15,168 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:15,270 - INFO - POST /api/tracker: received 3 circles: [id=0 x=625 y=325, id=1 x=477 y=242, id=2 x=693 y=504]
+2026-04-18 23:52:15,270 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:15,270 - INFO -   Circle 1: delta=93.9px
+2026-04-18 23:52:15,270 - INFO -   Circle 0: delta=82.5px
+2026-04-18 23:52:15,270 - INFO -   Circle 2: delta=8.9px
+INFO:     127.0.0.1:36766 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:15,270 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:15,372 - INFO - POST /api/tracker: received 3 circles: [id=0 x=624 y=327, id=1 x=478 y=240, id=2 x=686 y=479]
+2026-04-18 23:52:15,372 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:15,373 - INFO -   Circle 1: delta=92.2px
+2026-04-18 23:52:15,373 - INFO -   Circle 0: delta=83.0px
+2026-04-18 23:52:15,373 - INFO -   Circle 2: delta=19.5px
+INFO:     127.0.0.1:36778 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:15,373 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:15,475 - INFO - POST /api/tracker: received 3 circles: [id=0 x=623 y=328, id=1 x=476 y=242, id=2 x=680 y=454]
+2026-04-18 23:52:15,475 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:15,475 - INFO -   Circle 1: delta=93.9px
+2026-04-18 23:52:15,475 - INFO -   Circle 0: delta=84.0px
+2026-04-18 23:52:15,475 - INFO -   Circle 2: delta=45.2px
+INFO:     127.0.0.1:36784 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:15,475 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:15,577 - INFO - POST /api/tracker: received 3 circles: [id=0 x=622 y=329, id=1 x=475 y=241, id=2 x=673 y=428]
+2026-04-18 23:52:15,577 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:15,577 - INFO -   Circle 1: delta=93.3px
+2026-04-18 23:52:15,577 - INFO -   Circle 0: delta=83.8px
+2026-04-18 23:52:15,577 - INFO -   Circle 2: delta=71.2px
+INFO:     127.0.0.1:36792 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:15,578 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:15,680 - INFO - POST /api/tracker: received 3 circles: [id=0 x=622 y=330, id=1 x=476 y=243, id=2 x=667 y=403]
+2026-04-18 23:52:15,680 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:15,680 - INFO -   Circle 2: delta=97.2px
+2026-04-18 23:52:15,680 - INFO -   Circle 1: delta=95.0px
+2026-04-18 23:52:15,680 - INFO -   Circle 0: delta=84.7px
+INFO:     127.0.0.1:36804 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:15,680 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:15,782 - INFO - POST /api/tracker: received 3 circles: [id=0 x=622 y=332, id=1 x=476 y=242, id=2 x=661 y=378]
+2026-04-18 23:52:15,782 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:15,782 - INFO -   Circle 2: delta=123.2px
+2026-04-18 23:52:15,782 - INFO -   Circle 1: delta=93.8px
+2026-04-18 23:52:15,782 - INFO -   Circle 0: delta=86.4px
+INFO:     127.0.0.1:36820 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:15,783 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:15,885 - INFO - POST /api/tracker: received 3 circles: [id=0 x=622 y=332, id=1 x=477 y=242, id=2 x=661 y=378]
+2026-04-18 23:52:15,885 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:15,885 - INFO -   Circle 2: delta=122.5px
+2026-04-18 23:52:15,885 - INFO -   Circle 1: delta=93.6px
+2026-04-18 23:52:15,885 - INFO -   Circle 0: delta=86.5px
+INFO:     127.0.0.1:36836 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:15,885 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:15,987 - INFO - POST /api/tracker: received 3 circles: [id=0 x=622 y=332, id=1 x=477 y=242, id=2 x=661 y=379]
+2026-04-18 23:52:15,987 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:15,987 - INFO -   Circle 2: delta=121.7px
+2026-04-18 23:52:15,987 - INFO -   Circle 1: delta=94.2px
+2026-04-18 23:52:15,987 - INFO -   Circle 0: delta=86.8px
+INFO:     127.0.0.1:36840 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:15,988 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:16,090 - INFO - POST /api/tracker: received 3 circles: [id=0 x=623 y=332, id=1 x=477 y=243, id=2 x=661 y=380]
+2026-04-18 23:52:16,090 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:16,090 - INFO -   Circle 2: delta=121.4px
+2026-04-18 23:52:16,090 - INFO -   Circle 1: delta=94.5px
+2026-04-18 23:52:16,090 - INFO -   Circle 0: delta=86.7px
+INFO:     127.0.0.1:36850 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:16,090 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:16,192 - INFO - POST /api/tracker: received 3 circles: [id=0 x=622 y=331, id=1 x=477 y=244, id=2 x=660 y=379]
+2026-04-18 23:52:16,192 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:16,192 - INFO -   Circle 2: delta=121.9px
+2026-04-18 23:52:16,192 - INFO -   Circle 1: delta=95.4px
+2026-04-18 23:52:16,192 - INFO -   Circle 0: delta=86.1px
+INFO:     127.0.0.1:36864 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:16,193 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:16,295 - INFO - POST /api/tracker: received 3 circles: [id=0 x=622 y=332, id=1 x=476 y=244, id=2 x=660 y=380]
+2026-04-18 23:52:16,295 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:16,295 - INFO -   Circle 2: delta=121.6px
+2026-04-18 23:52:16,295 - INFO -   Circle 1: delta=95.9px
+2026-04-18 23:52:16,295 - INFO -   Circle 0: delta=86.6px
+INFO:     127.0.0.1:36868 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:16,295 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:16,397 - INFO - POST /api/tracker: received 3 circles: [id=0 x=621 y=332, id=1 x=477 y=244, id=2 x=659 y=379]
+2026-04-18 23:52:16,397 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:16,397 - INFO -   Circle 2: delta=122.5px
+2026-04-18 23:52:16,397 - INFO -   Circle 1: delta=95.5px
+2026-04-18 23:52:16,397 - INFO -   Circle 0: delta=86.1px
+INFO:     127.0.0.1:36878 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:16,398 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:16,500 - INFO - POST /api/tracker: received 3 circles: [id=0 x=621 y=332, id=1 x=477 y=245, id=2 x=659 y=378]
+2026-04-18 23:52:16,500 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:16,500 - INFO -   Circle 2: delta=123.3px
+2026-04-18 23:52:16,500 - INFO -   Circle 1: delta=96.4px
+2026-04-18 23:52:16,500 - INFO -   Circle 0: delta=86.2px
+INFO:     127.0.0.1:36880 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:16,500 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:16,602 - INFO - POST /api/tracker: received 3 circles: [id=0 x=622 y=333, id=1 x=477 y=244, id=2 x=659 y=378]
+2026-04-18 23:52:16,602 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:16,602 - INFO -   Circle 2: delta=123.9px
+2026-04-18 23:52:16,602 - INFO -   Circle 1: delta=96.4px
+2026-04-18 23:52:16,602 - INFO -   Circle 0: delta=87.4px
+INFO:     127.0.0.1:36896 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:16,602 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:16,704 - INFO - POST /api/tracker: received 3 circles: [id=0 x=621 y=332, id=1 x=476 y=245, id=2 x=658 y=377]
+2026-04-18 23:52:16,704 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:16,704 - INFO -   Circle 2: delta=124.6px
+2026-04-18 23:52:16,704 - INFO -   Circle 1: delta=97.5px
+2026-04-18 23:52:16,704 - INFO -   Circle 0: delta=86.2px
+INFO:     127.0.0.1:36898 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:16,705 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:16,807 - INFO - POST /api/tracker: received 3 circles: [id=0 x=621 y=332, id=1 x=476 y=246, id=2 x=659 y=376]
+2026-04-18 23:52:16,807 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:16,807 - INFO -   Circle 2: delta=125.0px
+2026-04-18 23:52:16,807 - INFO -   Circle 1: delta=97.9px
+2026-04-18 23:52:16,807 - INFO -   Circle 0: delta=85.7px
+INFO:     127.0.0.1:36908 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:16,807 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:16,909 - INFO - POST /api/tracker: received 3 circles: [id=0 x=622 y=333, id=1 x=477 y=246, id=2 x=659 y=377]
+2026-04-18 23:52:16,909 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:16,909 - INFO -   Circle 2: delta=124.8px
+2026-04-18 23:52:16,909 - INFO -   Circle 1: delta=97.7px
+2026-04-18 23:52:16,909 - INFO -   Circle 0: delta=86.8px
+INFO:     127.0.0.1:36916 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:16,910 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:17,012 - INFO - POST /api/tracker: received 3 circles: [id=0 x=621 y=332, id=1 x=477 y=246, id=2 x=658 y=377]
+2026-04-18 23:52:17,012 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:17,012 - INFO -   Circle 2: delta=124.2px
+2026-04-18 23:52:17,012 - INFO -   Circle 1: delta=97.6px
+2026-04-18 23:52:17,012 - INFO -   Circle 0: delta=86.3px
+INFO:     127.0.0.1:36924 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:17,012 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:17,114 - INFO - POST /api/tracker: received 3 circles: [id=0 x=622 y=333, id=1 x=476 y=246, id=2 x=658 y=377]
+2026-04-18 23:52:17,114 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:17,114 - INFO -   Circle 2: delta=124.9px
+2026-04-18 23:52:17,114 - INFO -   Circle 1: delta=97.6px
+2026-04-18 23:52:17,114 - INFO -   Circle 0: delta=86.7px
+INFO:     127.0.0.1:36926 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:17,115 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:17,216 - INFO - POST /api/tracker: received 3 circles: [id=0 x=621 y=333, id=1 x=476 y=246, id=2 x=658 y=377]
+2026-04-18 23:52:17,217 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:17,217 - INFO -   Circle 2: delta=124.8px
+2026-04-18 23:52:17,217 - INFO -   Circle 1: delta=98.4px
+2026-04-18 23:52:17,217 - INFO -   Circle 0: delta=86.9px
+INFO:     127.0.0.1:36936 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:17,217 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:17,319 - INFO - POST /api/tracker: received 3 circles: [id=0 x=622 y=334, id=1 x=475 y=247, id=2 x=658 y=377]
+2026-04-18 23:52:17,319 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:17,319 - INFO -   Circle 2: delta=124.8px
+2026-04-18 23:52:17,319 - INFO -   Circle 1: delta=99.5px
+2026-04-18 23:52:17,319 - INFO -   Circle 0: delta=87.9px
+INFO:     127.0.0.1:36938 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:17,319 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:17,421 - INFO - POST /api/tracker: received 3 circles: [id=0 x=622 y=333, id=1 x=474 y=248, id=2 x=659 y=377]
+2026-04-18 23:52:17,421 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:17,421 - INFO -   Circle 2: delta=124.5px
+2026-04-18 23:52:17,421 - INFO -   Circle 1: delta=100.5px
+2026-04-18 23:52:17,421 - INFO -   Circle 0: delta=87.4px
+INFO:     127.0.0.1:36944 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:17,422 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:17,523 - INFO - POST /api/tracker: received 3 circles: [id=0 x=621 y=334, id=1 x=475 y=248, id=2 x=659 y=377]
+2026-04-18 23:52:17,523 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:17,523 - INFO -   Circle 2: delta=124.8px
+2026-04-18 23:52:17,523 - INFO -   Circle 1: delta=100.3px
+2026-04-18 23:52:17,523 - INFO -   Circle 0: delta=87.5px
+INFO:     127.0.0.1:36952 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:17,524 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:17,626 - INFO - POST /api/tracker: received 3 circles: [id=0 x=621 y=335, id=1 x=476 y=248, id=2 x=659 y=377]
+2026-04-18 23:52:17,626 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:17,626 - INFO -   Circle 2: delta=124.1px
+2026-04-18 23:52:17,626 - INFO -   Circle 1: delta=100.2px
+2026-04-18 23:52:17,626 - INFO -   Circle 0: delta=88.5px
+INFO:     127.0.0.1:36958 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:17,626 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:17,728 - INFO - POST /api/tracker: received 3 circles: [id=0 x=621 y=336, id=1 x=476 y=248, id=2 x=658 y=377]
+2026-04-18 23:52:17,728 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:17,728 - INFO -   Circle 2: delta=124.5px
+2026-04-18 23:52:17,728 - INFO -   Circle 1: delta=100.2px
+2026-04-18 23:52:17,728 - INFO -   Circle 0: delta=89.1px
+INFO:     127.0.0.1:36964 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:17,728 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:17,830 - INFO - POST /api/tracker: received 3 circles: [id=0 x=621 y=335, id=1 x=477 y=248, id=2 x=658 y=377]
+2026-04-18 23:52:17,830 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:17,830 - INFO -   Circle 2: delta=124.8px
+2026-04-18 23:52:17,830 - INFO -   Circle 1: delta=99.5px
+2026-04-18 23:52:17,831 - INFO -   Circle 0: delta=88.6px
+INFO:     127.0.0.1:36972 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:17,831 - INFO - Turn check: waiting 1.0s since last movement...
+INFO:     127.0.0.1:36974 - "GET /api/game/state HTTP/1.1" 200 OK
+2026-04-18 23:52:17,933 - INFO - POST /api/tracker: received 3 circles: [id=0 x=622 y=335, id=1 x=454 y=241, id=2 x=657 y=379]
+2026-04-18 23:52:17,933 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:17,933 - INFO -   Circle 2: delta=123.8px
+2026-04-18 23:52:17,933 - INFO -   Circle 1: delta=102.6px
+2026-04-18 23:52:17,933 - INFO -   Circle 0: delta=89.5px
+INFO:     127.0.0.1:36988 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:17,933 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:18,035 - INFO - POST /api/tracker: received 3 circles: [id=0 x=622 y=335, id=1 x=430 y=234, id=2 x=656 y=377]
+2026-04-18 23:52:18,035 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:18,035 - INFO -   Circle 2: delta=125.7px
+2026-04-18 23:52:18,035 - INFO -   Circle 1: delta=111.2px
+2026-04-18 23:52:18,035 - INFO -   Circle 0: delta=88.8px
+INFO:     127.0.0.1:36998 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:18,036 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:18,138 - INFO - POST /api/tracker: received 3 circles: [id=0 x=624 y=337, id=1 x=407 y=227, id=2 x=657 y=378]
+2026-04-18 23:52:18,138 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:18,138 - INFO -   Circle 1: delta=124.0px
+2026-04-18 23:52:18,138 - INFO -   Circle 2: delta=123.8px
+2026-04-18 23:52:18,138 - INFO -   Circle 0: delta=91.1px
+INFO:     127.0.0.1:37012 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:18,138 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:18,240 - INFO - POST /api/tracker: received 3 circles: [id=0 x=623 y=337, id=1 x=383 y=221, id=2 x=658 y=380]
+2026-04-18 23:52:18,240 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:18,240 - INFO -   Circle 1: delta=139.9px
+2026-04-18 23:52:18,240 - INFO -   Circle 2: delta=122.2px
+2026-04-18 23:52:18,240 - INFO -   Circle 0: delta=91.3px
+INFO:     127.0.0.1:37028 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:18,240 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:18,342 - INFO - POST /api/tracker: received 3 circles: [id=0 x=622 y=336, id=1 x=360 y=214, id=2 x=657 y=379]
+2026-04-18 23:52:18,342 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:18,342 - INFO -   Circle 1: delta=158.0px
+2026-04-18 23:52:18,342 - INFO -   Circle 2: delta=123.5px
+2026-04-18 23:52:18,342 - INFO -   Circle 0: delta=90.2px
+INFO:     127.0.0.1:37044 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:18,343 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:18,445 - INFO - POST /api/tracker: received 3 circles: [id=0 x=621 y=337, id=1 x=360 y=214, id=2 x=658 y=379]
+2026-04-18 23:52:18,445 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:18,445 - INFO -   Circle 1: delta=158.0px
+2026-04-18 23:52:18,445 - INFO -   Circle 2: delta=123.3px
+2026-04-18 23:52:18,445 - INFO -   Circle 0: delta=90.2px
+INFO:     127.0.0.1:37052 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:18,445 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:18,547 - INFO - POST /api/tracker: received 3 circles: [id=0 x=622 y=336, id=1 x=359 y=213, id=2 x=658 y=378]
+2026-04-18 23:52:18,547 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:18,547 - INFO -   Circle 1: delta=158.4px
+2026-04-18 23:52:18,547 - INFO -   Circle 2: delta=124.2px
+2026-04-18 23:52:18,547 - INFO -   Circle 0: delta=89.9px
+INFO:     127.0.0.1:37066 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:18,548 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:18,650 - INFO - POST /api/tracker: received 3 circles: [id=0 x=621 y=336, id=1 x=360 y=214, id=2 x=658 y=377]
+2026-04-18 23:52:18,650 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:18,650 - INFO -   Circle 1: delta=158.4px
+2026-04-18 23:52:18,650 - INFO -   Circle 2: delta=124.8px
+2026-04-18 23:52:18,650 - INFO -   Circle 0: delta=89.1px
+INFO:     127.0.0.1:37080 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:18,650 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:18,752 - INFO - POST /api/tracker: received 3 circles: [id=0 x=621 y=336, id=1 x=360 y=214, id=2 x=658 y=377]
+2026-04-18 23:52:18,752 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:18,752 - INFO -   Circle 1: delta=158.0px
+2026-04-18 23:52:18,752 - INFO -   Circle 2: delta=124.6px
+2026-04-18 23:52:18,752 - INFO -   Circle 0: delta=88.6px
+INFO:     127.0.0.1:37094 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:18,753 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:18,855 - INFO - POST /api/tracker: received 3 circles: [id=0 x=620 y=336, id=1 x=359 y=214, id=2 x=657 y=377]
+2026-04-18 23:52:18,855 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:18,855 - INFO -   Circle 1: delta=158.7px
+2026-04-18 23:52:18,855 - INFO -   Circle 2: delta=125.1px
+2026-04-18 23:52:18,855 - INFO -   Circle 0: delta=89.3px
+INFO:     127.0.0.1:37106 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:18,855 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:18,957 - INFO - POST /api/tracker: received 3 circles: [id=0 x=621 y=337, id=1 x=358 y=214, id=2 x=657 y=376]
+2026-04-18 23:52:18,957 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:18,957 - INFO -   Circle 1: delta=159.4px
+2026-04-18 23:52:18,957 - INFO -   Circle 2: delta=125.9px
+2026-04-18 23:52:18,957 - INFO -   Circle 0: delta=89.8px
+INFO:     127.0.0.1:37112 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:18,958 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:19,060 - INFO - POST /api/tracker: received 3 circles: [id=0 x=621 y=337, id=1 x=358 y=213, id=2 x=657 y=375]
+2026-04-18 23:52:19,060 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:19,060 - INFO -   Circle 1: delta=159.2px
+2026-04-18 23:52:19,060 - INFO -   Circle 2: delta=126.6px
+2026-04-18 23:52:19,060 - INFO -   Circle 0: delta=89.9px
+INFO:     127.0.0.1:37116 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:19,060 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:19,162 - INFO - POST /api/tracker: received 3 circles: [id=0 x=621 y=337, id=1 x=359 y=214, id=2 x=657 y=375]
+2026-04-18 23:52:19,162 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:19,162 - INFO -   Circle 1: delta=159.0px
+2026-04-18 23:52:19,162 - INFO -   Circle 2: delta=127.5px
+2026-04-18 23:52:19,162 - INFO -   Circle 0: delta=90.2px
+INFO:     127.0.0.1:37120 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:19,163 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:19,265 - INFO - POST /api/tracker: received 3 circles: [id=0 x=620 y=338, id=1 x=359 y=213, id=2 x=656 y=375]
+2026-04-18 23:52:19,265 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:19,265 - INFO -   Circle 1: delta=159.0px
+2026-04-18 23:52:19,265 - INFO -   Circle 2: delta=127.1px
+2026-04-18 23:52:19,265 - INFO -   Circle 0: delta=90.2px
+INFO:     127.0.0.1:37130 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:19,265 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:19,367 - INFO - POST /api/tracker: received 3 circles: [id=0 x=619 y=337, id=1 x=359 y=214, id=2 x=657 y=375]
+2026-04-18 23:52:19,367 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:19,367 - INFO -   Circle 1: delta=159.0px
+2026-04-18 23:52:19,367 - INFO -   Circle 2: delta=126.9px
+2026-04-18 23:52:19,367 - INFO -   Circle 0: delta=89.1px
+INFO:     127.0.0.1:37138 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:19,368 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:19,470 - INFO - POST /api/tracker: received 3 circles: [id=0 x=618 y=337, id=1 x=358 y=214, id=2 x=656 y=376]
+2026-04-18 23:52:19,470 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:19,470 - INFO -   Circle 1: delta=159.3px
+2026-04-18 23:52:19,470 - INFO -   Circle 2: delta=126.8px
+2026-04-18 23:52:19,470 - INFO -   Circle 0: delta=89.0px
+INFO:     127.0.0.1:36124 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:19,470 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:19,572 - INFO - POST /api/tracker: received 3 circles: [id=0 x=618 y=337, id=1 x=358 y=214, id=2 x=657 y=376]
+2026-04-18 23:52:19,572 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:19,572 - INFO -   Circle 1: delta=159.4px
+2026-04-18 23:52:19,572 - INFO -   Circle 2: delta=125.8px
+2026-04-18 23:52:19,572 - INFO -   Circle 0: delta=88.5px
+INFO:     127.0.0.1:36126 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:19,572 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:19,674 - INFO - POST /api/tracker: received 3 circles: [id=0 x=619 y=336, id=1 x=357 y=213, id=2 x=656 y=377]
+2026-04-18 23:52:19,674 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:19,674 - INFO -   Circle 1: delta=159.8px
+2026-04-18 23:52:19,674 - INFO -   Circle 2: delta=125.3px
+2026-04-18 23:52:19,674 - INFO -   Circle 0: delta=88.6px
+INFO:     127.0.0.1:36134 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:19,675 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:19,776 - INFO - POST /api/tracker: received 3 circles: [id=0 x=619 y=336, id=1 x=358 y=212, id=2 x=655 y=378]
+2026-04-18 23:52:19,776 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:19,777 - INFO -   Circle 1: delta=159.0px
+2026-04-18 23:52:19,777 - INFO -   Circle 2: delta=124.7px
+2026-04-18 23:52:19,777 - INFO -   Circle 0: delta=88.2px
+INFO:     127.0.0.1:36138 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:19,777 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:19,879 - INFO - POST /api/tracker: received 3 circles: [id=0 x=619 y=336, id=1 x=357 y=212, id=2 x=656 y=378]
+2026-04-18 23:52:19,879 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:19,879 - INFO -   Circle 1: delta=159.6px
+2026-04-18 23:52:19,879 - INFO -   Circle 2: delta=124.0px
+2026-04-18 23:52:19,879 - INFO -   Circle 0: delta=88.4px
+INFO:     127.0.0.1:36146 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:19,879 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:19,981 - INFO - POST /api/tracker: received 3 circles: [id=0 x=619 y=337, id=1 x=357 y=211, id=2 x=657 y=378]
+2026-04-18 23:52:19,981 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:19,981 - INFO -   Circle 1: delta=159.7px
+2026-04-18 23:52:19,981 - INFO -   Circle 2: delta=124.1px
+2026-04-18 23:52:19,981 - INFO -   Circle 0: delta=89.0px
+INFO:     127.0.0.1:36156 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:19,981 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:20,084 - INFO - POST /api/tracker: received 3 circles: [id=0 x=620 y=336, id=1 x=356 y=212, id=2 x=657 y=378]
+2026-04-18 23:52:20,084 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:20,084 - INFO -   Circle 1: delta=160.8px
+2026-04-18 23:52:20,084 - INFO -   Circle 2: delta=124.2px
+2026-04-18 23:52:20,084 - INFO -   Circle 0: delta=88.8px
+INFO:     127.0.0.1:36166 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:20,084 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:20,186 - INFO - POST /api/tracker: received 3 circles: [id=0 x=620 y=337, id=1 x=355 y=212, id=2 x=658 y=378]
+2026-04-18 23:52:20,186 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:20,186 - INFO -   Circle 1: delta=161.8px
+2026-04-18 23:52:20,186 - INFO -   Circle 2: delta=123.8px
+2026-04-18 23:52:20,186 - INFO -   Circle 0: delta=89.6px
+INFO:     127.0.0.1:36178 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:20,186 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:20,288 - INFO - POST /api/tracker: received 3 circles: [id=0 x=619 y=337, id=1 x=356 y=212, id=2 x=657 y=378]
+2026-04-18 23:52:20,288 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:20,289 - INFO -   Circle 1: delta=160.9px
+2026-04-18 23:52:20,289 - INFO -   Circle 2: delta=124.1px
+2026-04-18 23:52:20,289 - INFO -   Circle 0: delta=89.0px
+INFO:     127.0.0.1:36192 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:20,289 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:20,391 - INFO - POST /api/tracker: received 3 circles: [id=0 x=619 y=337, id=1 x=356 y=212, id=2 x=658 y=378]
+2026-04-18 23:52:20,391 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:20,391 - INFO -   Circle 1: delta=161.3px
+2026-04-18 23:52:20,391 - INFO -   Circle 2: delta=123.7px
+2026-04-18 23:52:20,391 - INFO -   Circle 0: delta=89.4px
+INFO:     127.0.0.1:36194 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:20,391 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:20,493 - INFO - POST /api/tracker: received 3 circles: [id=0 x=605 y=340, id=1 x=356 y=211, id=2 x=657 y=377]
+2026-04-18 23:52:20,493 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:20,493 - INFO -   Circle 1: delta=160.8px
+2026-04-18 23:52:20,493 - INFO -   Circle 2: delta=125.2px
+2026-04-18 23:52:20,493 - INFO -   Circle 0: delta=85.7px
+INFO:     127.0.0.1:36208 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:20,494 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:20,596 - INFO - POST /api/tracker: received 3 circles: [id=0 x=591 y=342, id=1 x=355 y=212, id=2 x=655 y=378]
+2026-04-18 23:52:20,596 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:20,596 - INFO -   Circle 1: delta=161.4px
+2026-04-18 23:52:20,596 - INFO -   Circle 2: delta=124.6px
+2026-04-18 23:52:20,596 - INFO -   Circle 0: delta=84.2px
+INFO:     127.0.0.1:36210 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:20,596 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:20,698 - INFO - POST /api/tracker: received 3 circles: [id=0 x=577 y=345, id=1 x=356 y=212, id=2 x=656 y=378]
+2026-04-18 23:52:20,698 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:20,698 - INFO -   Circle 1: delta=161.0px
+2026-04-18 23:52:20,698 - INFO -   Circle 2: delta=124.3px
+2026-04-18 23:52:20,698 - INFO -   Circle 0: delta=85.3px
+INFO:     127.0.0.1:36226 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:20,699 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:20,801 - INFO - POST /api/tracker: received 3 circles: [id=0 x=563 y=347, id=1 x=354 y=213, id=2 x=656 y=378]
+2026-04-18 23:52:20,801 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:20,801 - INFO -   Circle 1: delta=163.2px
+2026-04-18 23:52:20,801 - INFO -   Circle 2: delta=124.5px
+2026-04-18 23:52:20,801 - INFO -   Circle 0: delta=88.6px
+INFO:     127.0.0.1:36230 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:20,801 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:20,903 - INFO - POST /api/tracker: received 3 circles: [id=0 x=549 y=350, id=1 x=355 y=213, id=2 x=656 y=377]
+2026-04-18 23:52:20,903 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:20,903 - INFO -   Circle 1: delta=162.3px
+2026-04-18 23:52:20,903 - INFO -   Circle 2: delta=125.1px
+2026-04-18 23:52:20,903 - INFO -   Circle 0: delta=94.1px
+INFO:     127.0.0.1:36246 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:20,903 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:21,005 - INFO - POST /api/tracker: received 3 circles: [id=0 x=549 y=351, id=1 x=355 y=213, id=2 x=656 y=378]
+2026-04-18 23:52:21,005 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:21,005 - INFO -   Circle 1: delta=162.1px
+2026-04-18 23:52:21,005 - INFO -   Circle 2: delta=124.2px
+2026-04-18 23:52:21,005 - INFO -   Circle 0: delta=94.6px
+INFO:     127.0.0.1:36252 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:21,006 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:21,108 - INFO - POST /api/tracker: received 3 circles: [id=0 x=549 y=351, id=1 x=355 y=212, id=2 x=656 y=377]
+2026-04-18 23:52:21,108 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:21,108 - INFO -   Circle 1: delta=161.7px
+2026-04-18 23:52:21,108 - INFO -   Circle 2: delta=125.0px
+2026-04-18 23:52:21,108 - INFO -   Circle 0: delta=95.0px
+INFO:     127.0.0.1:36262 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:21,108 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:21,210 - INFO - POST /api/tracker: received 3 circles: [id=0 x=550 y=351, id=1 x=355 y=212, id=2 x=656 y=378]
+2026-04-18 23:52:21,210 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:21,210 - INFO -   Circle 1: delta=161.9px
+2026-04-18 23:52:21,210 - INFO -   Circle 2: delta=124.3px
+2026-04-18 23:52:21,210 - INFO -   Circle 0: delta=94.6px
+INFO:     127.0.0.1:36264 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:21,211 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:21,312 - INFO - POST /api/tracker: received 3 circles: [id=0 x=550 y=351, id=1 x=356 y=212, id=2 x=657 y=377]
+2026-04-18 23:52:21,312 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:21,313 - INFO -   Circle 1: delta=161.2px
+2026-04-18 23:52:21,313 - INFO -   Circle 2: delta=124.9px
+2026-04-18 23:52:21,313 - INFO -   Circle 0: delta=95.2px
+INFO:     127.0.0.1:36272 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:21,313 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:21,416 - INFO - POST /api/tracker: received 3 circles: [id=0 x=550 y=352, id=1 x=355 y=211, id=2 x=656 y=378]
+2026-04-18 23:52:21,416 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:21,416 - INFO -   Circle 1: delta=161.8px
+2026-04-18 23:52:21,416 - INFO -   Circle 2: delta=124.2px
+2026-04-18 23:52:21,416 - INFO -   Circle 0: delta=95.8px
+INFO:     127.0.0.1:36282 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:21,416 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:21,518 - INFO - POST /api/tracker: received 3 circles: [id=0 x=551 y=353, id=1 x=354 y=212, id=2 x=656 y=379]
+2026-04-18 23:52:21,519 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:21,519 - INFO -   Circle 1: delta=162.9px
+2026-04-18 23:52:21,519 - INFO -   Circle 2: delta=123.9px
+2026-04-18 23:52:21,519 - INFO -   Circle 0: delta=96.5px
+INFO:     127.0.0.1:36296 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:21,519 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:21,621 - INFO - POST /api/tracker: received 3 circles: [id=0 x=551 y=354, id=1 x=353 y=211, id=2 x=657 y=379]
+2026-04-18 23:52:21,621 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:21,621 - INFO -   Circle 1: delta=163.6px
+2026-04-18 23:52:21,621 - INFO -   Circle 2: delta=123.7px
+2026-04-18 23:52:21,621 - INFO -   Circle 0: delta=97.2px
+INFO:     127.0.0.1:36312 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:21,621 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:21,723 - INFO - POST /api/tracker: received 3 circles: [id=0 x=550 y=354, id=1 x=353 y=211, id=2 x=658 y=379]
+2026-04-18 23:52:21,723 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:21,723 - INFO -   Circle 1: delta=163.6px
+2026-04-18 23:52:21,723 - INFO -   Circle 2: delta=123.2px
+2026-04-18 23:52:21,723 - INFO -   Circle 0: delta=97.5px
+INFO:     127.0.0.1:36328 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:21,724 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:21,826 - INFO - POST /api/tracker: received 3 circles: [id=0 x=551 y=353, id=1 x=352 y=211, id=2 x=658 y=378]
+2026-04-18 23:52:21,826 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:21,826 - INFO -   Circle 1: delta=164.1px
+2026-04-18 23:52:21,826 - INFO -   Circle 2: delta=123.8px
+2026-04-18 23:52:21,826 - INFO -   Circle 0: delta=96.6px
+INFO:     127.0.0.1:36344 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:21,826 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:21,928 - INFO - POST /api/tracker: received 3 circles: [id=0 x=551 y=354, id=1 x=353 y=210, id=2 x=658 y=378]
+2026-04-18 23:52:21,928 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:21,928 - INFO -   Circle 1: delta=163.1px
+2026-04-18 23:52:21,928 - INFO -   Circle 2: delta=123.8px
+2026-04-18 23:52:21,928 - INFO -   Circle 0: delta=97.3px
+INFO:     127.0.0.1:36352 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:21,929 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:22,030 - INFO - POST /api/tracker: received 3 circles: [id=0 x=551 y=354, id=1 x=352 y=210, id=2 x=657 y=379]
+2026-04-18 23:52:22,030 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:22,030 - INFO -   Circle 1: delta=163.5px
+2026-04-18 23:52:22,030 - INFO -   Circle 2: delta=123.0px
+2026-04-18 23:52:22,031 - INFO -   Circle 0: delta=97.6px
+INFO:     127.0.0.1:36362 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:22,031 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:22,133 - INFO - POST /api/tracker: received 3 circles: [id=0 x=552 y=353, id=1 x=352 y=210, id=2 x=658 y=379]
+2026-04-18 23:52:22,133 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:22,133 - INFO -   Circle 1: delta=164.3px
+2026-04-18 23:52:22,133 - INFO -   Circle 2: delta=122.5px
+2026-04-18 23:52:22,133 - INFO -   Circle 0: delta=96.8px
+INFO:     127.0.0.1:36370 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:22,133 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:22,235 - INFO - POST /api/tracker: received 3 circles: [id=0 x=553 y=354, id=1 x=351 y=209, id=2 x=659 y=378]
+2026-04-18 23:52:22,236 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:22,236 - INFO -   Circle 1: delta=164.9px
+2026-04-18 23:52:22,236 - INFO -   Circle 2: delta=123.1px
+2026-04-18 23:52:22,236 - INFO -   Circle 0: delta=96.7px
+INFO:     127.0.0.1:36372 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:22,236 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:22,338 - INFO - POST /api/tracker: received 3 circles: [id=0 x=552 y=353, id=1 x=351 y=209, id=2 x=658 y=379]
+2026-04-18 23:52:22,338 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:22,338 - INFO -   Circle 1: delta=164.3px
+2026-04-18 23:52:22,338 - INFO -   Circle 2: delta=122.7px
+2026-04-18 23:52:22,338 - INFO -   Circle 0: delta=96.2px
+INFO:     127.0.0.1:36386 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:22,339 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:22,440 - INFO - POST /api/tracker: received 3 circles: [id=0 x=552 y=353, id=1 x=351 y=209, id=2 x=659 y=379]
+2026-04-18 23:52:22,441 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:22,441 - INFO -   Circle 1: delta=164.1px
+2026-04-18 23:52:22,441 - INFO -   Circle 2: delta=122.5px
+2026-04-18 23:52:22,441 - INFO -   Circle 0: delta=96.0px
+INFO:     127.0.0.1:36392 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:22,441 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:22,543 - INFO - POST /api/tracker: received 3 circles: [id=0 x=553 y=353, id=1 x=352 y=208, id=2 x=659 y=380]
+2026-04-18 23:52:22,543 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:22,543 - INFO -   Circle 1: delta=163.5px
+2026-04-18 23:52:22,543 - INFO -   Circle 2: delta=121.8px
+2026-04-18 23:52:22,543 - INFO -   Circle 0: delta=96.0px
+INFO:     127.0.0.1:36402 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:22,543 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:22,645 - INFO - POST /api/tracker: received 3 circles: [id=0 x=553 y=354, id=1 x=351 y=208, id=2 x=658 y=381]
+2026-04-18 23:52:22,646 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:22,646 - INFO -   Circle 1: delta=163.7px
+2026-04-18 23:52:22,646 - INFO -   Circle 2: delta=121.3px
+2026-04-18 23:52:22,646 - INFO -   Circle 0: delta=96.5px
+INFO:     127.0.0.1:36410 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:22,646 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:22,748 - INFO - POST /api/tracker: received 3 circles: [id=0 x=553 y=354, id=1 x=351 y=207, id=2 x=658 y=381]
+2026-04-18 23:52:22,748 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:22,748 - INFO -   Circle 1: delta=163.6px
+2026-04-18 23:52:22,748 - INFO -   Circle 2: delta=120.8px
+2026-04-18 23:52:22,748 - INFO -   Circle 0: delta=97.0px
+INFO:     127.0.0.1:36426 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:22,748 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:22,850 - INFO - POST /api/tracker: received 3 circles: [id=0 x=553 y=353, id=1 x=352 y=207, id=2 x=658 y=381]
+2026-04-18 23:52:22,850 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:22,850 - INFO -   Circle 1: delta=162.9px
+2026-04-18 23:52:22,850 - INFO -   Circle 2: delta=120.6px
+2026-04-18 23:52:22,850 - INFO -   Circle 0: delta=96.3px
+INFO:     127.0.0.1:36428 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:22,851 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:22,953 - INFO - POST /api/tracker: received 3 circles: [id=0 x=554 y=353, id=1 x=352 y=207, id=2 x=659 y=382]
+2026-04-18 23:52:22,953 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:22,953 - INFO -   Circle 1: delta=162.4px
+2026-04-18 23:52:22,953 - INFO -   Circle 2: delta=120.2px
+2026-04-18 23:52:22,953 - INFO -   Circle 0: delta=95.5px
+INFO:     127.0.0.1:36430 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:22,953 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:23,055 - INFO - POST /api/tracker: received 3 circles: [id=0 x=553 y=353, id=1 x=352 y=207, id=2 x=636 y=389]
+2026-04-18 23:52:23,055 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:23,055 - INFO -   Circle 1: delta=162.6px
+2026-04-18 23:52:23,055 - INFO -   Circle 2: delta=122.2px
+2026-04-18 23:52:23,055 - INFO -   Circle 0: delta=95.9px
+INFO:     127.0.0.1:36442 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:23,056 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:23,158 - INFO - POST /api/tracker: received 3 circles: [id=0 x=551 y=353, id=1 x=351 y=207, id=2 x=614 y=397]
+2026-04-18 23:52:23,158 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:23,158 - INFO -   Circle 1: delta=163.6px
+2026-04-18 23:52:23,158 - INFO -   Circle 2: delta=128.5px
+2026-04-18 23:52:23,158 - INFO -   Circle 0: delta=96.3px
+INFO:     127.0.0.1:36444 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:23,158 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:23,260 - INFO - POST /api/tracker: received 3 circles: [id=0 x=553 y=352, id=1 x=350 y=205, id=2 x=592 y=404]
+2026-04-18 23:52:23,260 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:23,260 - INFO -   Circle 1: delta=164.2px
+2026-04-18 23:52:23,260 - INFO -   Circle 2: delta=138.7px
+2026-04-18 23:52:23,260 - INFO -   Circle 0: delta=94.9px
+INFO:     127.0.0.1:36458 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:23,261 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:23,363 - INFO - POST /api/tracker: received 3 circles: [id=0 x=552 y=351, id=1 x=351 y=206, id=2 x=569 y=412]
+2026-04-18 23:52:23,363 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:23,363 - INFO -   Circle 1: delta=163.5px
+2026-04-18 23:52:23,363 - INFO -   Circle 2: delta=151.9px
+2026-04-18 23:52:23,363 - INFO -   Circle 0: delta=94.2px
+INFO:     127.0.0.1:36472 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:23,363 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:23,465 - INFO - POST /api/tracker: received 3 circles: [id=0 x=551 y=351, id=1 x=350 y=205, id=2 x=547 y=420]
+2026-04-18 23:52:23,465 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:23,465 - INFO -   Circle 2: delta=167.4px
+2026-04-18 23:52:23,465 - INFO -   Circle 1: delta=163.7px
+2026-04-18 23:52:23,465 - INFO -   Circle 0: delta=95.1px
+INFO:     127.0.0.1:36484 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:23,465 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:23,567 - INFO - POST /api/tracker: received 3 circles: [id=0 x=550 y=352, id=1 x=351 y=205, id=2 x=547 y=419]
+2026-04-18 23:52:23,568 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:23,568 - INFO -   Circle 2: delta=167.8px
+2026-04-18 23:52:23,568 - INFO -   Circle 1: delta=163.1px
+2026-04-18 23:52:23,568 - INFO -   Circle 0: delta=96.0px
+INFO:     127.0.0.1:36494 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:23,568 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:23,670 - INFO - POST /api/tracker: received 3 circles: [id=0 x=550 y=353, id=1 x=351 y=205, id=2 x=547 y=419]
+2026-04-18 23:52:23,670 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:23,670 - INFO -   Circle 2: delta=167.9px
+2026-04-18 23:52:23,670 - INFO -   Circle 1: delta=162.8px
+2026-04-18 23:52:23,670 - INFO -   Circle 0: delta=97.0px
+INFO:     127.0.0.1:36510 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:23,670 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:23,772 - INFO - POST /api/tracker: received 3 circles: [id=0 x=550 y=353, id=1 x=352 y=204, id=2 x=546 y=420]
+2026-04-18 23:52:23,772 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:23,772 - INFO -   Circle 2: delta=167.8px
+2026-04-18 23:52:23,772 - INFO -   Circle 1: delta=161.8px
+2026-04-18 23:52:23,772 - INFO -   Circle 0: delta=97.1px
+INFO:     127.0.0.1:36518 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:23,773 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:23,874 - INFO - POST /api/tracker: received 3 circles: [id=0 x=551 y=353, id=1 x=351 y=203, id=2 x=545 y=419]
+2026-04-18 23:52:23,874 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:23,874 - INFO -   Circle 2: delta=168.7px
+2026-04-18 23:52:23,875 - INFO -   Circle 1: delta=162.5px
+2026-04-18 23:52:23,875 - INFO -   Circle 0: delta=96.4px
+INFO:     127.0.0.1:36532 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:23,875 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:23,977 - INFO - POST /api/tracker: received 3 circles: [id=0 x=551 y=353, id=1 x=352 y=203, id=2 x=546 y=419]
+2026-04-18 23:52:23,977 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:23,977 - INFO -   Circle 2: delta=168.9px
+2026-04-18 23:52:23,977 - INFO -   Circle 1: delta=161.9px
+2026-04-18 23:52:23,977 - INFO -   Circle 0: delta=96.8px
+INFO:     127.0.0.1:36536 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:23,977 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:24,079 - INFO - POST /api/tracker: received 3 circles: [id=0 x=552 y=353, id=1 x=352 y=202, id=2 x=546 y=418]
+2026-04-18 23:52:24,079 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:24,079 - INFO -   Circle 2: delta=169.0px
+2026-04-18 23:52:24,079 - INFO -   Circle 1: delta=161.0px
+2026-04-18 23:52:24,079 - INFO -   Circle 0: delta=96.6px
+INFO:     127.0.0.1:36546 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:24,080 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:24,181 - INFO - POST /api/tracker: received 3 circles: [id=0 x=551 y=354, id=1 x=351 y=201, id=2 x=546 y=418]
+2026-04-18 23:52:24,182 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:24,182 - INFO -   Circle 2: delta=168.8px
+2026-04-18 23:52:24,182 - INFO -   Circle 1: delta=161.6px
+2026-04-18 23:52:24,182 - INFO -   Circle 0: delta=97.3px
+INFO:     127.0.0.1:36562 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:24,182 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:24,284 - INFO - POST /api/tracker: received 3 circles: [id=0 x=552 y=353, id=1 x=350 y=201, id=2 x=547 y=419]
+2026-04-18 23:52:24,284 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:24,284 - INFO -   Circle 2: delta=168.0px
+2026-04-18 23:52:24,284 - INFO -   Circle 1: delta=162.4px
+2026-04-18 23:52:24,284 - INFO -   Circle 0: delta=96.6px
+INFO:     127.0.0.1:36568 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:24,284 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:24,387 - INFO - POST /api/tracker: received 3 circles: [id=0 x=551 y=354, id=1 x=350 y=202, id=2 x=546 y=420]
+2026-04-18 23:52:24,387 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:24,387 - INFO -   Circle 2: delta=168.4px
+2026-04-18 23:52:24,387 - INFO -   Circle 1: delta=162.8px
+2026-04-18 23:52:24,387 - INFO -   Circle 0: delta=97.0px
+INFO:     127.0.0.1:36582 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:24,387 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:24,489 - INFO - POST /api/tracker: received 3 circles: [id=0 x=551 y=354, id=1 x=349 y=202, id=2 x=546 y=420]
+2026-04-18 23:52:24,489 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:24,489 - INFO -   Circle 2: delta=167.5px
+2026-04-18 23:52:24,489 - INFO -   Circle 1: delta=163.7px
+2026-04-18 23:52:24,489 - INFO -   Circle 0: delta=98.0px
+INFO:     127.0.0.1:36592 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:24,490 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:24,592 - INFO - POST /api/tracker: received 3 circles: [id=0 x=550 y=354, id=1 x=349 y=202, id=2 x=546 y=420]
+2026-04-18 23:52:24,592 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:24,592 - INFO -   Circle 2: delta=167.8px
+2026-04-18 23:52:24,592 - INFO -   Circle 1: delta=164.2px
+2026-04-18 23:52:24,592 - INFO -   Circle 0: delta=98.3px
+INFO:     127.0.0.1:36600 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:24,592 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:24,694 - INFO - POST /api/tracker: received 3 circles: [id=0 x=550 y=355, id=1 x=349 y=202, id=2 x=546 y=419]
+2026-04-18 23:52:24,694 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:24,694 - INFO -   Circle 2: delta=168.0px
+2026-04-18 23:52:24,694 - INFO -   Circle 1: delta=163.7px
+2026-04-18 23:52:24,694 - INFO -   Circle 0: delta=99.2px
+INFO:     127.0.0.1:36616 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:24,695 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:24,796 - INFO - POST /api/tracker: received 3 circles: [id=0 x=550 y=356, id=1 x=350 y=202, id=2 x=546 y=419]
+2026-04-18 23:52:24,796 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:24,796 - INFO -   Circle 2: delta=168.2px
+2026-04-18 23:52:24,796 - INFO -   Circle 1: delta=163.6px
+2026-04-18 23:52:24,796 - INFO -   Circle 0: delta=99.5px
+INFO:     127.0.0.1:36630 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:24,797 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:24,899 - INFO - POST /api/tracker: received 3 circles: [id=0 x=551 y=356, id=1 x=350 y=203, id=2 x=547 y=419]
+2026-04-18 23:52:24,899 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:24,899 - INFO -   Circle 2: delta=167.8px
+2026-04-18 23:52:24,899 - INFO -   Circle 1: delta=163.1px
+2026-04-18 23:52:24,899 - INFO -   Circle 0: delta=99.8px
+INFO:     127.0.0.1:36642 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:24,899 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:25,001 - INFO - POST /api/tracker: received 3 circles: [id=0 x=552 y=356, id=1 x=351 y=204, id=2 x=547 y=418]
+2026-04-18 23:52:25,001 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:25,001 - INFO -   Circle 2: delta=167.9px
+2026-04-18 23:52:25,001 - INFO -   Circle 1: delta=163.0px
+2026-04-18 23:52:25,001 - INFO -   Circle 0: delta=99.4px
+INFO:     127.0.0.1:36658 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:25,002 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:25,104 - INFO - POST /api/tracker: received 3 circles: [id=0 x=551 y=357, id=1 x=350 y=204, id=2 x=548 y=418]
+2026-04-18 23:52:25,104 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:25,104 - INFO -   Circle 2: delta=167.6px
+2026-04-18 23:52:25,104 - INFO -   Circle 1: delta=163.3px
+2026-04-18 23:52:25,104 - INFO -   Circle 0: delta=100.3px
+INFO:     127.0.0.1:36672 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:25,104 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:25,206 - INFO - POST /api/tracker: received 3 circles: [id=0 x=552 y=356, id=1 x=350 y=203, id=2 x=547 y=419]
+2026-04-18 23:52:25,207 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:25,207 - INFO -   Circle 2: delta=167.4px
+2026-04-18 23:52:25,207 - INFO -   Circle 1: delta=163.4px
+2026-04-18 23:52:25,207 - INFO -   Circle 0: delta=99.8px
+INFO:     127.0.0.1:36682 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:25,207 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:25,309 - INFO - POST /api/tracker: received 3 circles: [id=0 x=552 y=357, id=1 x=349 y=202, id=2 x=548 y=419]
+2026-04-18 23:52:25,309 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:25,309 - INFO -   Circle 2: delta=166.4px
+2026-04-18 23:52:25,309 - INFO -   Circle 1: delta=163.9px
+2026-04-18 23:52:25,309 - INFO -   Circle 0: delta=100.6px
+INFO:     127.0.0.1:36696 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:25,310 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:25,412 - INFO - POST /api/tracker: received 3 circles: [id=0 x=551 y=357, id=1 x=348 y=203, id=2 x=548 y=419]
+2026-04-18 23:52:25,412 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:25,412 - INFO -   Circle 2: delta=167.0px
+2026-04-18 23:52:25,412 - INFO -   Circle 1: delta=164.9px
+2026-04-18 23:52:25,412 - INFO -   Circle 0: delta=100.5px
+INFO:     127.0.0.1:36708 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:25,412 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:25,514 - INFO - POST /api/tracker: received 3 circles: [id=0 x=551 y=358, id=1 x=348 y=202, id=2 x=547 y=420]
+2026-04-18 23:52:25,514 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:25,514 - INFO -   Circle 2: delta=166.7px
+2026-04-18 23:52:25,514 - INFO -   Circle 1: delta=165.1px
+2026-04-18 23:52:25,514 - INFO -   Circle 0: delta=101.5px
+INFO:     127.0.0.1:36718 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:25,515 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:25,617 - INFO - POST /api/tracker: received 3 circles: [id=0 x=549 y=356, id=1 x=356 y=210, id=2 x=547 y=421]
+2026-04-18 23:52:25,617 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:25,617 - INFO -   Circle 2: delta=166.8px
+2026-04-18 23:52:25,617 - INFO -   Circle 1: delta=160.2px
+2026-04-18 23:52:25,617 - INFO -   Circle 0: delta=100.2px
+INFO:     127.0.0.1:36726 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:25,618 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:25,720 - INFO - POST /api/tracker: received 3 circles: [id=0 x=550 y=357, id=1 x=364 y=219, id=2 x=548 y=422]
+2026-04-18 23:52:25,720 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:25,720 - INFO -   Circle 2: delta=165.3px
+2026-04-18 23:52:25,720 - INFO -   Circle 1: delta=156.1px
+2026-04-18 23:52:25,720 - INFO -   Circle 0: delta=100.7px
+INFO:     127.0.0.1:36730 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:25,720 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:25,823 - INFO - POST /api/tracker: received 3 circles: [id=0 x=552 y=359, id=1 x=372 y=228, id=2 x=546 y=423]
+2026-04-18 23:52:25,823 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:25,823 - INFO -   Circle 2: delta=166.3px
+2026-04-18 23:52:25,823 - INFO -   Circle 1: delta=152.8px
+2026-04-18 23:52:25,823 - INFO -   Circle 0: delta=101.9px
+INFO:     127.0.0.1:36732 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:25,823 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:25,925 - INFO - POST /api/tracker: received 3 circles: [id=0 x=551 y=360, id=1 x=381 y=236, id=2 x=546 y=424]
+2026-04-18 23:52:25,925 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:25,925 - INFO -   Circle 2: delta=165.7px
+2026-04-18 23:52:25,925 - INFO -   Circle 1: delta=150.3px
+2026-04-18 23:52:25,925 - INFO -   Circle 0: delta=103.6px
+INFO:     127.0.0.1:36742 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:25,926 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:26,031 - INFO - POST /api/tracker: received 3 circles: [id=0 x=551 y=360, id=1 x=389 y=245, id=2 x=547 y=425]
+2026-04-18 23:52:26,031 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:26,031 - INFO -   Circle 2: delta=165.0px
+2026-04-18 23:52:26,031 - INFO -   Circle 1: delta=148.8px
+2026-04-18 23:52:26,031 - INFO -   Circle 0: delta=103.6px
+INFO:     127.0.0.1:36758 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:26,031 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:26,133 - INFO - POST /api/tracker: received 3 circles: [id=0 x=550 y=361, id=1 x=388 y=245, id=2 x=547 y=424]
+2026-04-18 23:52:26,133 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:26,133 - INFO -   Circle 2: delta=165.0px
+2026-04-18 23:52:26,134 - INFO -   Circle 1: delta=149.7px
+2026-04-18 23:52:26,134 - INFO -   Circle 0: delta=104.2px
+INFO:     127.0.0.1:36766 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:26,134 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:26,236 - INFO - POST /api/tracker: received 3 circles: [id=0 x=550 y=360, id=1 x=389 y=244, id=2 x=548 y=425]
+2026-04-18 23:52:26,236 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:26,236 - INFO -   Circle 2: delta=164.1px
+2026-04-18 23:52:26,236 - INFO -   Circle 1: delta=148.6px
+2026-04-18 23:52:26,236 - INFO -   Circle 0: delta=103.9px
+INFO:     127.0.0.1:36768 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:26,237 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:26,338 - INFO - POST /api/tracker: received 3 circles: [id=0 x=549 y=360, id=1 x=388 y=244, id=2 x=548 y=425]
+2026-04-18 23:52:26,338 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:26,338 - INFO -   Circle 2: delta=163.7px
+2026-04-18 23:52:26,338 - INFO -   Circle 1: delta=148.5px
+2026-04-18 23:52:26,338 - INFO -   Circle 0: delta=103.8px
+INFO:     127.0.0.1:36774 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:26,339 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:26,440 - INFO - POST /api/tracker: received 3 circles: [id=0 x=550 y=361, id=1 x=389 y=244, id=2 x=549 y=425]
+2026-04-18 23:52:26,441 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:26,441 - INFO -   Circle 2: delta=163.5px
+2026-04-18 23:52:26,441 - INFO -   Circle 1: delta=148.3px
+2026-04-18 23:52:26,441 - INFO -   Circle 0: delta=104.4px
+INFO:     127.0.0.1:36788 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:26,441 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:26,543 - INFO - POST /api/tracker: received 3 circles: [id=0 x=549 y=361, id=1 x=389 y=243, id=2 x=550 y=425]
+2026-04-18 23:52:26,543 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:26,543 - INFO -   Circle 2: delta=162.4px
+2026-04-18 23:52:26,543 - INFO -   Circle 1: delta=147.8px
+2026-04-18 23:52:26,543 - INFO -   Circle 0: delta=104.4px
+INFO:     127.0.0.1:36796 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:26,543 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:26,645 - INFO - POST /api/tracker: received 3 circles: [id=0 x=549 y=361, id=1 x=388 y=243, id=2 x=549 y=425]
+2026-04-18 23:52:26,646 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:26,646 - INFO -   Circle 2: delta=163.2px
+2026-04-18 23:52:26,646 - INFO -   Circle 1: delta=147.8px
+2026-04-18 23:52:26,646 - INFO -   Circle 0: delta=104.5px
+INFO:     127.0.0.1:36802 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:26,646 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:26,748 - INFO - POST /api/tracker: received 3 circles: [id=0 x=549 y=362, id=1 x=388 y=242, id=2 x=549 y=425]
+2026-04-18 23:52:26,748 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:26,748 - INFO -   Circle 2: delta=163.3px
+2026-04-18 23:52:26,748 - INFO -   Circle 1: delta=147.9px
+2026-04-18 23:52:26,748 - INFO -   Circle 0: delta=105.5px
+INFO:     127.0.0.1:36810 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:26,749 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:26,851 - INFO - POST /api/tracker: received 3 circles: [id=0 x=549 y=361, id=1 x=388 y=242, id=2 x=549 y=424]
+2026-04-18 23:52:26,851 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:26,851 - INFO -   Circle 2: delta=163.6px
+2026-04-18 23:52:26,851 - INFO -   Circle 1: delta=147.4px
+2026-04-18 23:52:26,851 - INFO -   Circle 0: delta=105.1px
+INFO:     127.0.0.1:36822 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:26,851 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:26,953 - INFO - POST /api/tracker: received 3 circles: [id=0 x=549 y=361, id=1 x=389 y=243, id=2 x=548 y=425]
+2026-04-18 23:52:26,953 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:26,953 - INFO -   Circle 2: delta=164.2px
+2026-04-18 23:52:26,953 - INFO -   Circle 1: delta=147.6px
+2026-04-18 23:52:26,953 - INFO -   Circle 0: delta=105.0px
+INFO:     127.0.0.1:36828 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:26,954 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:27,055 - INFO - POST /api/tracker: received 3 circles: [id=0 x=549 y=361, id=1 x=389 y=244, id=2 x=547 y=425]
+2026-04-18 23:52:27,055 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:27,055 - INFO -   Circle 2: delta=164.9px
+2026-04-18 23:52:27,055 - INFO -   Circle 1: delta=148.1px
+2026-04-18 23:52:27,055 - INFO -   Circle 0: delta=105.1px
+INFO:     127.0.0.1:36838 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:27,056 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:27,158 - INFO - POST /api/tracker: received 3 circles: [id=0 x=549 y=361, id=1 x=390 y=244, id=2 x=547 y=425]
+2026-04-18 23:52:27,158 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:27,158 - INFO -   Circle 2: delta=164.8px
+2026-04-18 23:52:27,158 - INFO -   Circle 1: delta=147.7px
+2026-04-18 23:52:27,158 - INFO -   Circle 0: delta=105.2px
+INFO:     127.0.0.1:36844 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:27,158 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:27,260 - INFO - POST /api/tracker: received 3 circles: [id=0 x=548 y=362, id=1 x=390 y=245, id=2 x=546 y=425]
+2026-04-18 23:52:27,260 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:27,260 - INFO -   Circle 2: delta=165.2px
+2026-04-18 23:52:27,260 - INFO -   Circle 1: delta=148.3px
+2026-04-18 23:52:27,260 - INFO -   Circle 0: delta=105.7px
+INFO:     127.0.0.1:36846 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:27,261 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:27,363 - INFO - POST /api/tracker: received 3 circles: [id=0 x=549 y=362, id=1 x=389 y=246, id=2 x=547 y=426]
+2026-04-18 23:52:27,363 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:27,363 - INFO -   Circle 2: delta=165.0px
+2026-04-18 23:52:27,363 - INFO -   Circle 1: delta=149.5px
+2026-04-18 23:52:27,363 - INFO -   Circle 0: delta=106.0px
+INFO:     127.0.0.1:36862 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:27,363 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:27,466 - INFO - POST /api/tracker: received 3 circles: [id=0 x=548 y=362, id=1 x=389 y=246, id=2 x=547 y=426]
+2026-04-18 23:52:27,466 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:27,466 - INFO -   Circle 2: delta=164.4px
+2026-04-18 23:52:27,466 - INFO -   Circle 1: delta=149.3px
+2026-04-18 23:52:27,466 - INFO -   Circle 0: delta=106.2px
+INFO:     127.0.0.1:36876 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:27,466 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:27,568 - INFO - POST /api/tracker: received 3 circles: [id=0 x=548 y=363, id=1 x=389 y=247, id=2 x=548 y=426]
+2026-04-18 23:52:27,568 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:27,568 - INFO -   Circle 2: delta=163.7px
+2026-04-18 23:52:27,568 - INFO -   Circle 1: delta=149.4px
+2026-04-18 23:52:27,568 - INFO -   Circle 0: delta=106.5px
+INFO:     127.0.0.1:36880 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:27,569 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:27,670 - INFO - POST /api/tracker: received 3 circles: [id=0 x=547 y=363, id=1 x=389 y=247, id=2 x=547 y=426]
+2026-04-18 23:52:27,670 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:27,670 - INFO -   Circle 2: delta=164.2px
+2026-04-18 23:52:27,670 - INFO -   Circle 1: delta=149.8px
+2026-04-18 23:52:27,670 - INFO -   Circle 0: delta=107.4px
+INFO:     127.0.0.1:36888 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:27,671 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:27,773 - INFO - POST /api/tracker: received 3 circles: [id=0 x=547 y=363, id=1 x=388 y=246, id=2 x=547 y=427]
+2026-04-18 23:52:27,773 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:27,773 - INFO -   Circle 2: delta=163.8px
+2026-04-18 23:52:27,773 - INFO -   Circle 1: delta=150.0px
+2026-04-18 23:52:27,773 - INFO -   Circle 0: delta=106.9px
+INFO:     127.0.0.1:36904 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:27,773 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:27,875 - INFO - POST /api/tracker: received 3 circles: [id=0 x=547 y=362, id=1 x=388 y=246, id=2 x=548 y=427]
+2026-04-18 23:52:27,875 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:27,875 - INFO -   Circle 2: delta=163.0px
+2026-04-18 23:52:27,875 - INFO -   Circle 1: delta=150.0px
+2026-04-18 23:52:27,875 - INFO -   Circle 0: delta=106.5px
+INFO:     127.0.0.1:36918 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:27,876 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:27,977 - INFO - POST /api/tracker: received 3 circles: [id=0 x=546 y=362, id=1 x=388 y=246, id=2 x=549 y=426]
+2026-04-18 23:52:27,977 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:27,978 - INFO -   Circle 2: delta=162.4px
+2026-04-18 23:52:27,978 - INFO -   Circle 1: delta=150.2px
+2026-04-18 23:52:27,978 - INFO -   Circle 0: delta=106.4px
+INFO:     127.0.0.1:36932 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:27,978 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:28,080 - INFO - POST /api/tracker: received 3 circles: [id=0 x=547 y=361, id=1 x=387 y=245, id=2 x=550 y=427]
+2026-04-18 23:52:28,080 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:28,080 - INFO -   Circle 2: delta=161.8px
+2026-04-18 23:52:28,080 - INFO -   Circle 1: delta=150.3px
+2026-04-18 23:52:28,080 - INFO -   Circle 0: delta=105.5px
+INFO:     127.0.0.1:36940 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:28,080 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:28,182 - INFO - POST /api/tracker: received 3 circles: [id=0 x=545 y=360, id=1 x=387 y=246, id=2 x=571 y=442]
+2026-04-18 23:52:28,182 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:28,182 - INFO -   Circle 1: delta=150.5px
+2026-04-18 23:52:28,182 - INFO -   Circle 2: delta=135.9px
+2026-04-18 23:52:28,182 - INFO -   Circle 0: delta=105.1px
+INFO:     127.0.0.1:36944 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:28,183 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:28,285 - INFO - POST /api/tracker: received 3 circles: [id=0 x=545 y=361, id=1 x=386 y=244, id=2 x=593 y=457]
+2026-04-18 23:52:28,285 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:28,285 - INFO -   Circle 1: delta=150.7px
+2026-04-18 23:52:28,285 - INFO -   Circle 2: delta=110.3px
+2026-04-18 23:52:28,285 - INFO -   Circle 0: delta=105.8px
+INFO:     127.0.0.1:36948 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:28,285 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:28,387 - INFO - POST /api/tracker: received 3 circles: [id=0 x=546 y=360, id=1 x=386 y=246, id=2 x=614 y=473]
+2026-04-18 23:52:28,387 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:28,387 - INFO -   Circle 1: delta=151.7px
+2026-04-18 23:52:28,387 - INFO -   Circle 0: delta=104.3px
+2026-04-18 23:52:28,387 - INFO -   Circle 2: delta=85.1px
+INFO:     127.0.0.1:36952 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:28,388 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:28,490 - INFO - POST /api/tracker: received 3 circles: [id=0 x=547 y=360, id=1 x=388 y=245, id=2 x=635 y=488]
+2026-04-18 23:52:28,490 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:28,490 - INFO -   Circle 1: delta=149.6px
+2026-04-18 23:52:28,490 - INFO -   Circle 0: delta=104.9px
+2026-04-18 23:52:28,490 - INFO -   Circle 2: delta=61.0px
+INFO:     127.0.0.1:36954 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:28,490 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:28,592 - INFO - POST /api/tracker: received 3 circles: [id=0 x=545 y=359, id=1 x=389 y=246, id=2 x=657 y=503]
+2026-04-18 23:52:28,592 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:28,592 - INFO -   Circle 1: delta=149.3px
+2026-04-18 23:52:28,592 - INFO -   Circle 0: delta=103.7px
+2026-04-18 23:52:28,592 - INFO -   Circle 2: delta=39.7px
+INFO:     127.0.0.1:36958 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:28,592 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:28,694 - INFO - POST /api/tracker: received 3 circles: [id=0 x=545 y=358, id=1 x=389 y=246, id=2 x=656 y=504]
+2026-04-18 23:52:28,694 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:28,694 - INFO -   Circle 1: delta=149.5px
+2026-04-18 23:52:28,694 - INFO -   Circle 0: delta=103.4px
+2026-04-18 23:52:28,695 - INFO -   Circle 2: delta=40.4px
+INFO:     127.0.0.1:36960 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:28,695 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:28,797 - INFO - POST /api/tracker: received 3 circles: [id=0 x=544 y=358, id=1 x=389 y=246, id=2 x=656 y=503]
+2026-04-18 23:52:28,797 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:28,797 - INFO -   Circle 1: delta=149.2px
+2026-04-18 23:52:28,797 - INFO -   Circle 0: delta=102.9px
+2026-04-18 23:52:28,797 - INFO -   Circle 2: delta=40.0px
+INFO:     127.0.0.1:36966 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:28,797 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:28,904 - INFO - POST /api/tracker: received 3 circles: [id=0 x=544 y=357, id=1 x=388 y=246, id=2 x=657 y=502]
+2026-04-18 23:52:28,905 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:28,905 - INFO -   Circle 1: delta=150.1px
+2026-04-18 23:52:28,905 - INFO -   Circle 0: delta=102.5px
+2026-04-18 23:52:28,905 - INFO -   Circle 2: delta=39.2px
+INFO:     127.0.0.1:36968 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:28,905 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:29,007 - INFO - POST /api/tracker: received 3 circles: [id=0 x=544 y=358, id=1 x=388 y=246, id=2 x=657 y=503]
+2026-04-18 23:52:29,007 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:29,007 - INFO -   Circle 1: delta=150.1px
+2026-04-18 23:52:29,007 - INFO -   Circle 0: delta=102.9px
+2026-04-18 23:52:29,007 - INFO -   Circle 2: delta=40.0px
+INFO:     127.0.0.1:36980 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:29,008 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:29,110 - INFO - POST /api/tracker: received 3 circles: [id=0 x=544 y=359, id=1 x=389 y=247, id=2 x=657 y=503]
+2026-04-18 23:52:29,110 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:29,110 - INFO -   Circle 1: delta=150.0px
+2026-04-18 23:52:29,110 - INFO -   Circle 0: delta=103.9px
+2026-04-18 23:52:29,110 - INFO -   Circle 2: delta=39.8px
+INFO:     127.0.0.1:36994 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:29,110 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:29,212 - INFO - POST /api/tracker: received 3 circles: [id=0 x=544 y=359, id=1 x=389 y=246, id=2 x=656 y=502]
+2026-04-18 23:52:29,212 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:29,212 - INFO -   Circle 1: delta=149.4px
+2026-04-18 23:52:29,212 - INFO -   Circle 0: delta=104.1px
+2026-04-18 23:52:29,212 - INFO -   Circle 2: delta=40.0px
+INFO:     127.0.0.1:37008 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:29,213 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:29,314 - INFO - POST /api/tracker: received 3 circles: [id=0 x=545 y=359, id=1 x=390 y=246, id=2 x=657 y=502]
+2026-04-18 23:52:29,314 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:29,314 - INFO -   Circle 1: delta=148.6px
+2026-04-18 23:52:29,314 - INFO -   Circle 0: delta=104.4px
+2026-04-18 23:52:29,314 - INFO -   Circle 2: delta=39.3px
+INFO:     127.0.0.1:37016 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:29,315 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:29,417 - INFO - POST /api/tracker: received 3 circles: [id=0 x=545 y=360, id=1 x=389 y=245, id=2 x=657 y=501]
+2026-04-18 23:52:29,417 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:29,417 - INFO -   Circle 1: delta=148.6px
+2026-04-18 23:52:29,417 - INFO -   Circle 0: delta=104.9px
+2026-04-18 23:52:29,417 - INFO -   Circle 2: delta=38.9px
+INFO:     127.0.0.1:37018 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:29,417 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:29,519 - INFO - POST /api/tracker: received 3 circles: [id=0 x=545 y=360, id=1 x=390 y=245, id=2 x=658 y=501]
+2026-04-18 23:52:29,519 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:29,519 - INFO -   Circle 1: delta=147.7px
+2026-04-18 23:52:29,519 - INFO -   Circle 0: delta=105.5px
+2026-04-18 23:52:29,519 - INFO -   Circle 2: delta=37.9px
+INFO:     127.0.0.1:45896 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:29,519 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:29,621 - INFO - POST /api/tracker: received 3 circles: [id=0 x=545 y=361, id=1 x=390 y=245, id=2 x=659 y=500]
+2026-04-18 23:52:29,621 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:29,621 - INFO -   Circle 1: delta=148.0px
+2026-04-18 23:52:29,621 - INFO -   Circle 0: delta=105.7px
+2026-04-18 23:52:29,621 - INFO -   Circle 2: delta=37.5px
+INFO:     127.0.0.1:45904 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:29,622 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:29,724 - INFO - POST /api/tracker: received 3 circles: [id=0 x=546 y=361, id=1 x=390 y=245, id=2 x=658 y=501]
+2026-04-18 23:52:29,724 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:29,724 - INFO -   Circle 1: delta=148.0px
+2026-04-18 23:52:29,724 - INFO -   Circle 0: delta=105.9px
+2026-04-18 23:52:29,724 - INFO -   Circle 2: delta=38.3px
+INFO:     127.0.0.1:45918 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:29,724 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:29,826 - INFO - POST /api/tracker: received 3 circles: [id=0 x=546 y=361, id=1 x=389 y=245, id=2 x=658 y=501]
+2026-04-18 23:52:29,826 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:29,826 - INFO -   Circle 1: delta=148.4px
+2026-04-18 23:52:29,826 - INFO -   Circle 0: delta=105.7px
+2026-04-18 23:52:29,826 - INFO -   Circle 2: delta=37.9px
+INFO:     127.0.0.1:45932 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:29,827 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:29,929 - INFO - POST /api/tracker: received 3 circles: [id=0 x=546 y=362, id=1 x=390 y=245, id=2 x=659 y=502]
+2026-04-18 23:52:29,929 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:29,929 - INFO -   Circle 1: delta=147.9px
+2026-04-18 23:52:29,929 - INFO -   Circle 0: delta=106.0px
+2026-04-18 23:52:29,929 - INFO -   Circle 2: delta=37.8px
+INFO:     127.0.0.1:45944 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:29,929 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:30,031 - INFO - POST /api/tracker: received 3 circles: [id=0 x=547 y=362, id=1 x=391 y=244, id=2 x=659 y=502]
+2026-04-18 23:52:30,031 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:30,031 - INFO -   Circle 1: delta=146.9px
+2026-04-18 23:52:30,031 - INFO -   Circle 0: delta=106.3px
+2026-04-18 23:52:30,031 - INFO -   Circle 2: delta=37.0px
+INFO:     127.0.0.1:45946 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:30,032 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:30,134 - INFO - POST /api/tracker: received 3 circles: [id=0 x=547 y=363, id=1 x=391 y=245, id=2 x=659 y=503]
+2026-04-18 23:52:30,134 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:30,134 - INFO -   Circle 1: delta=147.2px
+2026-04-18 23:52:30,134 - INFO -   Circle 0: delta=107.1px
+2026-04-18 23:52:30,134 - INFO -   Circle 2: delta=37.8px
+INFO:     127.0.0.1:45956 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:30,134 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:30,236 - INFO - POST /api/tracker: received 3 circles: [id=0 x=546 y=363, id=1 x=391 y=245, id=2 x=658 y=502]
+2026-04-18 23:52:30,236 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:30,236 - INFO -   Circle 1: delta=147.0px
+2026-04-18 23:52:30,236 - INFO -   Circle 0: delta=107.0px
+2026-04-18 23:52:30,236 - INFO -   Circle 2: delta=38.4px
+INFO:     127.0.0.1:45960 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:30,237 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:30,339 - INFO - POST /api/tracker: received 3 circles: [id=0 x=546 y=362, id=1 x=392 y=245, id=2 x=658 y=501]
+2026-04-18 23:52:30,339 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:30,339 - INFO -   Circle 1: delta=146.6px
+2026-04-18 23:52:30,339 - INFO -   Circle 0: delta=107.1px
+2026-04-18 23:52:30,339 - INFO -   Circle 2: delta=38.1px
+INFO:     127.0.0.1:45972 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:30,339 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:30,441 - INFO - POST /api/tracker: received 3 circles: [id=0 x=546 y=363, id=1 x=391 y=245, id=2 x=657 y=500]
+2026-04-18 23:52:30,441 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:30,441 - INFO -   Circle 1: delta=147.4px
+2026-04-18 23:52:30,441 - INFO -   Circle 0: delta=107.4px
+2026-04-18 23:52:30,441 - INFO -   Circle 2: delta=38.7px
+INFO:     127.0.0.1:45990 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:30,442 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:30,543 - INFO - POST /api/tracker: received 3 circles: [id=0 x=547 y=362, id=1 x=391 y=246, id=2 x=657 y=501]
+2026-04-18 23:52:30,543 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:30,544 - INFO -   Circle 1: delta=147.3px
+2026-04-18 23:52:30,544 - INFO -   Circle 0: delta=106.5px
+2026-04-18 23:52:30,544 - INFO -   Circle 2: delta=38.9px
+INFO:     127.0.0.1:45992 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:30,544 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:30,646 - INFO - POST /api/tracker: received 3 circles: [id=0 x=546 y=361, id=1 x=392 y=245, id=2 x=658 y=501]
+2026-04-18 23:52:30,646 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:30,646 - INFO -   Circle 1: delta=146.1px
+2026-04-18 23:52:30,646 - INFO -   Circle 0: delta=105.8px
+2026-04-18 23:52:30,646 - INFO -   Circle 2: delta=37.9px
+INFO:     127.0.0.1:46000 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:30,646 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:30,748 - INFO - POST /api/tracker: received 3 circles: [id=0 x=568 y=373, id=1 x=394 y=244, id=2 x=657 y=502]
+2026-04-18 23:52:30,748 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:30,748 - INFO -   Circle 1: delta=144.2px
+2026-04-18 23:52:30,748 - INFO -   Circle 0: delta=114.2px
+2026-04-18 23:52:30,748 - INFO -   Circle 2: delta=39.1px
+INFO:     127.0.0.1:46016 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:30,749 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:30,851 - INFO - POST /api/tracker: received 3 circles: [id=0 x=591 y=386, id=1 x=392 y=246, id=2 x=657 y=502]
+2026-04-18 23:52:30,851 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:30,851 - INFO -   Circle 1: delta=146.8px
+2026-04-18 23:52:30,851 - INFO -   Circle 0: delta=127.2px
+2026-04-18 23:52:30,851 - INFO -   Circle 2: delta=39.2px
+INFO:     127.0.0.1:46032 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:30,851 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:30,953 - INFO - POST /api/tracker: received 3 circles: [id=0 x=613 y=398, id=1 x=391 y=247, id=2 x=658 y=501]
+2026-04-18 23:52:30,953 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:30,953 - INFO -   Circle 1: delta=148.3px
+2026-04-18 23:52:30,953 - INFO -   Circle 0: delta=143.6px
+2026-04-18 23:52:30,953 - INFO -   Circle 2: delta=37.9px
+INFO:     127.0.0.1:46044 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:30,954 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:31,055 - INFO - POST /api/tracker: received 3 circles: [id=0 x=635 y=410, id=1 x=389 y=248, id=2 x=658 y=499]
+2026-04-18 23:52:31,056 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:31,056 - INFO -   Circle 0: delta=162.3px
+2026-04-18 23:52:31,056 - INFO -   Circle 1: delta=150.7px
+2026-04-18 23:52:31,056 - INFO -   Circle 2: delta=37.9px
+INFO:     127.0.0.1:46058 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:31,056 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:31,158 - INFO - POST /api/tracker: received 3 circles: [id=0 x=658 y=422, id=1 x=388 y=250, id=2 x=659 y=501]
+2026-04-18 23:52:31,158 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:31,158 - INFO -   Circle 0: delta=182.6px
+2026-04-18 23:52:31,158 - INFO -   Circle 1: delta=152.4px
+2026-04-18 23:52:31,158 - INFO -   Circle 2: delta=36.9px
+INFO:     127.0.0.1:46064 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:31,159 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:31,261 - INFO - POST /api/tracker: received 3 circles: [id=0 x=658 y=423, id=1 x=387 y=250, id=2 x=659 y=501]
+2026-04-18 23:52:31,261 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:31,261 - INFO -   Circle 0: delta=183.2px
+2026-04-18 23:52:31,261 - INFO -   Circle 1: delta=153.4px
+2026-04-18 23:52:31,261 - INFO -   Circle 2: delta=36.9px
+INFO:     127.0.0.1:46072 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:31,262 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:31,363 - INFO - POST /api/tracker: received 3 circles: [id=0 x=658 y=422, id=1 x=388 y=250, id=2 x=658 y=501]
+2026-04-18 23:52:31,363 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:31,363 - INFO -   Circle 0: delta=182.5px
+2026-04-18 23:52:31,363 - INFO -   Circle 1: delta=152.9px
+2026-04-18 23:52:31,363 - INFO -   Circle 2: delta=37.8px
+INFO:     127.0.0.1:46074 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:31,364 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:31,465 - INFO - POST /api/tracker: received 3 circles: [id=0 x=658 y=422, id=1 x=388 y=251, id=2 x=659 y=502]
+2026-04-18 23:52:31,466 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:31,466 - INFO -   Circle 0: delta=182.3px
+2026-04-18 23:52:31,466 - INFO -   Circle 1: delta=152.6px
+2026-04-18 23:52:31,466 - INFO -   Circle 2: delta=37.7px
+INFO:     127.0.0.1:46076 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:31,466 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:31,568 - INFO - POST /api/tracker: received 3 circles: [id=0 x=658 y=422, id=1 x=389 y=250, id=2 x=659 y=502]
+2026-04-18 23:52:31,568 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:31,568 - INFO -   Circle 0: delta=182.6px
+2026-04-18 23:52:31,568 - INFO -   Circle 1: delta=152.5px
+2026-04-18 23:52:31,568 - INFO -   Circle 2: delta=37.5px
+INFO:     127.0.0.1:46084 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:31,568 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:31,670 - INFO - POST /api/tracker: received 3 circles: [id=0 x=658 y=422, id=1 x=389 y=250, id=2 x=658 y=503]
+2026-04-18 23:52:31,670 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:31,670 - INFO -   Circle 0: delta=181.9px
+2026-04-18 23:52:31,670 - INFO -   Circle 1: delta=152.2px
+2026-04-18 23:52:31,670 - INFO -   Circle 2: delta=38.3px
+INFO:     127.0.0.1:46086 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:31,670 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:31,772 - INFO - POST /api/tracker: received 3 circles: [id=0 x=658 y=421, id=1 x=389 y=251, id=2 x=658 y=503]
+2026-04-18 23:52:31,772 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:31,772 - INFO -   Circle 0: delta=181.3px
+2026-04-18 23:52:31,772 - INFO -   Circle 1: delta=151.9px
+2026-04-18 23:52:31,772 - INFO -   Circle 2: delta=38.4px
+INFO:     127.0.0.1:46100 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:31,773 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:31,874 - INFO - POST /api/tracker: received 3 circles: [id=0 x=657 y=421, id=1 x=389 y=251, id=2 x=657 y=502]
+2026-04-18 23:52:31,875 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:31,875 - INFO -   Circle 0: delta=181.5px
+2026-04-18 23:52:31,875 - INFO -   Circle 1: delta=152.7px
+2026-04-18 23:52:31,875 - INFO -   Circle 2: delta=39.3px
+INFO:     127.0.0.1:46104 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:31,875 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:31,977 - INFO - POST /api/tracker: received 3 circles: [id=0 x=658 y=421, id=1 x=389 y=251, id=2 x=658 y=502]
+2026-04-18 23:52:31,977 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:31,977 - INFO -   Circle 0: delta=181.7px
+2026-04-18 23:52:31,977 - INFO -   Circle 1: delta=152.8px
+2026-04-18 23:52:31,977 - INFO -   Circle 2: delta=38.6px
+INFO:     127.0.0.1:46116 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:31,977 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:32,080 - INFO - POST /api/tracker: received 3 circles: [id=0 x=658 y=421, id=1 x=388 y=252, id=2 x=658 y=502]
+2026-04-18 23:52:32,080 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:32,080 - INFO -   Circle 0: delta=181.3px
+2026-04-18 23:52:32,080 - INFO -   Circle 1: delta=153.7px
+2026-04-18 23:52:32,080 - INFO -   Circle 2: delta=38.3px
+INFO:     127.0.0.1:46132 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:32,080 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:32,182 - INFO - POST /api/tracker: received 3 circles: [id=0 x=657 y=420, id=1 x=388 y=253, id=2 x=658 y=501]
+2026-04-18 23:52:32,182 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:32,182 - INFO -   Circle 0: delta=180.3px
+2026-04-18 23:52:32,182 - INFO -   Circle 1: delta=154.5px
+2026-04-18 23:52:32,182 - INFO -   Circle 2: delta=37.8px
+INFO:     127.0.0.1:46146 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:32,182 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:32,284 - INFO - POST /api/tracker: received 3 circles: [id=0 x=658 y=421, id=1 x=389 y=253, id=2 x=659 y=502]
+2026-04-18 23:52:32,285 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:32,285 - INFO -   Circle 0: delta=181.0px
+2026-04-18 23:52:32,285 - INFO -   Circle 1: delta=154.2px
+2026-04-18 23:52:32,285 - INFO -   Circle 2: delta=37.5px
+INFO:     127.0.0.1:46162 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:32,285 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:32,387 - INFO - POST /api/tracker: received 3 circles: [id=0 x=657 y=421, id=1 x=389 y=254, id=2 x=658 y=502]
+2026-04-18 23:52:32,387 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:32,387 - INFO -   Circle 0: delta=181.4px
+2026-04-18 23:52:32,387 - INFO -   Circle 1: delta=154.4px
+2026-04-18 23:52:32,387 - INFO -   Circle 2: delta=38.4px
+INFO:     127.0.0.1:46172 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:32,388 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:32,490 - INFO - POST /api/tracker: received 3 circles: [id=0 x=658 y=422, id=1 x=390 y=255, id=2 x=658 y=502]
+2026-04-18 23:52:32,490 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:32,490 - INFO -   Circle 0: delta=182.4px
+2026-04-18 23:52:32,490 - INFO -   Circle 1: delta=154.1px
+2026-04-18 23:52:32,490 - INFO -   Circle 2: delta=38.4px
+INFO:     127.0.0.1:46182 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:32,490 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:32,592 - INFO - POST /api/tracker: received 3 circles: [id=0 x=657 y=422, id=1 x=390 y=254, id=2 x=658 y=503]
+2026-04-18 23:52:32,592 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:32,592 - INFO -   Circle 0: delta=182.6px
+2026-04-18 23:52:32,592 - INFO -   Circle 1: delta=154.1px
+2026-04-18 23:52:32,592 - INFO -   Circle 2: delta=39.0px
+INFO:     127.0.0.1:46188 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:32,592 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:32,694 - INFO - POST /api/tracker: received 3 circles: [id=0 x=657 y=423, id=1 x=389 y=255, id=2 x=658 y=503]
+2026-04-18 23:52:32,694 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:32,694 - INFO -   Circle 0: delta=182.9px
+2026-04-18 23:52:32,694 - INFO -   Circle 1: delta=154.6px
+2026-04-18 23:52:32,694 - INFO -   Circle 2: delta=38.4px
+INFO:     127.0.0.1:46190 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:32,695 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:32,797 - INFO - POST /api/tracker: received 3 circles: [id=0 x=657 y=424, id=1 x=389 y=255, id=2 x=658 y=503]
+2026-04-18 23:52:32,797 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:32,797 - INFO -   Circle 0: delta=183.6px
+2026-04-18 23:52:32,797 - INFO -   Circle 1: delta=155.2px
+2026-04-18 23:52:32,797 - INFO -   Circle 2: delta=38.2px
+INFO:     127.0.0.1:46204 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:32,797 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:32,899 - INFO - POST /api/tracker: received 3 circles: [id=0 x=658 y=423, id=1 x=390 y=254, id=2 x=658 y=504]
+2026-04-18 23:52:32,899 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:32,899 - INFO -   Circle 0: delta=183.5px
+2026-04-18 23:52:32,899 - INFO -   Circle 1: delta=154.4px
+2026-04-18 23:52:32,899 - INFO -   Circle 2: delta=38.7px
+INFO:     127.0.0.1:46216 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:32,900 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:33,002 - INFO - POST /api/tracker: received 3 circles: [id=0 x=658 y=423, id=1 x=389 y=254, id=2 x=657 y=503]
+2026-04-18 23:52:33,002 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:33,002 - INFO -   Circle 0: delta=183.5px
+2026-04-18 23:52:33,002 - INFO -   Circle 1: delta=153.9px
+2026-04-18 23:52:33,002 - INFO -   Circle 2: delta=39.1px
+INFO:     127.0.0.1:46222 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:33,002 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:33,105 - INFO - POST /api/tracker: received 3 circles: [id=0 x=658 y=423, id=1 x=390 y=254, id=2 x=658 y=503]
+2026-04-18 23:52:33,105 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:33,105 - INFO -   Circle 0: delta=183.1px
+2026-04-18 23:52:33,105 - INFO -   Circle 1: delta=153.8px
+2026-04-18 23:52:33,105 - INFO -   Circle 2: delta=38.8px
+INFO:     127.0.0.1:46230 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:33,106 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:33,211 - INFO - POST /api/tracker: received 3 circles: [id=0 x=658 y=422, id=1 x=390 y=253, id=2 x=657 y=503]
+2026-04-18 23:52:33,212 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:33,212 - INFO -   Circle 0: delta=182.4px
+2026-04-18 23:52:33,212 - INFO -   Circle 1: delta=153.4px
+2026-04-18 23:52:33,212 - INFO -   Circle 2: delta=39.1px
+INFO:     127.0.0.1:46244 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:33,213 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:33,315 - INFO - POST /api/tracker: received 3 circles: [id=0 x=658 y=424, id=1 x=404 y=237, id=2 x=657 y=503]
+2026-04-18 23:52:33,315 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:33,315 - INFO -   Circle 0: delta=184.5px
+2026-04-18 23:52:33,315 - INFO -   Circle 1: delta=132.1px
+2026-04-18 23:52:33,315 - INFO -   Circle 2: delta=39.6px
+INFO:     127.0.0.1:46254 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:33,315 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:33,417 - INFO - POST /api/tracker: received 3 circles: [id=0 x=659 y=424, id=1 x=418 y=220, id=2 x=655 y=505]
+2026-04-18 23:52:33,418 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:33,418 - INFO -   Circle 0: delta=184.5px
+2026-04-18 23:52:33,418 - INFO -   Circle 1: delta=110.8px
+2026-04-18 23:52:33,418 - INFO -   Circle 2: delta=41.8px
+INFO:     127.0.0.1:46260 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:33,418 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:33,520 - INFO - POST /api/tracker: received 3 circles: [id=0 x=658 y=426, id=1 x=432 y=204, id=2 x=654 y=504]
+2026-04-18 23:52:33,520 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:33,520 - INFO -   Circle 0: delta=185.6px
+2026-04-18 23:52:33,520 - INFO -   Circle 1: delta=89.7px
+2026-04-18 23:52:33,520 - INFO -   Circle 2: delta=42.5px
+INFO:     127.0.0.1:46274 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:33,520 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:33,622 - INFO - POST /api/tracker: received 3 circles: [id=0 x=658 y=426, id=1 x=446 y=187, id=2 x=655 y=504]
+2026-04-18 23:52:33,622 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:33,622 - INFO -   Circle 0: delta=185.8px
+2026-04-18 23:52:33,622 - INFO -   Circle 1: delta=69.0px
+2026-04-18 23:52:33,622 - INFO -   Circle 2: delta=41.9px
+INFO:     127.0.0.1:46286 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:33,623 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:33,724 - INFO - POST /api/tracker: received 3 circles: [id=0 x=660 y=426, id=1 x=460 y=171, id=2 x=654 y=503]
+2026-04-18 23:52:33,725 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:33,725 - INFO -   Circle 0: delta=186.7px
+2026-04-18 23:52:33,725 - INFO -   Circle 1: delta=49.1px
+2026-04-18 23:52:33,725 - INFO -   Circle 2: delta=42.7px
+INFO:     127.0.0.1:46292 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:33,725 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:33,827 - INFO - POST /api/tracker: received 3 circles: [id=0 x=659 y=426, id=1 x=459 y=170, id=2 x=653 y=503]
+2026-04-18 23:52:33,827 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:33,827 - INFO -   Circle 0: delta=186.5px
+2026-04-18 23:52:33,827 - INFO -   Circle 1: delta=49.3px
+2026-04-18 23:52:33,827 - INFO -   Circle 2: delta=43.2px
+INFO:     127.0.0.1:46308 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:33,828 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:33,929 - INFO - POST /api/tracker: received 3 circles: [id=0 x=660 y=426, id=1 x=458 y=170, id=2 x=654 y=504]
+2026-04-18 23:52:33,929 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:33,929 - INFO -   Circle 0: delta=186.5px
+2026-04-18 23:52:33,929 - INFO -   Circle 1: delta=50.0px
+2026-04-18 23:52:33,930 - INFO -   Circle 2: delta=42.8px
+INFO:     127.0.0.1:46322 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:33,930 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:34,032 - INFO - POST /api/tracker: received 3 circles: [id=0 x=660 y=426, id=1 x=458 y=170, id=2 x=653 y=503]
+2026-04-18 23:52:34,032 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:34,032 - INFO -   Circle 0: delta=186.9px
+2026-04-18 23:52:34,032 - INFO -   Circle 1: delta=50.8px
+2026-04-18 23:52:34,032 - INFO -   Circle 2: delta=43.2px
+INFO:     127.0.0.1:46334 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:34,032 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:34,134 - INFO - POST /api/tracker: received 3 circles: [id=0 x=659 y=426, id=1 x=457 y=170, id=2 x=654 y=504]
+2026-04-18 23:52:34,134 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:34,134 - INFO -   Circle 0: delta=186.2px
+2026-04-18 23:52:34,134 - INFO -   Circle 1: delta=51.6px
+2026-04-18 23:52:34,134 - INFO -   Circle 2: delta=42.7px
+INFO:     127.0.0.1:46344 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:34,134 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:34,236 - INFO - POST /api/tracker: received 3 circles: [id=0 x=659 y=425, id=1 x=457 y=171, id=2 x=654 y=504]
+2026-04-18 23:52:34,236 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:34,236 - INFO -   Circle 0: delta=185.2px
+2026-04-18 23:52:34,236 - INFO -   Circle 1: delta=51.7px
+2026-04-18 23:52:34,236 - INFO -   Circle 2: delta=43.1px
+INFO:     127.0.0.1:46352 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:34,237 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:34,339 - INFO - POST /api/tracker: received 3 circles: [id=0 x=658 y=425, id=1 x=457 y=171, id=2 x=653 y=503]
+2026-04-18 23:52:34,339 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:34,339 - INFO -   Circle 0: delta=184.8px
+2026-04-18 23:52:34,339 - INFO -   Circle 1: delta=52.1px
+2026-04-18 23:52:34,339 - INFO -   Circle 2: delta=43.2px
+INFO:     127.0.0.1:46356 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:34,339 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:34,441 - INFO - POST /api/tracker: received 3 circles: [id=0 x=657 y=425, id=1 x=456 y=171, id=2 x=652 y=503]
+2026-04-18 23:52:34,442 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:34,442 - INFO -   Circle 0: delta=184.9px
+2026-04-18 23:52:34,442 - INFO -   Circle 1: delta=52.6px
+2026-04-18 23:52:34,442 - INFO -   Circle 2: delta=44.1px
+INFO:     127.0.0.1:46370 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:34,442 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:34,544 - INFO - POST /api/tracker: received 3 circles: [id=0 x=658 y=426, id=1 x=457 y=171, id=2 x=652 y=503]
+2026-04-18 23:52:34,544 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:34,544 - INFO -   Circle 0: delta=186.1px
+2026-04-18 23:52:34,544 - INFO -   Circle 1: delta=51.8px
+2026-04-18 23:52:34,544 - INFO -   Circle 2: delta=44.5px
+INFO:     127.0.0.1:46374 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:34,545 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:34,646 - INFO - POST /api/tracker: received 3 circles: [id=0 x=658 y=426, id=1 x=456 y=171, id=2 x=651 y=503]
+2026-04-18 23:52:34,646 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:34,646 - INFO -   Circle 0: delta=185.8px
+2026-04-18 23:52:34,646 - INFO -   Circle 1: delta=52.4px
+2026-04-18 23:52:34,646 - INFO -   Circle 2: delta=45.4px
+INFO:     127.0.0.1:46390 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:34,647 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:34,749 - INFO - POST /api/tracker: received 3 circles: [id=0 x=657 y=426, id=1 x=456 y=170, id=2 x=651 y=503]
+2026-04-18 23:52:34,749 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:34,749 - INFO -   Circle 0: delta=185.7px
+2026-04-18 23:52:34,749 - INFO -   Circle 1: delta=52.3px
+2026-04-18 23:52:34,749 - INFO -   Circle 2: delta=45.1px
+INFO:     127.0.0.1:46396 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:34,749 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:34,851 - INFO - POST /api/tracker: received 3 circles: [id=0 x=657 y=427, id=1 x=456 y=171, id=2 x=651 y=504]
+2026-04-18 23:52:34,851 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:34,851 - INFO -   Circle 0: delta=186.0px
+2026-04-18 23:52:34,851 - INFO -   Circle 1: delta=52.4px
+2026-04-18 23:52:34,851 - INFO -   Circle 2: delta=45.7px
+INFO:     127.0.0.1:46404 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:34,852 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:34,954 - INFO - POST /api/tracker: received 3 circles: [id=0 x=657 y=427, id=1 x=457 y=171, id=2 x=651 y=504]
+2026-04-18 23:52:34,954 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:34,954 - INFO -   Circle 0: delta=186.7px
+2026-04-18 23:52:34,954 - INFO -   Circle 1: delta=51.8px
+2026-04-18 23:52:34,954 - INFO -   Circle 2: delta=45.6px
+INFO:     127.0.0.1:46418 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:34,954 - INFO - Turn check: waiting 1.0s since last movement...
+INFO:     127.0.0.1:46420 - "WebSocket /ws" [accepted]
+INFO:     connection open
+INFO:     connection closed
+2026-04-18 23:52:35,056 - INFO - POST /api/tracker: received 3 circles: [id=0 x=656 y=427, id=1 x=458 y=172, id=2 x=652 y=503]
+2026-04-18 23:52:35,057 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:35,057 - INFO -   Circle 0: delta=185.9px
+2026-04-18 23:52:35,057 - INFO -   Circle 1: delta=51.4px
+2026-04-18 23:52:35,057 - INFO -   Circle 2: delta=44.6px
+INFO:     127.0.0.1:46436 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:35,057 - INFO - Turn check: waiting 1.0s since last movement...
+2026-04-18 23:52:35,159 - INFO - POST /api/tracker: received 3 circles: [id=0 x=657 y=427, id=1 x=458 y=172, id=2 x=652 y=504]
+2026-04-18 23:52:35,159 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:35,159 - INFO -   Circle 0: delta=186.5px
+2026-04-18 23:52:35,159 - INFO -   Circle 1: delta=51.2px
+2026-04-18 23:52:35,159 - INFO -   Circle 2: delta=45.1px
+INFO:     127.0.0.1:46450 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:35,160 - INFO - Turn check: waiting 1.0s since last movement...
+INFO:     127.0.0.1:46460 - "WebSocket /ws" [accepted]
+INFO:     connection open
+2026-04-18 23:52:35,262 - INFO - POST /api/tracker: received 3 circles: [id=0 x=657 y=428, id=1 x=459 y=172, id=2 x=652 y=504]
+2026-04-18 23:52:35,262 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:35,262 - INFO -   Circle 0: delta=187.5px
+2026-04-18 23:52:35,262 - INFO -   Circle 1: delta=50.4px
+2026-04-18 23:52:35,262 - INFO -   Circle 2: delta=44.3px
+2026-04-18 23:52:35,262 - INFO - Turn check: waiting 1.0s since last movement...
+INFO:     127.0.0.1:46472 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:35,364 - INFO - POST /api/tracker: received 3 circles: [id=0 x=657 y=427, id=1 x=459 y=172, id=2 x=653 y=504]
+2026-04-18 23:52:35,364 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:35,364 - INFO -   Circle 0: delta=186.9px
+2026-04-18 23:52:35,364 - INFO -   Circle 1: delta=49.8px
+2026-04-18 23:52:35,364 - INFO -   Circle 2: delta=43.4px
+2026-04-18 23:52:35,364 - INFO - Turn check: waiting 1.0s since last movement...
+INFO:     127.0.0.1:46486 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:35,467 - INFO - POST /api/tracker: received 3 circles: [id=0 x=657 y=426, id=1 x=459 y=171, id=2 x=654 y=504]
+2026-04-18 23:52:35,467 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:35,467 - INFO -   Circle 0: delta=186.1px
+2026-04-18 23:52:35,467 - INFO -   Circle 1: delta=49.7px
+2026-04-18 23:52:35,467 - INFO -   Circle 2: delta=42.5px
+2026-04-18 23:52:35,467 - INFO - Turn check: waiting 1.0s since last movement...
+INFO:     127.0.0.1:46498 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:35,569 - INFO - POST /api/tracker: received 3 circles: [id=0 x=658 y=426, id=1 x=460 y=171, id=2 x=653 y=505]
+2026-04-18 23:52:35,569 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:35,570 - INFO -   Circle 0: delta=186.1px
+2026-04-18 23:52:35,570 - INFO -   Circle 1: delta=49.3px
+2026-04-18 23:52:35,570 - INFO -   Circle 2: delta=43.6px
+2026-04-18 23:52:35,570 - INFO - Turn check: waiting 1.0s since last movement...
+INFO:     127.0.0.1:46502 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:35,672 - INFO - POST /api/tracker: received 3 circles: [id=0 x=658 y=425, id=1 x=460 y=170, id=2 x=653 y=505]
+2026-04-18 23:52:35,672 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:35,672 - INFO -   Circle 0: delta=185.5px
+2026-04-18 23:52:35,672 - INFO -   Circle 1: delta=48.9px
+2026-04-18 23:52:35,672 - INFO -   Circle 2: delta=44.1px
+2026-04-18 23:52:35,672 - INFO - Turn check: waiting 1.0s since last movement...
+INFO:     127.0.0.1:46510 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:35,775 - INFO - POST /api/tracker: received 3 circles: [id=0 x=658 y=426, id=1 x=459 y=171, id=2 x=654 y=505]
+2026-04-18 23:52:35,775 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:35,775 - INFO -   Circle 0: delta=186.0px
+2026-04-18 23:52:35,775 - INFO -   Circle 1: delta=49.6px
+2026-04-18 23:52:35,775 - INFO -   Circle 2: delta=43.2px
+2026-04-18 23:52:35,775 - INFO - Turn check: waiting 1.0s since last movement...
+INFO:     127.0.0.1:46520 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:35,877 - INFO - POST /api/tracker: received 3 circles: [id=0 x=636 y=437, id=1 x=459 y=170, id=2 x=653 y=504]
+2026-04-18 23:52:35,878 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:35,878 - INFO -   Circle 0: delta=187.5px
+2026-04-18 23:52:35,878 - INFO -   Circle 1: delta=50.0px
+2026-04-18 23:52:35,878 - INFO -   Circle 2: delta=43.6px
+2026-04-18 23:52:35,878 - INFO - Turn check: waiting 1.0s since last movement...
+INFO:     127.0.0.1:46534 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:35,980 - INFO - POST /api/tracker: received 3 circles: [id=0 x=614 y=448, id=1 x=457 y=171, id=2 x=653 y=504]
+2026-04-18 23:52:35,980 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:35,980 - INFO -   Circle 0: delta=192.1px
+2026-04-18 23:52:35,980 - INFO -   Circle 1: delta=51.5px
+2026-04-18 23:52:35,980 - INFO -   Circle 2: delta=43.3px
+2026-04-18 23:52:35,980 - INFO - Turn check: waiting 1.0s since last movement...
+INFO:     127.0.0.1:46548 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:36,082 - INFO - POST /api/tracker: received 3 circles: [id=0 x=592 y=458, id=1 x=458 y=169, id=2 x=654 y=502]
+2026-04-18 23:52:36,083 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:36,083 - INFO -   Circle 0: delta=199.7px
+2026-04-18 23:52:36,083 - INFO -   Circle 1: delta=50.3px
+2026-04-18 23:52:36,083 - INFO -   Circle 2: delta=42.1px
+2026-04-18 23:52:36,083 - INFO - Turn check: waiting 1.0s since last movement...
+INFO:     127.0.0.1:46550 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:36,185 - INFO - POST /api/tracker: received 3 circles: [id=0 x=570 y=469, id=1 x=456 y=168, id=2 x=656 y=503]
+2026-04-18 23:52:36,185 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:36,185 - INFO -   Circle 0: delta=209.9px
+2026-04-18 23:52:36,185 - INFO -   Circle 1: delta=51.9px
+2026-04-18 23:52:36,185 - INFO -   Circle 2: delta=40.4px
+2026-04-18 23:52:36,186 - INFO - Turn check: waiting 1.0s since last movement...
+INFO:     127.0.0.1:46566 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:36,288 - INFO - POST /api/tracker: received 3 circles: [id=0 x=548 y=480, id=1 x=456 y=168, id=2 x=658 y=502]
+2026-04-18 23:52:36,288 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:36,288 - INFO -   Circle 0: delta=222.3px
+2026-04-18 23:52:36,288 - INFO -   Circle 1: delta=51.4px
+2026-04-18 23:52:36,288 - INFO -   Circle 2: delta=38.2px
+2026-04-18 23:52:36,288 - INFO - Turn check: waiting 1.0s since last movement...
+INFO:     127.0.0.1:46568 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:36,390 - INFO - POST /api/tracker: received 3 circles: [id=0 x=548 y=481, id=1 x=457 y=167, id=2 x=659 y=501]
+2026-04-18 23:52:36,390 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:36,390 - INFO -   Circle 0: delta=222.9px
+2026-04-18 23:52:36,390 - INFO -   Circle 1: delta=50.7px
+2026-04-18 23:52:36,391 - INFO -   Circle 2: delta=37.5px
+2026-04-18 23:52:36,391 - INFO - Turn check: waiting 1.0s since last movement...
+INFO:     127.0.0.1:46574 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:36,493 - INFO - POST /api/tracker: received 3 circles: [id=0 x=549 y=480, id=1 x=456 y=168, id=2 x=659 y=500]
+2026-04-18 23:52:36,493 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:36,493 - INFO -   Circle 0: delta=222.4px
+2026-04-18 23:52:36,493 - INFO -   Circle 1: delta=51.4px
+2026-04-18 23:52:36,493 - INFO -   Circle 2: delta=37.0px
+2026-04-18 23:52:36,493 - INFO - Turn check: waiting 1.0s since last movement...
+INFO:     127.0.0.1:46580 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:36,596 - INFO - POST /api/tracker: received 3 circles: [id=0 x=548 y=480, id=1 x=457 y=169, id=2 x=659 y=501]
+2026-04-18 23:52:36,596 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:36,596 - INFO -   Circle 0: delta=222.7px
+2026-04-18 23:52:36,596 - INFO -   Circle 1: delta=51.3px
+2026-04-18 23:52:36,596 - INFO -   Circle 2: delta=37.4px
+2026-04-18 23:52:36,596 - INFO - Turn check: waiting 1.0s since last movement...
+INFO:     127.0.0.1:46590 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:36,698 - INFO - POST /api/tracker: received 3 circles: [id=0 x=548 y=481, id=1 x=458 y=169, id=2 x=658 y=500]
+2026-04-18 23:52:36,698 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:36,698 - INFO -   Circle 0: delta=223.3px
+2026-04-18 23:52:36,698 - INFO -   Circle 1: delta=50.6px
+2026-04-18 23:52:36,698 - INFO -   Circle 2: delta=37.9px
+2026-04-18 23:52:36,698 - INFO - Turn check: waiting 1.0s since last movement...
+INFO:     127.0.0.1:46594 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:36,801 - INFO - POST /api/tracker: received 3 circles: [id=0 x=548 y=481, id=1 x=458 y=169, id=2 x=659 y=500]
+2026-04-18 23:52:36,801 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:36,801 - INFO -   Circle 0: delta=222.8px
+2026-04-18 23:52:36,801 - INFO -   Circle 1: delta=49.8px
+2026-04-18 23:52:36,801 - INFO -   Circle 2: delta=37.5px
+2026-04-18 23:52:36,801 - INFO - Turn check: waiting 1.0s since last movement...
+INFO:     127.0.0.1:46596 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:36,903 - INFO - POST /api/tracker: received 3 circles: [id=0 x=548 y=481, id=1 x=459 y=168, id=2 x=659 y=499]
+2026-04-18 23:52:36,903 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:36,903 - INFO -   Circle 0: delta=223.0px
+2026-04-18 23:52:36,903 - INFO -   Circle 1: delta=48.9px
+2026-04-18 23:52:36,903 - INFO -   Circle 2: delta=37.0px
+2026-04-18 23:52:36,904 - INFO - Turn check: waiting 1.0s since last movement...
+INFO:     127.0.0.1:46604 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:37,006 - INFO - POST /api/tracker: received 3 circles: [id=0 x=549 y=480, id=1 x=459 y=169, id=2 x=658 y=499]
+2026-04-18 23:52:37,006 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:37,006 - INFO -   Circle 0: delta=222.0px
+2026-04-18 23:52:37,006 - INFO -   Circle 1: delta=49.6px
+2026-04-18 23:52:37,006 - INFO -   Circle 2: delta=37.8px
+2026-04-18 23:52:37,006 - INFO - Turn check: waiting 1.0s since last movement...
+INFO:     127.0.0.1:46608 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:37,108 - INFO - POST /api/tracker: received 3 circles: [id=0 x=548 y=479, id=1 x=459 y=169, id=2 x=658 y=498]
+2026-04-18 23:52:37,109 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:37,109 - INFO -   Circle 0: delta=221.3px
+2026-04-18 23:52:37,109 - INFO -   Circle 1: delta=48.9px
+2026-04-18 23:52:37,109 - INFO -   Circle 2: delta=37.8px
+2026-04-18 23:52:37,109 - INFO - Turn check: waiting 1.0s since last movement...
+INFO:     127.0.0.1:46618 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:37,211 - INFO - POST /api/tracker: received 3 circles: [id=0 x=548 y=480, id=1 x=459 y=168, id=2 x=659 y=498]
+2026-04-18 23:52:37,211 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:37,211 - INFO -   Circle 0: delta=222.3px
+2026-04-18 23:52:37,211 - INFO -   Circle 1: delta=48.9px
+2026-04-18 23:52:37,211 - INFO -   Circle 2: delta=37.1px
+2026-04-18 23:52:37,211 - INFO - Turn check: waiting 1.0s since last movement...
+INFO:     127.0.0.1:46622 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:37,313 - INFO - POST /api/tracker: received 3 circles: [id=0 x=548 y=481, id=1 x=459 y=168, id=2 x=658 y=497]
+2026-04-18 23:52:37,314 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:37,314 - INFO -   Circle 0: delta=223.1px
+2026-04-18 23:52:37,314 - INFO -   Circle 1: delta=48.5px
+2026-04-18 23:52:37,314 - INFO -   Circle 2: delta=37.5px
+2026-04-18 23:52:37,314 - INFO - Turn check: waiting 1.0s since last movement...
+INFO:     127.0.0.1:46628 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:38,314 - INFO - Turn check: elapsed=1.00s, movement_detected=True
+2026-04-18 23:52:38,315 - INFO - === TURN 1 ENDED ===
+2026-04-18 23:52:38,315 - INFO - Recording turn 1: 1 total turns
+2026-04-18 23:52:38,315 - INFO -   Circle 0: (547.9, 480.9) IN frame, moved 223.1px this turn
+2026-04-18 23:52:38,315 - INFO -   Circle 1: (459.3, 167.6) IN frame, moved 48.5px this turn
+2026-04-18 23:52:38,315 - INFO -   Circle 2: (658.4, 497.4) IN frame, moved 37.5px this turn
+2026-04-18 23:52:38,315 - INFO - Turn 1 recorded:
+2026-04-18 23:52:38,315 - INFO -   Circle 0: (547.9, 480.9) - in frame
+2026-04-18 23:52:38,315 - INFO -   Circle 1: (459.3, 167.6) - in frame
+2026-04-18 23:52:38,315 - INFO -   Circle 2: (658.4, 497.4) - in frame
+INFO:     127.0.0.1:57070 - "GET /api/game/state HTTP/1.1" 200 OK
+2026-04-18 23:52:47,242 - INFO - POST /api/tracker: received 3 circles: [id=0 x=350 y=200, id=1 x=400 y=250, id=2 x=450 y=300]
+2026-04-18 23:52:47,242 - INFO - Movement check: moved=[0, 1, 2]
+2026-04-18 23:52:47,242 - INFO -   Circle 0: delta=343.6px
+2026-04-18 23:52:47,242 - INFO -   Circle 2: delta=287.1px
+2026-04-18 23:52:47,242 - INFO -   Circle 1: delta=101.5px
+2026-04-18 23:52:47,243 - INFO - Turn check: waiting 1.0s since last movement...
+INFO:     127.0.0.1:57086 - "POST /api/tracker HTTP/1.1" 200 OK
+2026-04-18 23:52:48,243 - INFO - Turn check: elapsed=1.00s, movement_detected=True
+2026-04-18 23:52:48,243 - INFO - === TURN 2 ENDED ===
+2026-04-18 23:52:48,243 - INFO - Recording turn 2: 2 total turns
+2026-04-18 23:52:48,243 - INFO -   Circle 0: (350.0, 200.0) IN frame, moved 343.6px this turn
+2026-04-18 23:52:48,243 - INFO -   Circle 1: (400.0, 250.0) IN frame, moved 101.5px this turn
+2026-04-18 23:52:48,243 - INFO -   Circle 2: (450.0, 300.0) IN frame, moved 287.1px this turn
+2026-04-18 23:52:48,243 - INFO - Turn 2 recorded:
+2026-04-18 23:52:48,243 - INFO -   Circle 0: (350.0, 200.0) - in frame
+2026-04-18 23:52:48,243 - INFO -   Circle 1: (400.0, 250.0) - in frame
+2026-04-18 23:52:48,243 - INFO -   Circle 2: (450.0, 300.0) - in frame
+2026-04-18 23:52:48,243 - INFO - === DELTAS FROM PREVIOUS TURN ===
+2026-04-18 23:52:48,243 - INFO -   Circle 0: delta_from_prev=343.6px
+2026-04-18 23:52:48,243 - INFO -   Circle 1: delta_from_prev=101.5px
+2026-04-18 23:52:48,243 - INFO -   Circle 2: delta_from_prev=287.1px
+INFO:     127.0.0.1:40152 - "GET /api/game_state HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:40160 - "GET /api/game/state HTTP/1.1" 200 OK
+INFO:     Shutting down
+INFO:     connection closed
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [90411]
