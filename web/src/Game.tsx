@@ -68,13 +68,26 @@ export const Game = () => {
     };
   }, []);
 
+  const endTurn = async () => {
+    try {
+      const response = await fetch("http://localhost:8000/api/turn/end", {
+        method: "POST",
+      });
+      if (!response.ok) {
+        console.error("Failed to end turn");
+      }
+    } catch (e) {
+      console.error("Error ending turn:", e);
+    }
+  };
+
   return (
     <div className="bg-slate-950 p-3 overflow-hidden w-screen h-screen">
-      <div className="rounded-2xl bg-white w-full h-full relative">
-        <div className="px-4 py-2 flex flex-row gap-4 justify-between">
-          <div className="flex gap-2">
+      <div className="rounded-2xl bg-white w-full h-full relative flex flex-col">
+        <div className="px-4 py-2 flex flex-row gap-4 justify-between items-center border-b">
+          <div className="flex gap-4 items-center">
             <span className="text-lg font-bold">
-              Turn: {turnNumber} | Player: {currentPlayer}
+              Turn: {turnNumber+1} | Player: {currentPlayer}
             </span>
             <span className="text-sm text-gray-600">
               Scores:{" "}
@@ -83,15 +96,24 @@ export const Game = () => {
                 .join(", ")}
             </span>
           </div>
-          <span
-            style={{
-              color: connected ? "green" : "red",
-            }}
-          >
-            {connected ? "connected" : "disconnected"}
-          </span>
+          <div className="flex gap-4 items-center">
+            <button
+              onClick={endTurn}
+              className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-1 rounded-lg font-medium transition-colors"
+            >
+              End Turn
+            </button>
+            <span
+              className="font-medium"
+              style={{
+                color: connected ? "green" : "red",
+              }}
+            >
+              {connected ? "connected" : "disconnected"}
+            </span>
+          </div>
         </div>
-        <div className="w-full h-full">
+        <div className="flex-1 w-full h-full relative">
           <ResponsiveStage>
             {circles.length > 0 && <CircleRenderer circles={circles} />}
           </ResponsiveStage>

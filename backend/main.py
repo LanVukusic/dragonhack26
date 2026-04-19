@@ -62,21 +62,23 @@ async def default_on_turn_end(
         {
             "type": "turn_change",
             "turn_number": turn_count,
-            "player": ((turn_count - 1) % NUM_PLAYERS) + 1,
+            "player": turn_manager.get_current_player(),
             "circles": circles_list,
-            "scores": {1: 0, 2: 0, 3: 0, 4: 0},
+            "scores": turn_manager.get_scores(),
         }
     )
 
 
+async def default_on_turn_setup():
+    logger.info("Setting up turn...")
+    # Optional: trigger some visual feedback or reset state
+
+
 turn_manager = TurnManager(
     NUM_PLAYERS,
-    turn_delay=1.0,
-    cumulative_movement_threshold=0.0025,
-    min_movement_per_update=0.0005,
     missing_timeout_ms=2000.0,
-    motion_blur_threshold=0.025,
     on_turn_end=default_on_turn_end,
+    on_turn_setup=default_on_turn_setup,
 )
 
 
@@ -135,6 +137,13 @@ async def calibrate_reset():
     calibration.reset()
     logger.info("Calibration reset")
     return {"status": "ok", "message": "calibration reset"}
+
+
+@app.post("/api/turn/end")
+async def end_turn():
+    await turn_manager.end_turn()
+    await turn_manager.start_turn()
+    return {"status": "ok", "turn": turn_manager.turn_count}
 
 
 @app.get("/api/calibration/status")

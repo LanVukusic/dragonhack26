@@ -55,7 +55,7 @@ function App() {
   const handleCalibrate = async () => {
     setCalibrating(true);
     try {
-      const res = await fetch(`${API_HOST}/api/calibrate`, { method: "POST" });
+      const res = await fetch(`http://${API_HOST}/api/calibrate`, { method: "POST" });
       const text = await res.text();
       if (!text) {
         alert("Empty response from server");
@@ -78,7 +78,7 @@ function App() {
   useEffect(() => {
     const check = async () => {
       try {
-        const res = await fetch(`${API_HOST}/api/calibration/status`);
+        const res = await fetch(`http://${API_HOST}/api/calibration/status`);
         const text = await res.text();
         if (!text) return;
         const data = JSON.parse(text);
@@ -101,7 +101,6 @@ function App() {
               New game
             </button>
             {circles.length}
-            {!calibrated && (
               <button
                 type="button"
                 className="px-4 py-2 bg-yellow-500 text-white"
@@ -110,7 +109,6 @@ function App() {
               >
                 {calibrating ? "Calibrating..." : "Calibrate"}
               </button>
-            )}
           </div>
           <span
             style={{
