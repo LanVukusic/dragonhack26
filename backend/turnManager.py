@@ -8,10 +8,7 @@ import numpy as np
 from backend.player import Player
 from backend.dtos import Circle, CircleRecord, TurnHistory, TurnRecord, CircleType
 
-logging.basicConfig(
-    level=logging.INFO,
-    format="%(asctime)s - %(levelname)s - %(message)s",
-)
+logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
 logger = logging.getLogger(__name__)
 
 
@@ -20,11 +17,11 @@ class TurnManager:
         self,
         num_players: int = 2,
         missing_timeout_ms: float = 3000.0,
-        collision_threshold: float = 0.02,
+        collision_threshold: float = 0.05,  # Now: movement delta to register a "hit"
         points_bonus: int = 100,
         points_harm: int = -100,
         points_no_move: int = -300,
-        min_move_dist: float = 0.2,
+        min_move_dist: float = 0.015,       # Movement threshold for penalty/cheat detection
         on_turn_end: Optional[
             Callable[[Dict[int, np.ndarray], TurnHistory, Set[int]], Awaitable[None]]
         ] = None,
@@ -45,6 +42,7 @@ class TurnManager:
         self.circle_last_seen: Dict[int, float] = {}
         self.circle_ids: Set[int] = set()
         self.circle_types: Dict[int, CircleType] = {}
+        self.turn_start_positions: Dict[int, np.ndarray] = {}
         
         # Game state
         self.turn_count: int = 0
@@ -52,13 +50,13 @@ class TurnManager:
         self._players: Dict[int, Player] = {
             i: Player(i) for i in range(1, self.NUM_PLAYERS + 1)
         }
+        self._turn_start_pending = False
 
     def set_callbacks(
         self,
         on_turn_end: Callable[[Dict[int, np.ndarray], TurnHistory, Set[int]], Awaitable[None]],
         on_turn_setup: Callable[[], Awaitable[None]],
     ):
-        """Set the async callbacks for turn events."""
         self._on_turn_end = on_turn_end
         self._on_turn_setup = on_turn_setup
 
@@ -69,7 +67,7 @@ class TurnManager:
     def _get_in_frame_ids(self, now: float) -> Set[int]:
         return {cid for cid in self.circle_ids if self._is_in_frame(cid, now)}
 
-    def update(self, circles: List[Circle]):
+    def update(self, circles: List[Circle]) -> bool:
         now = time.time()
         new_circle_detected = False
         for circle in circles:
@@ -81,14 +79,20 @@ class TurnManager:
                 new_circle_detected = True
                 logger.info(f"New circle detected: {circle.id}")
         
-        # If this is the start of the game (first circles), start the turn
         if new_circle_detected and not self.circle_types:
-            asyncio.create_task(self.start_turn())
+            self._turn_start_pending = True
+            return True
+        return False
+
+    def has_pending_turn_start(self) -> bool:
+        return self._turn_start_pending
 
     async def start_turn(self):
-        """Setup for a new turn."""
+        self._turn_start_pending = False
         self._assign_circle_types()
-
+        # Snapshot positions at turn start for movement comparison
+        self.turn_start_positions = {cid: pos.copy() for cid, pos in self.circle_positions.items()}
+        
         if self._on_turn_setup:
             try:
                 await self._on_turn_setup()
@@ -97,40 +101,28 @@ class TurnManager:
         logger.info(f"--- STARTING TURN {self.turn_count + 1} ---")
 
     def _assign_circle_types(self):
-        """Assign types to all current circles."""
         ids = list(self.circle_ids)
         if not ids:
             return
-
         random.shuffle(ids)
-        
-        # 1 Hitter, 2 Gates, rest split
         self.circle_types = {}
-        
-        # Hitter
         self.circle_types[ids.pop()] = CircleType.HITTER
-        
-        # Gates
-        if ids:
-            self.circle_types[ids.pop()] = CircleType.GATE
-        if ids:
-            self.circle_types[ids.pop()] = CircleType.GATE
-        
-        # Others
         for cid in ids:
             self.circle_types[cid] = random.choice([CircleType.BONUS, CircleType.HARM])
-        
-        logger.info(f"Assigned circle types: {self.circle_types}")
+        logger.info(f"Assigned types: {self.circle_types}")
 
     async def end_turn(self):
-        """Manually end the current turn."""
+        # Score the player who JUST played
+        prev_positions = self.history.turns[-1].circles if self.history.turns else None
+        if prev_positions:
+            self._compute_turn_scores(prev_positions)
+
         self.turn_count += 1
         logger.info(f"=== TURN {self.turn_count} ENDED ===")
 
         now = time.time()
         in_frame_ids = self._get_in_frame_ids(now)
 
-        # Record turn
         turn_record = TurnRecord(
             turn_number=self.turn_count,
             timestamp=datetime.now().isoformat(),
@@ -148,12 +140,6 @@ class TurnManager:
         )
         self.history.turns.append(turn_record)
 
-        # Compute scores
-        prev_positions = self.history.turns[-2].circles if len(self.history.turns) > 1 else None
-        if prev_positions:
-            self._compute_turn_scores(prev_positions)
-
-        # Notify callback
         if self._on_turn_end:
             try:
                 await self._on_turn_end(self.circle_positions, self.history, in_frame_ids)
@@ -161,101 +147,47 @@ class TurnManager:
                 logger.error(f"Turn end callback error: {e}", exc_info=True)
 
     def _compute_turn_scores(self, prev_positions: List[CircleRecord]):
-        """Compute scores for the current player."""
         player = self._players[self.get_current_player()]
-        
         hitter_id = next((cid for cid, ctype in self.circle_types.items() if ctype == CircleType.HITTER), None)
-        if not hitter_id or hitter_id not in self.circle_positions: return
-
-        # 1. Hitter movement penalty
-        prev_hitter = next((c for c in prev_positions if c.id == hitter_id), None)
-        if not prev_hitter or np.linalg.norm(self.circle_positions[hitter_id] - np.array([prev_hitter.x, prev_hitter.y])) < self.min_move_dist:
-            player.add_score(self.points_no_move)
-            logger.info(f"Player {player.id} penalized: hitter did not move ({self.points_no_move})")
+        if not hitter_id:
             return
 
-        # 2. Collision score
-        self._check_collisions(player, hitter_id)
-        
-        # 3. Gate score
-        self._check_gate_pass(player, hitter_id, prev_positions)
+        # HITTER movement check
+        hitter_start = self.turn_start_positions.get(hitter_id)
+        hitter_end = self.circle_positions.get(hitter_id)
+        hitter_moved = False
+        if hitter_start is not None and hitter_end is not None:
+            hitter_moved = np.linalg.norm(hitter_end - hitter_start) >= self.min_move_dist
 
-    def _check_collisions(self, player: Player, hitter_id: int):
-        hitter_pos = self.circle_positions[hitter_id]
-        
-        for cid, pos in self.circle_positions.items():
+        # Check all other circles for significant movement
+        hit_detected = False
+        scored_circles = []
+        for cid, ctype in self.circle_types.items():
             if cid == hitter_id: continue
-            
-            if np.linalg.norm(pos - hitter_pos) < self.collision_threshold:
-                ctype = self.circle_types.get(cid)
-                if ctype == CircleType.BONUS:
-                    player.add_score(self.points_bonus)
-                    logger.info(f"Player {player.id} hit bonus: +{self.points_bonus}")
-                elif ctype == CircleType.HARM:
-                    player.add_score(self.points_harm)
-                    logger.info(f"Player {player.id} hit harm: {self.points_harm}")
+            start_pos = self.turn_start_positions.get(cid)
+            end_pos = self.circle_positions.get(cid)
+            if start_pos is None or end_pos is None: continue
 
-    def _check_gate_pass(self, player: Player, hitter_id: int, prev_positions: List[CircleRecord]):
-        gate_ids = [cid for cid, ctype in self.circle_types.items() if ctype == CircleType.GATE]
-        if len(gate_ids) != 2: return
-        
-        prev_pos_map = {c.id: np.array([c.x, c.y]) for c in prev_positions}
-        # Filter both to only ids present in both
-        common_ids = sorted(list(self.circle_ids.intersection(set(prev_pos_map.keys()))))
-        if not common_ids: return
-        
-        A = np.array([prev_pos_map[cid] for cid in common_ids])
-        B = np.array([self.circle_positions[cid] for cid in common_ids])
-        
-        h_idx_in_common = common_ids.index(hitter_id)
-        g_idxs_in_common = [common_ids.index(gid) for gid in gate_ids]
-        
-        logger.info(f"Gate check: ids={common_ids}, h_idx={h_idx_in_common}, g_idxs={g_idxs_in_common}")
-        
-        if self._did_hitter_move_between_gates(A, B, g_idxs_in_common, h_idx_in_common):
-            dist = np.linalg.norm(B[g_idxs_in_common[0]] - B[g_idxs_in_common[1]])
-            points = int(max(30, 200 - dist / 10))
-            player.add_score(points)
-            logger.info(f"Player {player.id} passed gate: +{points}")
-        else:
-            logger.info(f"Player {player.id} failed gate pass check")
-            
-    def _did_hitter_move_between_gates(self, A, B, gate_indices, hitter_index, tol=1e-8):
-        """Determines if the hitter point lies on the line segment between the two gates."""
-        A = np.asarray(A)
-        B = np.asarray(B)
-        
-        # Extract points from the final state
-        g1 = B[gate_indices[0]]
-        g2 = B[gate_indices[1]]
-        h_final = B[hitter_index]
-        
-        # Verify the hitter actually moved
-        if np.linalg.norm(h_final - A[hitter_index]) < tol:
-            return False
-            
-        # Vectors
-        v = g2 - g1          # Gate segment direction
-        w = h_final - g1     # Vector from gate1 to hitter
-        
-        v_len_sq = np.dot(v, v)
-        
-        # Handle degenerate case where both gates occupy the same position
-        if v_len_sq < tol:
-            return np.linalg.norm(h_final - g1) < tol
-            
-        # Projection parameter t: where the hitter's perpendicular projection falls along the gate segment
-        t = np.dot(w, v) / v_len_sq
-        
-        # 1. Check if projection lies within segment bounds [0, 1]
-        if t < -tol or t > 1.0 + tol:
-            return False
-            
-        # 2. Check if hitter is actually on the line (perpendicular distance)
-        projection = g1 + t * v
-        dist_to_segment = np.linalg.norm(h_final - projection)
-        
-        return dist_to_segment < tol
+            move_dist = np.linalg.norm(end_pos - start_pos)
+            if move_dist >= self.collision_threshold:
+                hit_detected = True
+                scored_circles.append((cid, ctype))
+
+        # CHEAT/PENALTY: Targets moved significantly, but HITTER didn't
+        if not hitter_moved and hit_detected:
+            player.add_score(self.points_no_move)
+            print("SCORE: PENALTY")
+            logger.warning(f"Player {player.id} penalized: HITTER stationary, targets moved")
+            return
+
+        # NORMAL SCORING: Award points for moved circles
+        for cid, ctype in scored_circles:
+            if ctype == CircleType.BONUS:
+                player.add_score(self.points_bonus)
+                print(f"SCORE: BONUS +{self.points_bonus}")
+            elif ctype == CircleType.HARM:
+                player.add_score(self.points_harm)
+                print(f"SCORE: HARM {self.points_harm}")
 
     def get_current_state(self) -> Dict[int, np.ndarray]:
         return dict(self.circle_positions)

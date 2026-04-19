@@ -21,7 +21,7 @@ SETTLE_DURATION = 2.0
 MOVE_DISTANCE_MIN = 0.1  # 10% of field
 MOVE_DISTANCE_MAX = 0.3  # 30% of field
 JIGGLE_AMOUNT = 0.003  # noise in UV space
-NUM_CIRCLES = 4
+NUM_CIRCLES = 7
 
 # Screen: output transformation
 SCREEN_WIDTH = 4000
