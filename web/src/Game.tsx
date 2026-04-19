@@ -127,7 +127,7 @@ export const Game = () => {
         <span className="text-4xl text-gray-600"></span>
       </div>
 
-      <div className="absolute  w-full top-0 p-8 flex flex-col items-center gap-3">
+      <div className="absolute  w-full top-0 p-8 flex flex-col items-center gap-3 pointer-events-none">
         <span className="text-6xl tracking-tight">Dragonsmack</span>
         <span className="text-md tracking-normal opacity-70">Vision based interactive hokey</span>
       </div>

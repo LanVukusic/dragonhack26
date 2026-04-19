@@ -101,14 +101,14 @@ function App() {
               New game
             </button>
             {circles.length}
-              <button
-                type="button"
-                className="px-4 py-2 bg-yellow-500 text-white"
-                onClick={handleCalibrate}
-                disabled={calibrating}
-              >
-                {calibrating ? "Calibrating..." : "Calibrate"}
-              </button>
+            <button
+              type="button"
+              className="px-4 py-2 bg-yellow-500 text-white"
+              onClick={handleCalibrate}
+              disabled={calibrating}
+            >
+              {calibrating ? "Calibrating..." : "Calibrate"}
+            </button>
           </div>
           <span
             style={{
