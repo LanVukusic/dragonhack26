@@ -82,42 +82,86 @@ export const Game = () => {
   };
 
   return (
-    <div className="bg-slate-950 p-3 overflow-hidden w-screen h-screen">
-      <div className="rounded-2xl bg-white w-full h-full relative flex flex-col">
-        <div className="px-4 py-2 flex flex-row gap-4 justify-between items-center border-b">
-          <div className="flex gap-4 items-center">
-            <span className="text-lg font-bold">
-              Turn: {turnNumber+1} | Player: {currentPlayer}
-            </span>
-            <span className="text-sm text-gray-600">
-              Scores:{" "}
-              {Object.entries(scores)
-                .map(([p, s]) => `P${p}:${s}`)
-                .join(", ")}
-            </span>
-          </div>
-          <div className="flex gap-4 items-center">
+    <div className="rounded-2xl bg-white w-screen h-screen relative flex flex-col overflow-hidden ">
+      <div className="px-4 py-2 flex flex-row gap-4 justify-between items-center ">
+        <div className="flex gap-4 items-start flex-col">
+          <span className="text-lg font-bold">Turn: {turnNumber + 1}</span>
+        </div>
+        <div className="flex gap-4 items-center">
+          {turnNumber == 0 && (
             <button
               onClick={endTurn}
-              className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-1 rounded-lg font-medium transition-colors"
+              className="bg-slate-950 hover:bg-slate-700 cursor-pointer text-white px-4 py-1 rounded-lg font-medium transition-colors"
             >
-              End Turn
+              START
             </button>
-            <span
-              className="font-medium"
-              style={{
-                color: connected ? "green" : "red",
-              }}
-            >
-              {connected ? "connected" : "disconnected"}
-            </span>
+          )}
+          <span
+            className="font-medium text-xs"
+            style={{
+              color: connected ? "green" : "red",
+            }}
+          >
+            {connected ? "connected" : "disconnected"}
+          </span>
+        </div>
+      </div>
+
+      <div className="absolute pt-32 right-0 pr-8 flex flex-col items-end">
+        {Object.entries(scores).map(([p, s]) => (
+          <div className="flex gap-6">
+            {currentPlayer.toString() == p && (
+              <button
+                onClick={endTurn}
+                className="bg-slate-100 hover:bg-slate-200 cursor-pointer text-slate-600 px-4 py-1 rounded-lg font-medium transition-colors"
+              >
+                End Turn
+              </button>
+            )}
+            <div className="py-3">
+              <div className="text-3xl">{`Player ${p}`}</div>
+              <div className="text-5xl">{`${s}`}</div>
+            </div>
           </div>
+        ))}
+        <span className="text-4xl text-gray-600"></span>
+      </div>
+
+      <div className="absolute  w-full top-0 p-8 flex flex-col items-center gap-3">
+        <span className="text-6xl tracking-tight">Dragonsmack</span>
+        <span className="text-md tracking-normal opacity-70">Vision based interactive hokey</span>
+      </div>
+
+      <div className="absolute pt-32 left-0 bottom-0 p-8 flex flex-col items-start">
+        <div className="flex gap-3 justify-center items-center">
+          <div className="bg-red-500 w-6 h-6 rounded-full"></div>
+          <div className="bg-red-500 w-6 h-6 rounded-full opacity-0"></div>
+          <span className="font-bold text-2xl text-slate-700">-100 Points</span>
         </div>
-        <div className="flex-1 w-full h-full relative">
-          <ResponsiveStage>
-            {circles.length > 0 && <CircleRenderer circles={circles} />}
-          </ResponsiveStage>
+
+        <div className="flex gap-3 justify-center items-center">
+          <div className="bg-purple-600 w-6 h-6 rounded-full"></div>
+          <div className="bg-purple-600 w-6 h-6 rounded-full"></div>
+          <span className="font-bold text-2xl text-slate-700">+ points based on the gap</span>
         </div>
+
+        <div className="flex gap-3 justify-center items-center">
+          <div className="bg-cyan-300 w-6 h-6 rounded-full"></div>
+          <div className="bg-cyan-300 w-6 h-6 rounded-full opacity-0"></div>
+          <span className="font-bold text-2xl text-slate-700">+ 100 Points</span>
+        </div>
+
+        <div className="flex gap-3 justify-center items-center">
+          <div className="bg-gray-300 w-6 h-6 rounded-full"></div>
+          <div className="bg-gray-300 w-6 h-6 rounded-full opacity-0"></div>
+          <span className="font-bold text-2xl text-slate-700">Hit this puck</span>
+        </div>
+      </div>
+
+      <div className="h-full p-4 pl-24 pt-24">
+        <ResponsiveStage>
+          {circles.length > 0 && <CircleRenderer circles={circles} />}
+        </ResponsiveStage>
       </div>
     </div>
   );

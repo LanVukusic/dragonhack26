@@ -5,16 +5,14 @@ interface CircleRendererProps {
   circles: CircleData[];
 }
 
-
-const SCALE = 1300;
+const SCALE = 1500;
 
 const RADIUS = 0.025 * SCALE;
-const STROKE_WIDTH = 0.004 * SCALE;
+const STROKE_WIDTH = 0.002 * SCALE;
 const SHADOW_BLUR = 0.03 * SCALE;
 const TEXT_OFFSET_X = RADIUS * 2 * SCALE;
 const TEXT_OFFSET_Y = RADIUS * SCALE;
 const FONT_SIZE = 0.015 * SCALE;
-
 
 const COLORS: [number, number, number][] = [
   [255, 0, 0], // 0: Red
@@ -25,7 +23,7 @@ const COLORS: [number, number, number][] = [
   [0, 255, 255], // 5: Cyan
   [255, 128, 0], // 6: Orange
   [128, 0, 255], // 7: Purple
-  [0, 128, 128], // 8: Teal
+  [0, 128, 255], // 8: Teal
   [128, 128, 0], // 9: Olive
   [128, 128, 128], // 10: Olive
 ];
@@ -39,12 +37,11 @@ export const CircleRenderer = ({ circles }: CircleRendererProps) => {
   const circleElements = circles.map((circle) => {
     const { id, x, y, type } = circle;
     let color: string;
-    if (type === "hitter") color = getColor(10)
-    else if (type === "gate") color = getColor(7)
-    else if (type === "bonus") color = getColor(8)
-    else if (type === "harm") color = getColor(3)
+    if (type === "hitter") color = getColor(10);
+    else if (type === "gate") color = getColor(7);
+    else if (type === "bonus") color = getColor(5);
+    else if (type === "harm") color = getColor(0);
     else color = getColor(id);
-
 
     return (
       <Circle
@@ -54,7 +51,7 @@ export const CircleRenderer = ({ circles }: CircleRendererProps) => {
         radius={RADIUS}
         fill={color}
         strokeWidth={STROKE_WIDTH}
-        stroke={color}
+        stroke={"white"}
         shadowColor={color}
         shadowBlur={SHADOW_BLUR}
         shadowEnabled={true}
