@@ -9,8 +9,8 @@ interface ResponsiveStageProps {
 
 export function ResponsiveStage({
   children,
-  sceneWidth = 1000,
-  sceneHeight = 1000,
+  sceneWidth = 1500,
+  sceneHeight = 1500,
 }: ResponsiveStageProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const [stageSize, setStageSize] = useState({
@@ -46,7 +46,7 @@ export function ResponsiveStage({
   }, [sceneWidth, sceneHeight]);
 
   return (
-    <div ref={containerRef} className="w-full h-full outline">
+    <div ref={containerRef} className="w-full h-full outline aspect-square mx-auto bg-blue-100">
       <Stage
         width={stageSize.width}
         height={stageSize.height}

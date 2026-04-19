@@ -3,6 +3,7 @@ import App from "./App.tsx";
 import "./global.css";
 import { createBrowserRouter, RouterProvider } from "react-router";
 import { Device } from "./components/device/Dev.tsx";
+import { Game } from "./Game.tsx";
 
 const router = createBrowserRouter([
   {
@@ -12,6 +13,10 @@ const router = createBrowserRouter([
   {
     path: "/device/:id",
     Component: Device,
+  },
+  {
+    path: "/game",
+    Component: Game,
   },
 ]);
 

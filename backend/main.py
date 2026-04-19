@@ -4,7 +4,7 @@ import logging
 import time
 from contextlib import asynccontextmanager
 from datetime import datetime
-from typing import Callable, Dict, List, Optional, Set
+from typing import Awaitable, Callable, Dict, List, Optional, Set
 
 import numpy as np
 from fastapi import FastAPI, WebSocket, WebSocketDisconnect
@@ -13,6 +13,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 
 from backend.calibration import HomographyManager
+from backend.player import Player, NUM_PLAYERS
 
 logging.basicConfig(
     level=logging.INFO,
@@ -75,7 +76,7 @@ class TurnManager:
         missing_timeout_ms: float = 2000.0,
         motion_blur_threshold: float = 100.0,
         on_turn_end: Optional[
-            Callable[[Dict[int, np.ndarray], TurnHistory, Set[int]], None]
+            Callable[[Dict[int, np.ndarray], TurnHistory, Set[int]], Awaitable[None]]
         ] = None,
     ):
         self.turn_delay = turn_delay
@@ -96,6 +97,10 @@ class TurnManager:
 
         self.turn_count: int = 0
         self.history = TurnHistory()
+
+        self._players: Dict[int, Player] = {
+            i: Player(i) for i in range(1, NUM_PLAYERS + 1)
+        }
 
         self._stabilization_task: Optional[asyncio.Task] = None
         self._last_movement_time: float = 0.0
@@ -243,8 +248,9 @@ class TurnManager:
             if current is not None:
                 self.turn_start_positions[cid] = current.copy()
 
-        if self._on_turn_end:
-            self._on_turn_end(self.circle_last_position, self.history, in_frame_ids)
+        if self._on_turn_end is not None:
+            callback = self._on_turn_end
+            await callback(self.circle_last_position, self.history, in_frame_ids)
 
     def get_current_state(self) -> Dict[int, np.ndarray]:
         return dict(self.circle_last_position)
@@ -255,27 +261,32 @@ class TurnManager:
     def get_in_frame_ids(self) -> Set[int]:
         return self._get_in_frame_ids()
 
+    def get_current_player(self) -> int:
+        return (self.turn_count % NUM_PLAYERS) + 1
 
-def default_on_turn_end(
+    def get_scores(self) -> Dict[int, int]:
+        return {pid: p.get_score() for pid, p in self._players.items()}
+
+
+async def default_on_turn_end(
     circles: Dict[int, np.ndarray], history: TurnHistory, in_frame_ids: Set[int]
 ):
-    last_turn = history.turns[-1] if history.turns else None
-    if not last_turn:
-        return
+    turn_count = history.turns[-1].turn_number if history.turns else 0
 
-    logger.info(f"Turn {last_turn.turn_number} recorded:")
-    for cr in last_turn.circles:
-        status = "in frame" if cr.in_frame else "out of frame"
-        logger.info(f"  Circle {cr.id}: ({cr.x:.1f}, {cr.y:.1f}) - {status}")
+    circles_list = [
+        {"id": int(cid), "x": float(pos[0]), "y": float(pos[1])}
+        for cid, pos in circles.items()
+    ]
 
-    if len(history.turns) >= 2:
-        prev_turn = history.turns[-2]
-        logger.info("=== DELTAS FROM PREVIOUS TURN ===")
-        for cr in sorted(last_turn.circles, key=lambda c: c.id):
-            prev_cr = next((p for p in prev_turn.circles if p.id == cr.id), None)
-            if prev_cr:
-                d = ((cr.x - prev_cr.x) ** 2 + (cr.y - prev_cr.y) ** 2) ** 0.5
-                logger.info(f"  Circle {cr.id}: delta_from_prev={d:.4f}")
+    await broadcast_to_frontends(
+        {
+            "type": "turn_change",
+            "turn_number": turn_count,
+            "player": ((turn_count - 1) % NUM_PLAYERS) + 1,
+            "circles": circles_list,
+            "scores": {1: 0, 2: 0, 3: 0, 4: 0},
+        }
+    )
 
 
 turn_manager = TurnManager(
@@ -334,6 +345,13 @@ async def calibrate():
     }
 
 
+@app.post("/api/calibrate/reset")
+async def calibrate_reset():
+    calibration.reset()
+    logger.info("Calibration reset")
+    return {"status": "ok", "message": "calibration reset"}
+
+
 @app.get("/api/calibration/status")
 async def calibration_status():
     last_4 = calibration.get_last_n_circles(4).tolist()
@@ -351,20 +369,21 @@ async def tracker_update(circles: List[CircleInput]):
 
     if not calibration.is_calibrated():
         logger.warning("/api/tracker: no calibration, passing scaled coords")
-        screen_circles = [Circle(id=c.id, x=c.x/3000.0, y=c.y/4000.0) for c in circles]
+        screen_circles = [
+            Circle(id=c.id, x=c.x / 3000.0, y=c.y / 4000.0) for c in circles
+        ]
         turn_manager.update(screen_circles)
         circles_list = [
             {
                 "id": c.id,
-                "x": c.x/3000.0,
-                "y": c.y/4000.0,
-                "in_frame": c.id in turn_manager.get_in_frame_ids(),
+                "x": c.x / 3000.0,
+                "y": c.y / 4000.0,
             }
             for c in circles
         ]
         await broadcast_to_frontends(
             {
-                "timestamp": datetime.now().isoformat(),
+                "type": "positions",
                 "circles": circles_list,
             }
         )
@@ -390,14 +409,13 @@ async def tracker_update(circles: List[CircleInput]):
             "id": c.id,
             "x": float(uv_pts[i, 0]),
             "y": float(uv_pts[i, 1]),
-            "in_frame": c.id in turn_manager.get_in_frame_ids(),
         }
         for i, c in enumerate(circles)
     ]
 
     await broadcast_to_frontends(
         {
-            "timestamp": datetime.now().isoformat(),
+            "type": "positions",
             "circles": circles_list,
         }
     )

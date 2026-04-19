@@ -34,9 +34,8 @@ function getColor(id: number): string {
 
 export const CircleRenderer = ({ circles }: CircleRendererProps) => {
   const circleElements = circles.map((circle) => {
-    const { id, x, y, in_frame } = circle;
+    const { id, x, y } = circle;
     const color = getColor(id);
-    const opacity = in_frame !== false ? 1 : 0.3;
 
     return (
       <Circle
@@ -49,17 +48,14 @@ export const CircleRenderer = ({ circles }: CircleRendererProps) => {
         stroke={color}
         shadowColor={color}
         shadowBlur={SHADOW_BLUR}
-        shadowEnabled={in_frame !== false}
-        // shadowOpacity={1}
-        opacity={opacity}
+        shadowEnabled={true}
       />
     );
   });
 
   const textElements = circles.map((circle) => {
-    const { id, x, y, in_frame } = circle;
-    const status = in_frame !== false ? "IN" : "OUT";
-    const label = `ID: ${id}\n(${x.toFixed(3)}, ${y.toFixed(3)})\n${status}`;
+    const { id, x, y } = circle;
+    const label = `ID: ${id}\n(${x.toFixed(3)}, ${y.toFixed(3)})`;
 
     return (
       <Text

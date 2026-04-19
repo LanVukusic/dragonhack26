@@ -3,14 +3,13 @@ import type { CircleData, WebSocketMessage } from "./types/websocket";
 import { CircleRenderer } from "./components/CircleRenderer";
 import { ResponsiveStage } from "./components/ResponsiveStage";
 
-function App() {
+export const Game = () => {
   const [connected, setConnected] = useState(false);
   const [circles, setCircles] = useState<CircleData[]>([]);
-  const [calibrated, setCalibrated] = useState(false);
+  const [turnNumber, setTurnNumber] = useState(0);
+  const [currentPlayer, setCurrentPlayer] = useState(1);
+  const [scores, setScores] = useState<Record<number, number>>({});
   const wsRef = useRef<WebSocket | null>(null);
-  const [calibrating, setCalibrating] = useState(false);
-
-  const API_HOST = `${window.location.hostname}:8000`;
 
   useEffect(() => {
     const wsHost = window.location.hostname + ":8000";
@@ -35,7 +34,32 @@ function App() {
     ws.onmessage = (event) => {
       try {
         const data: WebSocketMessage = JSON.parse(event.data);
-        if (data.circles) {
+
+        // Handle new format: positions
+        if (data.type === "positions" && data.circles) {
+          setCircles(() =>
+            data.circles.map((c) => ({
+              ...c,
+              x: c.x * 1000,
+              y: c.y * 1000,
+            })),
+          );
+        }
+        // Handle new format: turn_change
+        else if (data.type === "turn_change") {
+          setTurnNumber(data.turn_number);
+          setCurrentPlayer(data.player);
+          setScores(data.scores);
+          setCircles(() =>
+            data.circles.map((c) => ({
+              ...c,
+              x: c.x * 1000,
+              y: c.y * 1000,
+            })),
+          );
+        }
+        // Handle old format for debugging: data.circles
+        else if ("circles" in data && data.circles) {
           setCircles(() =>
             data.circles.map((c) => ({
               ...c,
@@ -54,66 +78,20 @@ function App() {
     };
   }, []);
 
-  const handleCalibrate = async () => {
-    setCalibrating(true);
-    try {
-      const res = await fetch(`${API_HOST}/api/calibrate`, { method: "POST" });
-      const text = await res.text();
-      if (!text) {
-        alert("Empty response from server");
-        setCalibrating(false);
-        return;
-      }
-      const data = JSON.parse(text);
-      if (data.status === "ok") {
-        setCalibrated(true);
-        alert("Calibration saved!");
-      } else {
-        alert(data.message || "Calibration failed");
-      }
-    } catch (e) {
-      alert("Calibration failed: " + e);
-    }
-    setCalibrating(false);
-  };
-
-  useEffect(() => {
-    const check = async () => {
-      try {
-        const res = await fetch(`${API_HOST}/api/calibration/status`);
-        const text = await res.text();
-        if (!text) return;
-        const data = JSON.parse(text);
-        setCalibrated(data.calibrated);
-      } catch {
-        setCalibrated(false);
-      }
-    };
-    check();
-    const interval = setInterval(check, 5000);
-    return () => clearInterval(interval);
-  }, []);
-
   return (
     <div className="bg-slate-950 p-3 overflow-hidden w-screen h-screen">
       <div className="rounded-2xl bg-white w-full h-full relative">
         <div className="px-4 py-2 flex flex-row gap-4 justify-between">
           <div className="flex gap-2">
-            <button type="button" className="px-4 py-2">
-              {" "}
-              New game{" "}
-            </button>
-            {circles.length}
-            {!calibrated && (
-              <button
-                type="button"
-                className="px-4 py-2 bg-yellow-500 text-white"
-                onClick={handleCalibrate}
-                disabled={calibrating}
-              >
-                {calibrating ? "Calibrating..." : "Calibrate"}
-              </button>
-            )}
+            <span className="text-lg font-bold">
+              Turn: {turnNumber} | Player: {currentPlayer}
+            </span>
+            <span className="text-sm text-gray-600">
+              Scores:{" "}
+              {Object.entries(scores)
+                .map(([p, s]) => `P${p}:${s}`)
+                .join(", ")}
+            </span>
           </div>
           <span
             style={{
@@ -131,6 +109,4 @@ function App() {
       </div>
     </div>
   );
-}
-
-export default App;
+};

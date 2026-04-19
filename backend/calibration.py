@@ -19,12 +19,12 @@ def _sort_corners_by_position(pts: np.ndarray) -> np.ndarray:
     pts = pts.reshape(4, 2)
     s = pts.sum(axis=1)  # x+y
     diff = np.diff(pts, axis=1).flatten()  # x-y
-    
+
     ordered = np.zeros((4, 2), dtype=np.float32)
-    ordered[0] = pts[np.argmin(s)]      # TL: min sum
-    ordered[2] = pts[np.argmax(s)]      # BR: max sum
-    ordered[1] = pts[np.argmin(diff)]   # TR: min diff (x-y)
-    ordered[3] = pts[np.argmax(diff)]   # BL: max diff
+    ordered[0] = pts[np.argmin(s)]  # TL: min sum
+    ordered[2] = pts[np.argmax(s)]  # BR: max sum
+    ordered[1] = pts[np.argmin(diff)]  # TR: min diff (x-y)
+    ordered[3] = pts[np.argmax(diff)]  # BL: max diff
     return ordered
 
 
@@ -51,6 +51,12 @@ class HomographyManager:
 
     def get_tracked_count(self) -> int:
         return len(self._circle_history)
+
+    def reset(self) -> None:
+        self.H = None
+        self.screen_points = None
+        self.created_at = None
+        self._circle_history.clear()
 
     def load(self) -> bool:
         path = Path(self.matrix_path)
