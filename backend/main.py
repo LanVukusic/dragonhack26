@@ -9,7 +9,7 @@ from fastapi import FastAPI, WebSocket, WebSocketDisconnect
 from fastapi.responses import PlainTextResponse
 from fastapi.middleware.cors import CORSMiddleware
 
-from backend.dtos import Circle, CircleInput, TurnHistory
+from backend.dtos import Circle, CircleInput, TurnHistory, TYPE_METADATA
 from backend.connectionManager import ConnectionManager
 from backend.calibration import HomographyManager
 from backend.player import  NUM_PLAYERS
@@ -23,6 +23,8 @@ logger = logging.getLogger(__name__)
 
 frontend_clients: List[WebSocket] = []
 effect_manager = ConnectionManager()
+
+
 
 
 async def set_circle_effect(esp_id: int, effect: int, r: int = 0, g: int = 0, b: int = 0):
@@ -53,10 +55,18 @@ async def default_on_turn_end(
 ):
     turn_count = history.turns[-1].turn_number if history.turns else 0
 
-    circles_list = [
-        {"id": int(cid), "x": float(pos[0]), "y": float(pos[1])}
-        for cid, pos in circles.items()
-    ]
+    circles_list = []
+    for cid, pos in circles.items():
+        ctype = turn_manager.circle_types.get(int(cid))
+        meta = TYPE_METADATA.get(ctype) if ctype else None
+        circles_list.append({
+            "id": int(cid),
+            "x": float(pos[0]),
+            "y": float(pos[1]),
+            "type": ctype,
+            "color": meta["color"] if meta else (255, 255, 255),
+            "effect": meta["effect"] if meta else 1
+        })
 
     await broadcast_to_frontends(
         {
@@ -71,7 +81,16 @@ async def default_on_turn_end(
 
 async def default_on_turn_setup():
     logger.info("Setting up turn...")
-    # Optional: trigger some visual feedback or reset state
+    # Trigger set_circle_effect for all circles
+    for cid, ctype in turn_manager.circle_types.items():
+        meta = TYPE_METADATA.get(ctype)
+        if meta:
+            try:
+                # meta['color'] is a tuple like (255, 255, 255)
+                r, g, b = meta["color"]
+                await set_circle_effect(esp_id=cid, effect=meta["effect"], r=r, g=g, b=b)
+            except Exception as e:
+                logger.error(f"Failed to set effect for circle {cid}: {e}")
 
 
 turn_manager = TurnManager(
@@ -104,6 +123,9 @@ async def startup_event():
         )
 
     async def effect_loop():
+        # Setup initial turn state
+        await turn_manager.start_turn()
+
         while True:
             await asyncio.sleep(10)
             # Example call: Set ESP 1 to rainbow effect (4) every 10 seconds
@@ -167,14 +189,18 @@ async def tracker_update(circles: List[CircleInput]):
             Circle(id=c.id, x=c.x / 3000.0, y=c.y / 4000.0) for c in circles
         ]
         turn_manager.update(screen_circles)
-        circles_list = [
-            {
+        circles_list = []
+        for c in circles:
+            ctype = turn_manager.circle_types.get(c.id)
+            meta = TYPE_METADATA.get(ctype) if ctype else None
+            circles_list.append({
                 "id": c.id,
                 "x": c.x / 3000.0,
                 "y": c.y / 4000.0,
-            }
-            for c in circles
-        ]
+                "type": ctype,
+                "color": meta["color"] if meta else (255, 255, 255),
+                "effect": meta["effect"] if meta else 1
+            })
         await broadcast_to_frontends(
             {
                 "type": "positions",
@@ -198,14 +224,18 @@ async def tracker_update(circles: List[CircleInput]):
 
     turn_manager.update(circle_objs)
 
-    circles_list = [
-        {
+    circles_list = []
+    for i, c in enumerate(circles):
+        ctype = turn_manager.circle_types.get(c.id)
+        meta = TYPE_METADATA.get(ctype) if ctype else None
+        circles_list.append({
             "id": c.id,
             "x": float(uv_pts[i, 0]),
             "y": float(uv_pts[i, 1]),
-        }
-        for i, c in enumerate(circles)
-    ]
+            "type": ctype,
+            "color": meta["color"] if meta else (255, 255, 255),
+            "effect": meta["effect"] if meta else 1
+        })
 
     await broadcast_to_frontends(
         {
@@ -272,13 +302,12 @@ async def effects_websocket_endpoint(websocket: WebSocket):
         effect_manager.disconnect(websocket)
         logger.info("ESP LED client disconnected")
 
-
-@app.get("/health")
+""" @app.get("/health")
 def health():
     return PlainTextResponse("ok")
+ """
 
-
-@app.get("/api/game/state")
+""" @app.get("/api/game/state")
 async def get_game_state():
     current = turn_manager.get_current_state()
     return {
@@ -290,13 +319,11 @@ async def get_game_state():
         "in_frame_ids": list(turn_manager.get_in_frame_ids()),
         "history": turn_manager.get_history().model_dump(),
     }
-
+ """
 
 def main():
     import uvicorn
-
     uvicorn.run(app, host="0.0.0.0", port=8000)
-
 
 if __name__ == "__main__":
     main()

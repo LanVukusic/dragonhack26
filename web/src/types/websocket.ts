@@ -1,7 +1,10 @@
+export type CircleType = "hitter" | "gate" | "bonus" | "harm";
+
 export interface CircleData {
   id: number;
   x: number;
   y: number;
+  type?: CircleType;
 }
 
 export interface PositionMessage {

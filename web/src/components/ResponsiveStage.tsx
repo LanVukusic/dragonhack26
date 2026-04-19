@@ -46,7 +46,7 @@ export function ResponsiveStage({
   }, [sceneWidth, sceneHeight]);
 
   return (
-    <div ref={containerRef} className="w-full h-full outline aspect-square mx-auto bg-blue-100">
+    <div ref={containerRef} className="w-full h-full outline aspect-square mx-auto">
       <Stage
         width={stageSize.width}
         height={stageSize.height}
