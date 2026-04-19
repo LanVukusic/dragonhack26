@@ -9,12 +9,10 @@ function App() {
   const [calibrated, setCalibrated] = useState(false);
   const wsRef = useRef<WebSocket | null>(null);
   const [calibrating, setCalibrating] = useState(false);
-
   const API_HOST = `${window.location.hostname}:8000`;
 
   useEffect(() => {
-    const wsHost = window.location.hostname + ":8000";
-    const wsUrl = `ws://${wsHost}/ws`;
+    const wsUrl = `ws://${API_HOST}/ws`;
 
     const ws = new WebSocket(wsUrl);
     wsRef.current = ws;
