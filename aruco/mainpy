@@ -1,0 +1,67 @@
+import cv2
+import depthai as dai
+import numpy as np
+import requests
+
+# Set the endpoint URL
+POST_URL = "http://10.42.0.1:8000/api/tracker"
+
+# 1. Setup the ArUco detector (using the modern OpenCV 4.7+ API)
+aruco_dict = cv2.aruco.getPredefinedDictionary(cv2.aruco.DICT_4X4_50)
+aruco_params = cv2.aruco.DetectorParameters()
+detector = cv2.aruco.ArucoDetector(aruco_dict, aruco_params)
+
+# Create a requests Session object for connection pooling (better performance)
+session = requests.Session()
+
+# 2. Setup DepthAI Pipeline
+with dai.Pipeline() as pipeline:
+    cam = pipeline.create(dai.node.Camera).build()
+    
+    # We use ISP (Image Signal Processor) output for a good 1080p color frame 
+    videoQueue = cam.requestFullResolutionOutput().createOutputQueue()
+   
+    pipeline.start()
+    
+    try:
+        # 3. Process the video stream
+        while pipeline.isRunning():
+            frame = videoQueue.get()           # dai.ImgFrame
+            img = frame.getCvFrame()           # numpy array, BGR, ready for OpenCV
+            
+            # Convert to grayscale for robust detection
+            gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+            
+            # Detect the markers
+            corners, ids, rejected = detector.detectMarkers(gray)
+            
+            # If any markers were found, calculate centers and send them
+            if ids is not None:
+                markers_payload = []
+                
+                for marker_id, marker_corners in zip(ids.flatten(), corners):
+                    # marker_corners has shape (1, 4, 2), extract the 4 corner points
+                    pts = marker_corners[0]
+                    
+                    # Calculate the center by averaging the X and Y coordinates
+                    center_x = float(np.mean(pts[:, 0]))
+                    center_y = float(np.mean(pts[:, 1]))
+                    
+                    # Append the marker to the payload list
+                    markers_payload.append({
+                        "id": int(marker_id),
+                        "x": center_x,
+                        "y": center_y,
+                    })
+                
+                # Send the entire list of detected markers in one POST request
+                try:
+                    # Using the json= parameter automatically converts the list to a JSON array 
+                    # and sets the header 'Content-Type': 'application/json'
+                    response = session.post(POST_URL, json=markers_payload)
+                    # print(f"Sent {len(markers_payload)} markers, status: {response.status_code}")
+                except requests.exceptions.RequestException as e:
+                    print(f"Failed to post data: {e}")
+                            
+    except KeyboardInterrupt:
+        print("Stopping pipeline...")
