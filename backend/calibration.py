@@ -15,8 +15,17 @@ FLOOR_CORNERS = np.array(
 
 
 def _sort_corners_by_position(pts: np.ndarray) -> np.ndarray:
-    sorted_idx = np.lexsort((pts[:, 1], pts[:, 0]))
-    return pts[sorted_idx]
+    """Order 4 points: top-left, top-right, bottom-right, bottom-left"""
+    pts = pts.reshape(4, 2)
+    s = pts.sum(axis=1)  # x+y
+    diff = np.diff(pts, axis=1).flatten()  # x-y
+    
+    ordered = np.zeros((4, 2), dtype=np.float32)
+    ordered[0] = pts[np.argmin(s)]      # TL: min sum
+    ordered[2] = pts[np.argmax(s)]      # BR: max sum
+    ordered[1] = pts[np.argmin(diff)]   # TR: min diff (x-y)
+    ordered[3] = pts[np.argmax(diff)]   # BL: max diff
+    return ordered
 
 
 class HomographyManager:

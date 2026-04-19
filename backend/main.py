@@ -350,14 +350,14 @@ async def tracker_update(circles: List[CircleInput]):
         calibration.track_circle(c.id, c.x, c.y)
 
     if not calibration.is_calibrated():
-        logger.warning("/api/tracker: no calibration, passing raw coords")
-        screen_circles = [Circle(id=c.id, x=c.x, y=c.y) for c in circles]
+        logger.warning("/api/tracker: no calibration, passing scaled coords")
+        screen_circles = [Circle(id=c.id, x=c.x/3000.0, y=c.y/4000.0) for c in circles]
         turn_manager.update(screen_circles)
         circles_list = [
             {
                 "id": c.id,
-                "x": c.x,
-                "y": c.y,
+                "x": c.x/3000.0,
+                "y": c.y/4000.0,
                 "in_frame": c.id in turn_manager.get_in_frame_ids(),
             }
             for c in circles
