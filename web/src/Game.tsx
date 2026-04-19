@@ -58,16 +58,6 @@ export const Game = () => {
             })),
           );
         }
-        // Handle old format for debugging: data.circles
-        else if ("circles" in data && data.circles) {
-          setCircles(() =>
-            data.circles.map((c) => ({
-              ...c,
-              x: c.x * 1000,
-              y: c.y * 1000,
-            })),
-          );
-        }
       } catch (e) {
         console.error("Failed to parse message:", e);
       }

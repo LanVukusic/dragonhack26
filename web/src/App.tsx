@@ -96,10 +96,9 @@ function App() {
     <div className="bg-slate-950 p-3 overflow-hidden w-screen h-screen">
       <div className="rounded-2xl bg-white w-full h-full relative">
         <div className="px-4 py-2 flex flex-row gap-4 justify-between">
-          <div className="flex gap-2">
+          <div className="flex gap-2 items-center">
             <button type="button" className="px-4 py-2">
-              {" "}
-              New game{" "}
+              New game
             </button>
             {circles.length}
             {!calibrated && (

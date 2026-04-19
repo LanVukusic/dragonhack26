@@ -8,9 +8,8 @@ import numpy as np
 from fastapi import FastAPI, WebSocket, WebSocketDisconnect
 from fastapi.responses import PlainTextResponse
 from fastapi.middleware.cors import CORSMiddleware
-from pydantic import BaseModel
 
-from backend.dtos import Circle, CircleInput, TurnHistory, CalibrationInput
+from backend.dtos import Circle, CircleInput, TurnHistory
 from backend.connectionManager import ConnectionManager
 from backend.calibration import HomographyManager
 from backend.player import  NUM_PLAYERS
