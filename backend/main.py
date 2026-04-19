@@ -54,6 +54,41 @@ class TurnHistory(BaseModel):
 
 frontend_clients: List[WebSocket] = []
 
+
+class ConnectionManager:
+    def __init__(self):
+        self.active_connections: List[WebSocket] = []
+
+    async def connect(self, websocket: WebSocket):
+        await websocket.accept()
+        self.active_connections.append(websocket)
+
+    def disconnect(self, websocket: WebSocket):
+        if websocket in self.active_connections:
+            self.active_connections.remove(websocket)
+
+    async def broadcast(self, message: str):
+        for connection in self.active_connections:
+            try:
+                await connection.send_text(message)
+            except Exception:
+                pass
+
+
+effect_manager = ConnectionManager()
+
+
+async def set_circle_effect(esp_id: int, effect: int, r: int = 0, g: int = 0, b: int = 0):
+    """
+    Call this async function from anywhere in your backend logic
+    to push a new effect and color to the ESP.
+    """
+    payload = [{"id": esp_id, "effect": effect, "r": r, "g": g, "b": b}]
+
+    # Broadcasts the JSON array to all connected ESPs
+    await effect_manager.broadcast(json.dumps(payload))
+
+
 calibration = HomographyManager()
 
 
@@ -320,6 +355,14 @@ async def startup_event():
             "POST /api/calibrate to calibrate."
         )
 
+    async def effect_loop():
+        while True:
+            await asyncio.sleep(10)
+            # Example call: Set ESP 1 to rainbow effect (4) every 10 seconds
+            # await set_circle_effect(esp_id=1, effect=4)
+
+    asyncio.create_task(effect_loop())
+
 
 class CalibrationInput(BaseModel):
     id: int
@@ -465,6 +508,19 @@ async def device_websocket_endpoint(websocket: WebSocket):
             await websocket.receive_text()
     except WebSocketDisconnect:
         logger.info("Device disconnected")
+
+
+@app.websocket("/ws/effects")
+async def effects_websocket_endpoint(websocket: WebSocket):
+    await effect_manager.connect(websocket)
+    logger.info("ESP LED client connected")
+    try:
+        while True:
+            # Keep the connection alive
+            await websocket.receive_text()
+    except WebSocketDisconnect:
+        effect_manager.disconnect(websocket)
+        logger.info("ESP LED client disconnected")
 
 
 @app.get("/health")
