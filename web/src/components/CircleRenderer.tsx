@@ -18,19 +18,21 @@ const COLORS: [number, number, number][] = [
   [128, 128, 0], // 9: Olive
 ];
 
-const RADIUS = 0.025;
-const STROKE_WIDTH = 0.004;
-const SHADOW_BLUR = 0.03;
-const TEXT_OFFSET_X = RADIUS * 2;
-const TEXT_OFFSET_Y = RADIUS;
-const FONT_SIZE = 0.015;
+const SCALE = 1300;
+
+const RADIUS = 0.025 * SCALE;
+const STROKE_WIDTH = 0.004 * SCALE;
+const SHADOW_BLUR = 0.03 * SCALE;
+const TEXT_OFFSET_X = RADIUS * 2 * SCALE;
+const TEXT_OFFSET_Y = RADIUS * SCALE;
+const FONT_SIZE = 0.015 * SCALE;
 
 function getColor(id: number): string {
   const c = COLORS[id % COLORS.length];
   return `rgb(${c[0]}, ${c[1]}, ${c[2]})`;
 }
 
-export function CircleRenderer({ circles }: CircleRendererProps) {
+export const CircleRenderer = ({ circles }: CircleRendererProps) => {
   const circleElements = circles.map((circle) => {
     const { id, x, y, in_frame } = circle;
     const color = getColor(id);
@@ -48,7 +50,7 @@ export function CircleRenderer({ circles }: CircleRendererProps) {
         shadowColor={color}
         shadowBlur={SHADOW_BLUR}
         shadowEnabled={in_frame !== false}
-        shadowOpacity={1}
+        // shadowOpacity={1}
         opacity={opacity}
       />
     );
@@ -78,4 +80,4 @@ export function CircleRenderer({ circles }: CircleRendererProps) {
       {textElements}
     </>
   );
-}
+};

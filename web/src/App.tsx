@@ -3,8 +3,7 @@ import type { CircleData, WebSocketMessage } from "./types/websocket";
 import { CircleRenderer } from "./components/CircleRenderer";
 import { ResponsiveStage } from "./components/ResponsiveStage";
 
-const IS_DEV = ["5173", "5174", "3000", "5175"].includes(window.location.port);
-const API_HOST = IS_DEV ? "localhost:8000" : `${window.location.hostname}:8000`;
+const API_HOST = `${window.location.hostname}:8000`;
 const BASE_URL = `http://${API_HOST}`;
 
 function App() {
@@ -15,22 +14,21 @@ function App() {
   const wsRef = useRef<WebSocket | null>(null);
 
   useEffect(() => {
-    const port = window.location.port;
-    const wsHost = ["5173", "5174", "3000", "5175"].includes(port) ? "localhost:8000" : window.location.host;
+    const wsHost = window.location.hostname + ":8000";
     const wsUrl = `ws://${wsHost}/ws`;
-    
+
     const ws = new WebSocket(wsUrl);
     wsRef.current = ws;
 
     ws.onopen = () => {
       setConnected(true);
     };
-    
+
     ws.onclose = () => {
       setConnected(false);
       wsRef.current = null;
     };
-    
+
     ws.onerror = () => {
       setConnected(false);
     };
@@ -39,7 +37,13 @@ function App() {
       try {
         const data: WebSocketMessage = JSON.parse(event.data);
         if (data.circles) {
-          setCircles(data.circles);
+          setCircles(() =>
+            data.circles.map((c) => ({
+              ...c,
+              x: c.x * 1000,
+              y: c.y * 1000,
+            })),
+          );
         }
       } catch (e) {
         console.error("Failed to parse message:", e);
@@ -51,14 +55,14 @@ function App() {
     };
   }, []);
 
-  const circleElements = useMemo(() => {
-    return circles.map(circle => ({
-      id: circle.id,
-      x: circle.x,
-      y: circle.y,
-      in_frame: circle.in_frame
-    }));
-  }, [circles]);
+  // const circleElements = useMemo(() => {
+  //   return circles.map((circle) => ({
+  //     id: circle.id,
+  //     x: circle.x,
+  //     y: circle.y,
+  //     in_frame: circle.in_frame,
+  //   }));
+  // }, [circles]);
 
   const handleCalibrate = async () => {
     setCalibrating(true);
@@ -105,7 +109,11 @@ function App() {
       <div className="rounded-2xl bg-white w-full h-full relative">
         <div className="px-4 py-2 flex flex-row gap-4 justify-between">
           <div className="flex gap-2">
-            <button type="button" className="px-4 py-2"> New game </button>
+            <button type="button" className="px-4 py-2">
+              {" "}
+              New game{" "}
+            </button>
+            {circles.length}
             {!calibrated && (
               <button
                 type="button"
@@ -127,7 +135,7 @@ function App() {
         </div>
         <div className="w-full h-full">
           <ResponsiveStage>
-            {circles.length > 0 && <CircleRenderer circles={circleElements} />}
+            {circles.length > 0 && <CircleRenderer circles={circles} />}
           </ResponsiveStage>
         </div>
       </div>
