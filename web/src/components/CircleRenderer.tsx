@@ -18,7 +18,12 @@ const COLORS: [number, number, number][] = [
   [128, 128, 0], // 9: Olive
 ];
 
-const SCALE = 3;
+const RADIUS = 0.025;
+const STROKE_WIDTH = 0.004;
+const SHADOW_BLUR = 0.03;
+const TEXT_OFFSET_X = RADIUS * 2;
+const TEXT_OFFSET_Y = RADIUS;
+const FONT_SIZE = 0.015;
 
 function getColor(id: number): string {
   const c = COLORS[id % COLORS.length];
@@ -36,12 +41,12 @@ export function CircleRenderer({ circles }: CircleRendererProps) {
         key={id}
         x={x}
         y={y}
-        radius={40 * SCALE}
+        radius={RADIUS}
         fill={color}
-        strokeWidth={5 * SCALE}
+        strokeWidth={STROKE_WIDTH}
         stroke={color}
         shadowColor={color}
-        shadowBlur={20 * SCALE}
+        shadowBlur={SHADOW_BLUR}
         shadowEnabled={in_frame !== false}
         shadowOpacity={1}
         opacity={opacity}
@@ -52,15 +57,15 @@ export function CircleRenderer({ circles }: CircleRendererProps) {
   const textElements = circles.map((circle) => {
     const { id, x, y, in_frame } = circle;
     const status = in_frame !== false ? "IN" : "OUT";
-    const label = `ID: ${id}\n(${x.toFixed(0)}, ${y.toFixed(0)})\n${status}`;
+    const label = `ID: ${id}\n(${x.toFixed(3)}, ${y.toFixed(3)})\n${status}`;
 
     return (
       <Text
         key={`text-${id}`}
-        x={x + 60}
-        y={y - 40}
+        x={x + TEXT_OFFSET_X}
+        y={y - TEXT_OFFSET_Y}
         text={label}
-        fontSize={14 * SCALE}
+        fontSize={FONT_SIZE}
         fill="#333"
         fontStyle="bold"
       />

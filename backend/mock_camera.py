@@ -17,13 +17,13 @@ logger = logging.getLogger(__name__)
 UPDATE_INTERVAL = 0.1
 BURST_DURATION = 0.5
 SETTLE_DURATION = 2.0
-MOVE_DISTANCE_MIN = 400  # ~13% of min dimension
-MOVE_DISTANCE_MAX = 1200  # ~40% of min dimension (strong hit)
-JIGGLE_AMOUNT = 10  # ~0.3% (camera noise tolerance)
-NUM_CIRCLES = 3
-FIELD_WIDTH = 4000
-FIELD_HEIGHT = 3000
-PUCK_RADIUS = 60  # ~2% of min dimension
+MOVE_DISTANCE_MIN = 0.1  # 10% of field
+MOVE_DISTANCE_MAX = 0.3  # 30% of field
+JIGGLE_AMOUNT = 0.003  # ~0.3% noise
+NUM_CIRCLES = 4
+FIELD_WIDTH = 1.0
+FIELD_HEIGHT = 1.0
+PUCK_RADIUS = 0.015  # ~1.5% of field
 
 
 class MockCameraService:
@@ -38,13 +38,13 @@ class MockCameraService:
         self.positions = {
             i: np.array(
                 [
-                    random.uniform(100, FIELD_WIDTH - 100),
-                    random.uniform(100, FIELD_HEIGHT - 100),
+                    random.uniform(0.1, FIELD_WIDTH - 0.1),
+                    random.uniform(0.1, FIELD_HEIGHT - 0.1),
                 ]
             )
             for i in range(NUM_CIRCLES)
         }
-        logger.info(f"Initialized {NUM_CIRCLES} circles")
+        logger.info(f"Initialized {NUM_CIRCLES} circles at 0-1 scale")
 
     def _get_random_target(self, circle_id: int) -> np.ndarray:
         current = self.positions[circle_id]
@@ -70,7 +70,7 @@ class MockCameraService:
 
     async def _send_update(self):
         logger.info(
-            f"Sending positions: {{{', '.join(f'{cid}: ({pos[0]:.1f}, {pos[1]:.1f})' for cid, pos in self.positions.items())}}}"
+            f"Sending positions: {{{', '.join(f'{cid}: ({pos[0]:.3f}, {pos[1]:.3f})' for cid, pos in self.positions.items())}}}"
         )
 
         data = [
@@ -228,8 +228,8 @@ class MockCameraService:
                 current = self.positions[active].copy()
 
                 jump_distance = random.uniform(
-                    1500, 2500
-                )  # Large jump for blur detection
+                    0.4, 0.6
+                )  # Large jump for blur detection (> motion_blur_threshold 0.025)
                 angle = random.uniform(0, 2 * np.pi)
                 jump_target = (
                     current + np.array([np.cos(angle), np.sin(angle)]) * jump_distance
@@ -241,7 +241,7 @@ class MockCameraService:
                 )
 
                 logger.warning(
-                    f"Motion blur: circle {active} jumping {jump_distance:.0f}px"
+                    f"Motion blur: circle {active} jumping {jump_distance:.3f}"
                 )
 
                 self.positions[active] = jump_target
@@ -289,7 +289,7 @@ class MockCameraService:
 
     async def _send_update_custom(self, data):
         """Send custom data list"""
-        pos_str = ", ".join(f"{d['id']}: ({d['x']:.1f}, {d['y']:.1f})" for d in data)
+        pos_str = ", ".join(f"{d['id']}: ({d['x']:.3f}, {d['y']:.3f})" for d in data)
         logger.info(f"Sending positions: {{{pos_str}}}")
 
         try:

@@ -9,7 +9,10 @@ from typing import Callable, Dict, List, Optional, Set
 import numpy as np
 from fastapi import FastAPI, WebSocket, WebSocketDisconnect
 from fastapi.responses import PlainTextResponse
+from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
+
+from backend.calibration import HomographyManager
 
 logging.basicConfig(
     level=logging.INFO,
@@ -49,6 +52,8 @@ class TurnHistory(BaseModel):
 
 
 frontend_clients: List[WebSocket] = []
+
+calibration = HomographyManager()
 
 
 async def broadcast_to_frontends(data: dict):
@@ -125,7 +130,7 @@ class TurnManager:
                 if consec_delta > self.motion_blur_threshold:
                     logger.warning(
                         f"Circle {circle.id}: motion blur detected, "
-                        f"delta={consec_delta:.1f}px > {self.motion_blur_threshold}px, ignoring"
+                        f"delta={consec_delta:.4f} > {self.motion_blur_threshold:.4f}, ignoring"
                     )
                 else:
                     self.circle_last_position[circle.id] = new_pos
@@ -153,7 +158,7 @@ class TurnManager:
             self.circle_movement_this_turn[circle_id] = delta
 
             logger.debug(
-                f"Circle {circle_id}: pos=[{current_pos[0]:.1f},{current_pos[1]:.1f}], delta={delta:.1f}px from turn start"
+                f"Circle {circle_id}: pos=[{current_pos[0]:.4f},{current_pos[1]:.4f}], delta={delta:.4f} from turn start"
             )
 
             if delta >= self.min_movement_per_update:
@@ -174,7 +179,7 @@ class TurnManager:
             )
             logger.info(f"Movement check: moved={moved_circles}")
             for cid, delta in sorted_deltas:
-                logger.info(f"  Circle {cid}: delta={delta:.1f}px")
+                logger.info(f"  Circle {cid}: delta={delta:.4f}")
 
             if self._stabilization_task and not self._stabilization_task.done():
                 self._stabilization_task.cancel()
@@ -227,7 +232,7 @@ class TurnManager:
             in_frame = "IN" if cid in in_frame_ids else "OUT"
             delta = self.circle_movement_this_turn.get(cid, 0)
             logger.info(
-                f"  Circle {cid}: ({c[0]:.1f}, {c[1]:.1f}) {in_frame} frame, moved {delta:.1f}px this turn"
+                f"  Circle {cid}: ({c[0]:.4f}, {c[1]:.4f}) {in_frame} frame, moved {delta:.4f} this turn"
             )
 
         self.circle_movement_this_turn.clear()
@@ -270,41 +275,124 @@ def default_on_turn_end(
             prev_cr = next((p for p in prev_turn.circles if p.id == cr.id), None)
             if prev_cr:
                 d = ((cr.x - prev_cr.x) ** 2 + (cr.y - prev_cr.y) ** 2) ** 0.5
-                logger.info(f"  Circle {cr.id}: delta_from_prev={d:.1f}px")
+                logger.info(f"  Circle {cr.id}: delta_from_prev={d:.4f}")
 
 
 turn_manager = TurnManager(
     turn_delay=1.0,
-    cumulative_movement_threshold=10.0,
-    min_movement_per_update=2.0,
+    cumulative_movement_threshold=0.0025,
+    min_movement_per_update=0.0005,
     missing_timeout_ms=2000.0,
-    motion_blur_threshold=100.0,
+    motion_blur_threshold=0.025,
     on_turn_end=default_on_turn_end,
 )
 
 
 app = FastAPI()
 
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+
+@app.on_event("startup")
+async def startup_event():
+    if calibration.load():
+        logger.info("Calibration loaded successfully")
+    else:
+        logger.warning(
+            "No calibration found. Use frontend Calibrate button or "
+            "POST /api/calibrate to calibrate."
+        )
+
+
+class CalibrationInput(BaseModel):
+    id: int
+    x: float
+    y: float
+
+
+@app.post("/api/calibrate")
+async def calibrate():
+    circles = calibration.get_last_n_circles(4)
+    if len(circles) < 4:
+        return {"status": "error", "message": f"need 4 circles, have {len(circles)}"}
+
+    H = calibration.compute_from_corners(circles)
+    calibration.save(H, circles, datetime.now().isoformat())
+
+    logger.info("Calibration complete!")
+
+    return {
+        "status": "ok",
+        "message": "calibration saved",
+        "screen_points": circles.tolist(),
+    }
+
+
+@app.get("/api/calibration/status")
+async def calibration_status():
+    last_4 = calibration.get_last_n_circles(4).tolist()
+    return {
+        "calibrated": calibration.is_calibrated(),
+        "tracked_count": calibration.get_tracked_count(),
+        "last_positions": last_4 if last_4 else [],
+    }
+
 
 @app.post("/api/tracker")
 async def tracker_update(circles: List[CircleInput]):
-    circle_objs = [Circle(id=c.id, x=c.x, y=c.y) for c in circles]
+    for c in circles:
+        calibration.track_circle(c.id, c.x, c.y)
+
+    if not calibration.is_calibrated():
+        logger.warning("/api/tracker: no calibration, passing raw coords")
+        screen_circles = [Circle(id=c.id, x=c.x, y=c.y) for c in circles]
+        turn_manager.update(screen_circles)
+        circles_list = [
+            {
+                "id": c.id,
+                "x": c.x,
+                "y": c.y,
+                "in_frame": c.id in turn_manager.get_in_frame_ids(),
+            }
+            for c in circles
+        ]
+        await broadcast_to_frontends(
+            {
+                "timestamp": datetime.now().isoformat(),
+                "circles": circles_list,
+            }
+        )
+        return {"status": "error", "message": "not calibrated"}
+
+    screen_pts = np.array([[c.x, c.y] for c in circles], dtype=np.float32)
+    uv_pts = calibration.transform_batch(screen_pts)
+
+    circle_objs = [
+        Circle(id=c.id, x=float(uv_pts[i, 0]), y=float(uv_pts[i, 1]))
+        for i, c in enumerate(circles)
+    ]
 
     logger.info(
-        f"POST /api/tracker: received {len(circles)} circles: [{', '.join(f'id={c.id} x={c.x:.0f} y={c.y:.0f}' for c in circles)}]"
+        f"POST /api/tracker: received {len(circles)} circles: [{', '.join(f'id={c.id} x={c.x:.0f} y={c.y:.0f}' for c in circles)}] -> "
+        f"[{', '.join(f'id={c.id} x={uv_pts[i, 0]:.4f} y={uv_pts[i, 1]:.4f}' for i, c in enumerate(circles))}]"
     )
 
     turn_manager.update(circle_objs)
 
-    # BROADCAST RAW DATA DIRECTLY - don't use get_current_state()
     circles_list = [
         {
             "id": c.id,
-            "x": c.x,
-            "y": c.y,
+            "x": float(uv_pts[i, 0]),
+            "y": float(uv_pts[i, 1]),
             "in_frame": c.id in turn_manager.get_in_frame_ids(),
         }
-        for c in circles
+        for i, c in enumerate(circles)
     ]
 
     await broadcast_to_frontends(
